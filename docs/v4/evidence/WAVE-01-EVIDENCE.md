@@ -100,3 +100,21 @@ Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`.
 `tests/unit/v4`: 84 passed. Full suite: 458 passed, same 3 Windows environment failures. Coverage 94.19%. Smoke, ruff, mypy, pip-audit, bandit passed.
 
 Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not complete. Wave 2 unstarted.
+
+## Third independent re-verification (appended)
+
+**Failed commit:** `e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22`  
+**Failing tests first:** `aaac0146`
+
+| ID | Finding | Confirm / challenge | Correction |
+|---|---|---|---|
+| R3-1 | Outcome consistency only for `authorized`; missing policy could be `pending`; `denied` could become `minimized`; `policy_version` accepted whitespace/arbitrary text | **Confirmed.** `deny_without_policy` only blocked `outcome==authorized`. Version was any string. | Outcome must equal `policy_result`. Missing policy permits only `denied`. Nonempty version must be an opaque identifier |
+| R3-2 | §7.8 bindings incomplete; decision not bound to the exact request | **Confirmed.** Decision lacked data-subject/vulnerability, procedural/correction state, source/collection, granularity/time window, transformations, expiry/revocation, reason, authority, audit identity, and request digest | All §7.8 fields required; `request_digest` is SHA-256 of the canonical request |
+| R3-3 | `two_person_control` Boolean plus hardcoded high-risk transitions | **Confirmed.** `_check_transition` required the flag for publication/published, identity_hypothesis/confirmed_same, and disclosure_request/authorized | Flag removed. Distinct `first_approver_id` / `second_approver_id` required only when externally supplied `separation_of_duties_required` is true |
+| R3-4 | `canonical_dumps` converted only `ValueError` | **Confirmed.** `object()` raised `TypeError` | `ValueError` and `TypeError` become `ContractError` |
+
+### R3 validation
+
+`tests/unit/v4`: 94 passed. Full suite: 468 passed, same 3 Windows environment failures. Coverage 94.19%. Smoke, ruff, mypy, pip-audit, bandit passed.
+
+Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not complete. Wave 2 unstarted.
