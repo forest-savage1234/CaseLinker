@@ -3,6 +3,8 @@
 ```yaml
 wave: "01"
 status: "self_verified"
+prior_independent_review_status: "fail"
+failed_verification_commit: "b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 wave_00_accepted_closeout: "a370cfbc6ee419746cf925a682b85da1efd1193e"
 result_commit: "uncommitted"
@@ -57,3 +59,23 @@ No live migration, no Postgres service, no object store, no IdP, no policy conte
 ## Rollback
 
 Revert Wave 1 commits on `proposal/v4-research-network`. `main` and `proposal/v3-foundation` unchanged.
+
+## Independent verification findings and disposition (appended)
+
+**Failed commit:** `b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45`  
+**Protocol:** §32. Wave 0 remains closed. Wave 2 remains unstarted.
+
+| ID | Finding | Confirm / challenge | Correction |
+|---|---|---|---|
+| F1 | Correction/dependency identities, required machines, serialization/compatibility, disclosure requests, audit events missing or narrative-only | **Confirmed.** At `b73cccc6`, `schemas/v4/` had no correction, dependency, request, audit, compatibility, or as-known schemas; `state-transition-v1` listed four assertion pairs only. | New schemas + nine-machine table; `canonical_dumps`; `compatibility-v1` |
+| F2 | Temporal checks were raw string compare / length | **Confirmed.** `validate.py` at that commit compared `start > end` as strings and treated day precision as `len(start) < 10`. | Calendar `date.fromisoformat`, UTC `Z` timestamps, open/partial intervals, as-known query |
+| F3 | Person and event hypotheses were fused; evidence untyped | **Confirmed.** `identity-hypothesis-v1` used `evt_` for both sides and string evidence. | `person-hypothesis-v1` / `event-hypothesis-v1`; distinct subjects; `reopened`; `{kind, polarity}` |
+| F4 | Disclosure decisions not bound to request; missing-policy only raised | **Confirmed.** No request schema; empty `policy_version` raised instead of producing a denied decision. | `disclosure-request-v1`; `decide_disclosure` copies request context and returns `denied` when policy is missing |
+| F5 | AI provenance incomplete; no audit-event contract | **Confirmed.** AI schema lacked provider/tools/egress; no `audit-event-v1`. | Complete AI fields; reject `self_approved`; `audit-event-v1` rejects `source_passage` |
+| F6 | Tests-before-fix | **Confirmed as process.** | Failing revision tests committed in `b9344156` before this repair |
+
+### Revision validation
+
+Focused `tests/unit/v4`: 68 passed. Full approved suite: repository/traceability/ruff/mypy/bandit/pip-audit/smoke passed. Fast pytest 442 passed, **same 3 Windows environment failures** as the pristine v3 base. Coverage 93.89% (≥ 90%).
+
+Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`.

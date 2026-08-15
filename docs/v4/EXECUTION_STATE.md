@@ -11,7 +11,7 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "revision_required"
+  legal_state: "self_verified"
   failed_verification_commit: "b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45"
   human_accepted: false
   official_version_claim: false
@@ -29,8 +29,8 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-`human_approved` then implemented as slices A–E. Independent verification of `b73cccc6` **failed**. State is `revision_required`. Wave 0 remains closed. Wave 2 remains unstarted.
+Independent verification of `b73cccc6` failed. §32 repair applied. Wave 1 is again `self_verified`. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Apply §32 corrections. Do not begin Wave 2.
+Independent re-verification of Wave 1. Do not mark `gate_ready`. Do not begin Wave 2.
