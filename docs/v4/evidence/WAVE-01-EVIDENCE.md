@@ -118,7 +118,8 @@ Wave 1 returned to `revision_required`. The r4 adversarial tests are committed b
 ### R4 repair and self-verification (appended)
 
 **Tests-first commit:** `08390048`  
-**Contract repair:** `7521bfb8`
+**Contract repair:** `7521bfb8`  
+**Closeout:** `ac52ab84`
 
 | Finding | Executable correction |
 |---|---|
@@ -129,7 +130,7 @@ Wave 1 returned to `revision_required`. The r4 adversarial tests are committed b
 
 Validation on `7521bfb8`: focused `tests/unit/v4` **102 passed**. Full approved pytest suite **476 passed**, with the same three Windows environment failures as the pristine base. Coverage **93.81%** (≥ 90%). Repository, traceability, ruff, format, mypy, smoke, pip-audit, and Bandit passed. Pip-audit reported no known vulnerabilities.
 
-Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`, and not complete. Wave 0 remains closed. Wave 2 remains unstarted. Independent re-verification is required.
+Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`, and not complete. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Third independent re-verification (appended)
 
@@ -148,3 +149,11 @@ Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`, and not compl
 `tests/unit/v4`: 94 passed. Full suite: 468 passed, same 3 Windows environment failures. Coverage 94.19%. Smoke, ruff, mypy, pip-audit, bandit passed.
 
 Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not complete. Wave 2 unstarted.
+
+## Assurance-boundary freeze (appended)
+
+**Implementation commit:** `ac52ab84dead1ef5aebd74e0291c01bca0b461d5`  
+**Decision:** D-2026-08-15-019  
+**Artifacts:** `docs/v4/STRATEGY.md`; `docs/v4/assurance/WAVE-01-ASSURANCE.md`; `docs/v4/assurance/WAVE-01-REQUIREMENTS-MAP.md`; Proposed ADR W1-010
+
+The Wave 1 assurance contract is frozen to `GROK_BUILD_PROGRAM.md` §21 plus D-2026-08-15-013. Escalation under `STRATEGY.md` §6 is active after four review/repair cycles on the same contracts. r4 is already present on `ac52ab84`; no r5 implementation is authorized. Wave 1 remains `self_verified`. Clean-room review of `ac52ab84` is requested against the frozen boundary, not against the accumulated repair history as a new spec. Wave 2 remains unstarted.

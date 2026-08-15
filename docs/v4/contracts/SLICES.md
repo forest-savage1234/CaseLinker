@@ -1,7 +1,7 @@
 # Wave 1 contract slices
 
-**Status:** Wave 1 `human_approved`.  
-**Not:** Wave 2, Phase 0 complete, official version, live migration.
+**Status:** Wave 1 `self_verified`; assurance boundary frozen in `docs/v4/assurance/WAVE-01-ASSURANCE.md`.  
+**Not:** Wave 2, Phase 0 complete, official version, live migration, `gate_ready`.
 
 Each slice is independently reviewable. Tests are committed before the contract surface that makes them pass.
 

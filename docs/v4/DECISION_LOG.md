@@ -120,6 +120,15 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Label:** repository fact
 - **Decision:** Tests-first commit `08390048` and contract repair `7521bfb8` close the four accepted r4 findings under self-verification. Wave 1 returns to `self_verified`, not `gate_ready` or `human_accepted`. Wave 2 stays unstarted pending independent re-verification.
 
+## D-2026-08-15-019 — Adopt strategy; freeze Wave 1 boundary; pause further implementation
+
+- **Label:** human decision required (decided)
+- **Decision:** Adopt `docs/v4/STRATEGY.md`. Freeze Wave 1 acceptance in `docs/v4/assurance/WAVE-01-ASSURANCE.md` and map every exit requirement. Keep Wave 1 `self_verified` at `ac52ab84`. Do **not** implement an r5 contract repair. Do **not** mark `gate_ready` from the builder. Do **not** begin Wave 2.
+- **Rationale:** four consecutive review/repair cycles restructured the same disclosure and transition contracts. `STRATEGY.md` §6 requires a boundary review rather than another patch.
+- **Review target:** `ac52ab84dead1ef5aebd74e0291c01bca0b461d5`
+- **Independence:** builders of r3/r4 must not be the independent verifier.
+- **Consequence:** r4 is historical implementation. Clean-room review classifies remaining issues against the frozen §21 + D-013 boundary (in-scope defect, later-wave improvement, or `program_clarification_required`).
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
