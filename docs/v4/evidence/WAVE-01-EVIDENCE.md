@@ -201,3 +201,12 @@ A reported claim cannot set `treat_allegation_as_guilt` or `finding: guilt`. No 
 Builder gates: `tests/unit/v4` 107 passed. Full suite 481 passed, same 3 Windows baseline exceptions. Coverage 93.81%. Repository, traceability, ruff, mypy, smoke, pip-audit, bandit passed.
 
 Wave 1 is `self_verified`. Not `gate_ready`. The prior clean-room review remains `review_invalid`. A new independent review that reruns gates is required. Wave 2 unstarted.
+
+## W1-N15 independent review (appended)
+
+**Record:** `docs/v4/evidence/WAVE-01-W1N15-REVIEW.md`  
+**Decision:** D-2026-08-15-025  
+**Gates:** rerun by the reviewer. Not `review_invalid`.  
+**GR-1:** closed. **Critical/high:** none.
+
+Wave 1 is `gate_ready` for later human acceptance. Not `human_accepted`. Wave 2 unstarted.

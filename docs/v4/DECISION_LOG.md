@@ -170,6 +170,13 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Decision:** Apply only the smallest policy-neutral v4 contract/test that allegation is not guilt. Do **not** perform another disclosure or SoD revision. After the repair, obtain a fresh independent review that **reruns** the approved gates. Only if that review is valid and finds no in-boundary critical/high defect may Wave 1 return to `gate_ready` for later human acceptance.
 - **Does not decide:** human acceptance, Wave 2, official version
 
+## D-2026-08-15-025 — W1-N15 review valid; Wave 1 `gate_ready` for later acceptance
+
+- **Label:** repository fact of a valid independent review plus D-024
+- **Decision:** Record `docs/v4/evidence/WAVE-01-W1N15-REVIEW.md`. The reviewer reran the approved gates. GR-1 is closed. No in-boundary critical/high defect remains. Set Wave 1 to `gate_ready`. Do **not** set `human_accepted`. Do **not** begin Wave 2.
+- **Independence limitation:** same-model reviewer. Unlike the prior review, gates were rerun, so this review is not `review_invalid`.
+- **Does not decide:** human acceptance, Phase 0, official version, Wave 2
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

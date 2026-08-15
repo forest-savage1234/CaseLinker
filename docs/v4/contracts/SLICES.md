@@ -1,7 +1,7 @@
 # Wave 1 contract slices
 
-**Status:** Wave 1 `revision_required` (`gate_ready` withdrawn, D-022); assurance boundary frozen in `docs/v4/assurance/WAVE-01-ASSURANCE.md`.  
-**Not:** Wave 2, Phase 0 complete, official version, live migration, `human_accepted`, `gate_ready`.
+**Status:** Wave 1 `gate_ready` after W1-N15 repair and a gate-rerunning review; assurance boundary frozen in `docs/v4/assurance/WAVE-01-ASSURANCE.md`.  
+**Not:** Wave 2, Phase 0 complete, official version, live migration, `human_accepted`.
 
 Each slice is independently reviewable. Tests are committed before the contract surface that makes them pass.
 

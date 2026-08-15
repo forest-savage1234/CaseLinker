@@ -27,14 +27,14 @@ Disposition vocabulary:
 | W1-N8 | Projection / artifact contracts | implemented | `projection-artifact-v1` | `test_projection_provenance.py` | Projection is not SoR |
 | W1-N9 | Serialization / compatibility | implemented | `canonical_dumps`; `compatibility-v1` | `test_revision_serialization.py`, r2/r3 dumps tests | — |
 | W1-N10 | Audit and AI provenance | implemented | `audit-event-v1`, `ai-execution-v1` | `test_revision_audit_ai.py`, `test_projection_provenance.py` | No model path; R-AI remains blocked for model use |
-| W1-N11 | ADRs, schemas, examples | implemented | `docs/v4/adr/W1-001`…`W1-008`; `schemas/v4/`; fixtures in tests | this map; slice docs | Repair ADRs are history, not new scope |
+| W1-N11 | ADRs, schemas, examples | implemented | `docs/v4/adr/W1-001`…`W1-011`; `schemas/v4/`; fixtures in tests | this map; slice docs | Repair ADRs are history, not new scope |
 | W1-N12 | Postgres logical model | implemented (markdown) | `architecture/POSTGRES_LOGICAL_MODEL.md` | document review; no migration tests (non-goal) | **blocked** OD-008 for any live claim |
 | W1-N13 | Constraint placement | implemented (analysis) | same file, §4 | document review | — |
 | W1-N14 | Invalid examples / fail-closed | implemented | unknown fields rejected; `ContractError` | every `tests/unit/v4/test_*.py` negative case | — |
 | W1-N15 | Five distinctions | implemented after D-024 | `reported-claim-v1`; `allegation_is_not_guilt` | `test_revision_w1n15.py` plus the four existing distinction tests | v3 extractors unchanged; this contract is the v4 demonstration |
 | W1-N16 | Tests before implementation | implemented (process) | git history: failing slice/repair tests precede fixes | `5eaa3d0d`…`aaac0146` | — |
 | W1-N17 | Schemas as executable surface | implemented | `schemas/v4/*.schema.json` + `validate_instance` | kernel tests | — |
-| W1-N18 | Proposed ADRs under `docs/v4/adr/` | implemented | W1-001…W1-008 | files exist; `docs/adr/` untouched | — |
+| W1-N18 | Proposed ADRs under `docs/v4/adr/` | implemented | W1-001…W1-011 | files exist; `docs/adr/` untouched | — |
 
 ## Related program IDs (partial only)
 
