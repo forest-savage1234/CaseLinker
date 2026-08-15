@@ -88,6 +88,13 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Phase 0 completion, pilot approval, deployment, official version, Wave 1 implementation, Wave 2
 - **Consequence:** Wave 1 **planning** may be presented; Wave 1 implementation awaits a separate explicit plan approval
 
+## D-2026-08-15-013 — Wave 1 plan approved
+
+- **Label:** human decision required (decided)
+- **Decision:** Approve the Wave 1 plan with binding modifications (slice order, tests-before-implementation, schemas as the executable surface, Proposed ADRs under `docs/v4/adr/`, Postgres logical-only).
+- **State:** Wave 0 remains `human_accepted`/`closed`. Wave 1 is `human_approved` (was `proposed`; not unstarted). Wave 2 remains `unstarted`.
+- **Does not decide:** Phase 0, pilot, deploy, official version, Wave 2
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
