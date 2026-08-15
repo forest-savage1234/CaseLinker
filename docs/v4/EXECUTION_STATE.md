@@ -11,7 +11,8 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "self_verified"
+  legal_state: "revision_required"
+  failed_verification_commit: "b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45"
   human_accepted: false
   official_version_claim: false
 wave_02:
@@ -28,8 +29,8 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-`human_approved` then implemented as slices A–E (tests before schemas). Now `self_verified`. See `docs/v4/evidence/WAVE-01-EVIDENCE.md`.
+`human_approved` then implemented as slices A–E. Independent verification of `b73cccc6` **failed**. State is `revision_required`. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Independent Wave 1 verification. Do not begin Wave 2. Do not mark Wave 1 `human_accepted` here.
+Apply §32 corrections. Do not begin Wave 2.

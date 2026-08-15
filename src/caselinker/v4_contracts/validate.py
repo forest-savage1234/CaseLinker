@@ -16,6 +16,21 @@ class ContractError(ValueError):
     """Raised when a v4 proposal contract instance is not acceptable."""
 
 
+def canonical_dumps(instance: object) -> bytes:
+    """Placeholder until canonical serialization is implemented."""
+    raise ContractError("canonical serialization is not implemented")
+
+
+def decide_disclosure(
+    request: Mapping[str, object],
+    *,
+    policy_version: str | None,
+    research_eligible: bool,
+) -> dict[str, object]:
+    """Placeholder until missing-policy denial is implemented."""
+    raise ContractError("disclosure decision procedure is not implemented")
+
+
 def validate_instance(schema_name: str, instance: object) -> None:
     """Validate *instance* against ``schemas/v4/{schema_name}.schema.json``."""
     if SCHEMA_NAME_PATTERN.fullmatch(schema_name) is None:

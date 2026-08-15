@@ -95,6 +95,11 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **State:** Wave 0 remains `human_accepted`/`closed`. Wave 1 is `human_approved` (was `proposed`; not unstarted). Wave 2 remains `unstarted`.
 - **Does not decide:** Phase 0, pilot, deploy, official version, Wave 2
 
+## D-2026-08-15-014 — Wave 1 revision_required
+
+- **Label:** repository fact
+- **Decision:** Independent verification of `b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45` failed. Wave 1 is `revision_required`. Wave 0 stays closed. Wave 2 stays unstarted. Apply §32 without broadening scope.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
