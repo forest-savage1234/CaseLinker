@@ -11,7 +11,7 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "revision_required"
+  legal_state: "self_verified"
   failed_verification_commit: "3f57afe1a11b97e608bae4b184396240262a65c4"
   prior_failed_verification_commit: "b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45"
   human_accepted: false
@@ -30,8 +30,8 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-Independent re-verification of `3f57afe1` failed. Wave 1 is `revision_required`, not `gate_ready`. Wave 0 remains closed. Wave 2 remains unstarted.
+Independent re-verification of `3f57afe1` failed. Tests-first repair applied. Wave 1 is again `self_verified`, not `gate_ready`, not `human_accepted`. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Apply the smallest tests-first contract repair. Do not mark `gate_ready`. Do not begin Wave 2.
+Independent re-verification of Wave 1. Do not mark `gate_ready`. Do not begin Wave 2.

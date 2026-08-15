@@ -79,3 +79,24 @@ Revert Wave 1 commits on `proposal/v4-research-network`. `main` and `proposal/v3
 Focused `tests/unit/v4`: 68 passed. Full approved suite: repository/traceability/ruff/mypy/bandit/pip-audit/smoke passed. Fast pytest 442 passed, **same 3 Windows environment failures** as the pristine v3 base. Coverage 93.89% (≥ 90%).
 
 Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`.
+
+## Second independent re-verification (appended)
+
+**Failed commit:** `3f57afe1a11b97e608bae4b184396240262a65c4`  
+**Failing tests first:** `57f961fb`
+
+| ID | Finding | Confirm / challenge | Correction |
+|---|---|---|---|
+| R2-1 | Nonempty `policy_version` authorized | **Confirmed.** `decide_disclosure` set `outcome` to `authorized` whenever a version string was present. | Authorize only with explicit `policy_result="authorized"` plus a version; otherwise `denied` |
+| R2-2 | Decision omitted purpose and request context | **Confirmed.** Purpose was optional; request fields were not required on the decision. | Purpose and request context required and copied |
+| R2-3 | Missing machine defaulted to `legacy_assertion`; guards unmodeled | **Confirmed.** `_check_transition` used `instance.get("machine", "legacy_assertion")`. | Machine, idempotency key, audit id, guard, two-person flag, and side effects required; no default machine |
+| R2-4 | Incomplete AI provenance; open `tool_calls` | **Confirmed.** No retrieved artifacts/cost/timing/output; tool items were open objects. | Closed tool-call schema; required provenance fields; reject `source_passage` |
+| R2-5 | `reopened` optional prior; polarity unconstrained | **Confirmed.** | Prior state required for `reopened`; polarity placement enforced |
+| R2-6 | `canonical_dumps` allowed NaN | **Confirmed.** `json.dumps` default `allow_nan=True`. | `allow_nan=False` → `ContractError` |
+| R2-7 | Impossible UTC could raise `ValueError` | **Confirmed.** `fromisoformat` was unwrapped after a digit regex that accepts `01-32`. | Wrap parse failures as `ContractError` |
+
+### R2 validation
+
+`tests/unit/v4`: 84 passed. Full suite: 458 passed, same 3 Windows environment failures. Coverage 94.19%. Smoke, ruff, mypy, pip-audit, bandit passed.
+
+Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not complete. Wave 2 unstarted.
