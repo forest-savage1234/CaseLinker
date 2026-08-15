@@ -136,6 +136,14 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Independence limitation:** same-model reviewer; gates not re-executed in that review. Not organizational independence.
 - **Does not decide:** Phase 0 completion, official version, policy content, or Wave 2.
 
+## D-2026-08-15-021 — Wave 1 not human-accepted
+
+- **Label:** human decision required (decided)
+- **Decision:** Do **not** human-accept Wave 1. `human_accepted` remains false. Wave 1 may stay `gate_ready` from the clean-room review; that is not acceptance.
+- **Also decided:** the frozen §21 + D-013 assurance boundary remains adopted; `STRATEGY.md` remains adopted; disclosure and SoD contracts are **not** reopened; Wave 2 remains `unstarted`.
+- **Does not decide:** later acceptance, Phase 0 completion, official version, or any product change
+- **Consequence:** no Wave 2 planning or implementation; no r5; no disclosure/SoD patch
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

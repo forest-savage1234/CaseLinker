@@ -168,3 +168,10 @@ The Wave 1 assurance contract is frozen to `GROK_BUILD_PROGRAM.md` §21 plus D-2
 No traceable critical/high defect inside the frozen boundary. Residual items are medium/low or later-wave. r3/r4 extras are historical over-specification, not an r5 queue.
 
 Wave 1 is `gate_ready`. Not `human_accepted`. Not complete. Wave 2 unstarted.
+
+## Human non-acceptance (appended)
+
+**Decision:** D-2026-08-15-021  
+**Operator:** Wave 1 is **not** human-accepted.
+
+The frozen §21 + D-013 assurance boundary and `STRATEGY.md` remain adopted. Disclosure and SoD are not reopened. Wave 2 remains unstarted. No r5. Wave 1 stays `gate_ready` only as a review disposition, not as acceptance.
