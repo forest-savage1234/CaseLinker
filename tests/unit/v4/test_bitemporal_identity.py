@@ -49,7 +49,7 @@ def test_inverted_event_interval_is_rejected() -> None:
         **VALID_INTERVAL,
         "event_time": {"start": "2026-01-09", "end": "2026-01-05", "precision": "day"},
     }
-    with pytest.raises(ContractError, match="interval"):
+    with pytest.raises(ContractError, match="inverted interval"):
         validate_instance("bitemporal-interval-v1", bad)
 
 
