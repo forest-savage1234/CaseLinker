@@ -1,0 +1,24 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/ai-execution-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal AI execution provenance v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["ai_cannot_publish"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "ai_execution", "type": "string"},
+    "execution_id": {"type": "string", "pattern": "^aiex_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "model_identity": {"type": "string", "minLength": 1},
+    "prompt_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "disposition": {"type": "string", "enum": ["proposed", "rejected", "published"]}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "execution_id",
+    "model_identity",
+    "prompt_digest",
+    "disposition"
+  ]
+}
