@@ -124,6 +124,7 @@ A Wave 1 review may treat these as the executable exit tests. Additional tests e
 | Derivation ≠ corroboration; similarity ≠ identity; no transitivity | `test_lineage_hypotheses.py`, `test_revision_hypotheses.py` |
 | Eligibility ≠ disclosure; missing policy does not authorize | `test_disclosure_authority.py`, `test_revision_disclosure.py` |
 | Projection ≠ source of truth; AI cannot publish | `test_projection_provenance.py`, `test_revision_audit_ai.py` |
+| Allegation is not guilt | `test_revision_w1n15.py` |
 | Canonical JSON / compatibility | `test_revision_serialization.py` |
 
 Repair-round tests (`test_revision_r2.py`, `test_revision_r3.py`) are historical evidence that specific defects were closed. They are not a license to keep growing the same contracts.

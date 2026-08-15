@@ -1,0 +1,42 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/reported-claim-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal reported claim v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["allegation_is_not_guilt"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "reported_claim", "type": "string"},
+    "assertion_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "speech_status": {
+      "type": "string",
+      "enum": ["reported", "extracted", "reviewed"]
+    },
+    "procedural_status": {
+      "type": "string",
+      "enum": [
+        "arrest",
+        "charge",
+        "indictment",
+        "guilty_plea",
+        "acquittal",
+        "dismissal",
+        "appeal",
+        "correction",
+        "retraction"
+      ]
+    },
+    "finding": {"type": "string", "enum": ["none", "guilt"]},
+    "treat_allegation_as_guilt": {"type": "boolean"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "assertion_id",
+    "speech_status",
+    "procedural_status",
+    "finding",
+    "treat_allegation_as_guilt"
+  ]
+}

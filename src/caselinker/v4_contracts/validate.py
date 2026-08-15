@@ -428,6 +428,10 @@ def _run_invariant(name: str, instance: Mapping[str, object], schema: Mapping[st
         and instance.get("treat_eligible_as_disclosed") is True
     ):
         raise ContractError("eligibility is not disclosure permission")
+    if name == "allegation_is_not_guilt" and (
+        instance.get("treat_allegation_as_guilt") is True or instance.get("finding") == "guilt"
+    ):
+        raise ContractError("allegation is not guilt")
     if name == "deny_without_policy":
         version = instance.get("policy_version")
         missing_policy = not isinstance(version, str) or version == ""
