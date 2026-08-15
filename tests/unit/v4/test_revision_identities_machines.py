@@ -33,6 +33,9 @@ VALID_SOURCE_TRANSITION = {
     "reason_code": "bytes_hashed",
     "idempotency_key": "idem_source_1",
     "audit_event_id": "aud_example01",
+    "guard_code": "hash_present",
+    "two_person_control": False,
+    "side_effects": [],
 }
 
 

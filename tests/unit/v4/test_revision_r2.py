@@ -42,8 +42,10 @@ def test_explicit_external_policy_result_is_required_to_authorize() -> None:
 
 
 def test_disclosure_decision_requires_purpose() -> None:
+    bad = dict(VALID_DECISION)
+    bad.pop("purpose")
     with pytest.raises(ContractError, match="purpose"):
-        validate_instance("disclosure-decision-v1", dict(VALID_DECISION))
+        validate_instance("disclosure-decision-v1", bad)
 
 
 def test_decision_preserves_request_fields() -> None:
@@ -66,15 +68,16 @@ def test_decision_preserves_request_fields() -> None:
 
 
 def test_state_transition_requires_selected_machine() -> None:
+    bad = dict(VALID_TRANSITION)
+    bad.pop("machine")
     with pytest.raises(ContractError, match="machine"):
-        validate_instance("state-transition-v1", dict(VALID_TRANSITION))
+        validate_instance("state-transition-v1", bad)
 
 
 def test_state_transition_requires_idempotency_and_audit() -> None:
-    incomplete = {
-        **VALID_TRANSITION,
-        "machine": "legacy_assertion",
-    }
+    incomplete = dict(VALID_TRANSITION)
+    incomplete.pop("idempotency_key")
+    incomplete.pop("audit_event_id")
     with pytest.raises(ContractError, match="required"):
         validate_instance("state-transition-v1", incomplete)
 
@@ -95,7 +98,7 @@ def test_high_risk_transition_requires_two_person_control() -> None:
         "two_person_control": False,
         "side_effects": ["notify_subscribers"],
     }
-    with pytest.raises(ContractError, match="two.person"):
+    with pytest.raises(ContractError, match="two-person"):
         validate_instance("state-transition-v1", instance)
 
 
@@ -103,8 +106,12 @@ def test_high_risk_transition_requires_two_person_control() -> None:
 
 
 def test_ai_execution_requires_retrieved_artifacts_cost_and_timing() -> None:
+    incomplete = dict(VALID_AI)
+    incomplete.pop("retrieved_artifact_ids")
+    incomplete.pop("cost")
+    incomplete.pop("timing_ms")
     with pytest.raises(ContractError, match="required"):
-        validate_instance("ai-execution-v1", dict(VALID_AI))
+        validate_instance("ai-execution-v1", incomplete)
 
 
 def test_ai_tool_call_rejects_source_passage() -> None:
@@ -156,7 +163,7 @@ def test_negative_evidence_cannot_support() -> None:
         validate_instance("event-hypothesis-v1", bad)
 
 
-# --- 6–7. canonical JSON and parse errors ---
+# --- 6-7. canonical JSON and parse errors ---
 
 
 def test_canonical_dumps_rejects_nan() -> None:

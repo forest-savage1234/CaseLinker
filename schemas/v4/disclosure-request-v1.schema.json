@@ -9,6 +9,8 @@
     "contract_kind": {"const": "disclosure_request", "type": "string"},
     "request_id": {"type": "string", "pattern": "^dreq_[a-z0-9][a-z0-9._-]{2,127}$"},
     "principal_id": {"type": "string", "pattern": "^prin_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "organization_id": {"type": "string", "pattern": "^org_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "jurisdiction": {"type": "string", "minLength": 1},
     "audience": {
       "type": "string",
       "enum": ["internal_review", "approved_research", "public_aggregate"]
@@ -26,6 +28,8 @@
     "contract_kind",
     "request_id",
     "principal_id",
+    "organization_id",
+    "jurisdiction",
     "audience",
     "purpose",
     "requested_fields",

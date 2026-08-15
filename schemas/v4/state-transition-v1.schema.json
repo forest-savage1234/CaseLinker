@@ -29,15 +29,24 @@
     "actor_kind": {"type": "string", "enum": ["reviewer", "system", "policy"]},
     "reason_code": {"type": "string", "minLength": 1},
     "idempotency_key": {"type": "string", "minLength": 1},
-    "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"}
+    "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "guard_code": {"type": "string", "minLength": 1},
+    "two_person_control": {"type": "boolean"},
+    "side_effects": {"type": "array", "items": {"type": "string", "minLength": 1}}
   },
   "required": [
     "schema_version",
     "contract_kind",
+    "machine",
     "subject_id",
     "from_state",
     "to_state",
     "actor_kind",
-    "reason_code"
+    "reason_code",
+    "idempotency_key",
+    "audit_event_id",
+    "guard_code",
+    "two_person_control",
+    "side_effects"
   ]
 }

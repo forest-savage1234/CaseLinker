@@ -16,7 +16,38 @@
     "execution_environment": {"type": "string", "minLength": 1},
     "prompt_identity": {"type": "string", "minLength": 1},
     "allowed_input_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "tool_calls": {"type": "array", "items": {"type": "object"}},
+    "retrieved_artifact_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"}
+    },
+    "tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "args_digest"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "args_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "structured_output": {"type": "object"},
+    "validation_result": {"type": "string", "minLength": 1},
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currency", "amount_millionths"],
+      "properties": {
+        "currency": {"type": "string", "minLength": 1},
+        "amount_millionths": {"type": "integer", "minimum": 0}
+      }
+    },
+    "timing_ms": {"type": "integer", "minimum": 0},
+    "resulting_canonical_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"}
+    },
     "structured_output_valid": {"type": "boolean"},
     "policy_decision": {"type": "string", "minLength": 1},
     "egress_class": {"type": "string", "enum": ["none", "minimized", "blocked"]},
@@ -38,7 +69,13 @@
     "execution_environment",
     "prompt_identity",
     "allowed_input_digest",
+    "retrieved_artifact_ids",
     "tool_calls",
+    "structured_output",
+    "validation_result",
+    "cost",
+    "timing_ms",
+    "resulting_canonical_ids",
     "structured_output_valid",
     "policy_decision",
     "egress_class",

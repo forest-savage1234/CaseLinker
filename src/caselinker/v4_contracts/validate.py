@@ -106,9 +106,16 @@ class ContractError(ValueError):
 
 def canonical_dumps(instance: object) -> bytes:
     """Return sorted, compact UTF-8 JSON for governed comparison."""
-    return json.dumps(instance, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode(
-        "utf-8"
-    )
+    try:
+        return json.dumps(
+            instance,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+            allow_nan=False,
+        ).encode("utf-8")
+    except ValueError as error:
+        raise ContractError("non-JSON numeric value") from error
 
 
 def decide_disclosure(
@@ -127,22 +134,33 @@ def decide_disclosure(
         raise ContractError("disclosure request context is malformed")
     if not isinstance(audience, str) or not isinstance(purpose, str):
         raise ContractError("disclosure request context is malformed")
-    missing = policy_version is None or policy_version == ""
+    missing_policy = policy_version is None or policy_version == ""
+    allowed_results = {"authorized", "denied", "minimized", "pending"}
+    unauthorized = missing_policy or policy_result is None
+    if unauthorized or policy_result not in allowed_results:
+        outcome = "denied"
+        recorded_result = "denied"
+    else:
+        outcome = policy_result
+        recorded_result = policy_result
     decision: dict[str, object] = {
         "schema_version": "1.0",
         "contract_kind": "disclosure_decision",
         "request_id": request_id,
         "decision_id": "ddec_" + request_id.removeprefix("dreq_"),
+        "principal_id": request.get("principal_id"),
+        "organization_id": request.get("organization_id"),
         "audience": audience,
         "purpose": purpose,
-        "outcome": "denied" if missing else "authorized",
-        "policy_version": "" if missing else policy_version,
+        "requested_fields": request.get("requested_fields"),
+        "channel": request.get("channel"),
+        "jurisdiction": request.get("jurisdiction"),
+        "outcome": outcome,
+        "policy_version": "" if missing_policy else policy_version,
+        "policy_result": recorded_result,
         "research_eligible": research_eligible,
         "treat_eligible_as_disclosed": False,
     }
-    if missing:
-        validate_instance("disclosure-decision-v1", decision)
-        return decision
     validate_instance("disclosure-decision-v1", decision)
     return decision
 
@@ -257,7 +275,10 @@ def _validate(instance: object, schema: Mapping[str, object], *, path: str) -> N
 def _require_utc(value: str, *, path: str) -> datetime:
     if UTC_TIMESTAMP.fullmatch(value) is None:
         raise ContractError(f"{path} must be a UTC timestamp ending with Z")
-    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ContractError(f"{path} is an invalid UTC timestamp") from error
     if parsed.tzinfo is None or parsed.utcoffset() != UTC.utcoffset(parsed):
         raise ContractError(f"{path} must be UTC")
     return parsed
@@ -311,6 +332,18 @@ def _run_invariant(name: str, instance: Mapping[str, object], schema: Mapping[st
         right = instance.get("right_subject_id", instance.get("right_event_id"))
         if left == right:
             raise ContractError("distinct subjects required")
+    if name == "reopen_requires_prior_state" and instance.get("state") == "reopened":
+        prior = instance.get("prior_state")
+        legal_prior = {
+            "possibly_same",
+            "confirmed_same",
+            "confirmed_different",
+            "unresolved",
+        }
+        if prior not in legal_prior:
+            raise ContractError("reopened requires a valid prior_state")
+    if name == "evidence_polarity_placement":
+        _check_evidence_polarity(instance)
     if name == "compatibility_versions":
         if instance.get("writer_schema_version") != instance.get("reader_schema_version"):
             raise ContractError("incompatible schema versions")
@@ -333,7 +366,8 @@ def _run_invariant(name: str, instance: Mapping[str, object], schema: Mapping[st
         raise ContractError("eligibility is not disclosure permission")
     if name == "deny_without_policy":
         missing_policy = not instance.get("policy_version")
-        if missing_policy and instance.get("outcome") != "denied":
+        explicit = instance.get("policy_result")
+        if instance.get("outcome") == "authorized" and (missing_policy or explicit != "authorized"):
             raise ContractError("missing policy version denies disclosure")
     if name == "projection_not_authoritative" and instance.get("authoritative") is True:
         raise ContractError("a projection is not a source of truth")
@@ -367,10 +401,30 @@ def _check_interval(instance: Mapping[str, object]) -> None:
         _require_utc(knowledge, path="$.knowledge_time")
 
 
+def _check_evidence_polarity(instance: Mapping[str, object]) -> None:
+    positive = instance.get("positive_evidence")
+    negative = instance.get("negative_evidence")
+    if isinstance(positive, list):
+        for item in positive:
+            if isinstance(item, dict) and item.get("polarity") != "supports":
+                raise ContractError("positive evidence polarity must support")
+    if isinstance(negative, list):
+        for item in negative:
+            if isinstance(item, dict) and item.get("polarity") != "contradicts":
+                raise ContractError("negative evidence polarity must contradict")
+
+
 def _check_transition(instance: Mapping[str, object], schema: Mapping[str, object]) -> None:
-    machine = instance.get("machine", "legacy_assertion")
-    if not isinstance(machine, str):
-        raise ContractError("machine must be a string")
+    machine = instance.get("machine")
+    if not isinstance(machine, str) or not machine:
+        raise ContractError("machine is required")
+    high_risk = (machine, instance.get("to_state")) in {
+        ("publication", "published"),
+        ("identity_hypothesis", "confirmed_same"),
+        ("disclosure_request", "authorized"),
+    }
+    if high_risk and instance.get("two_person_control") is not True:
+        raise ContractError("two-person control required")
     allowed: Sequence[object]
     machines = schema.get("x-caselinker-machines")
     if isinstance(machines, dict) and machine in machines:

@@ -16,11 +16,17 @@ VALID_INTERVAL = {
 VALID_TRANSITION = {
     "schema_version": "1.0",
     "contract_kind": "state_transition",
+    "machine": "legacy_assertion",
     "subject_id": "asrt_example01",
     "from_state": "extracted",
     "to_state": "resolved",
     "actor_kind": "reviewer",
     "reason_code": "accepted_bundle",
+    "idempotency_key": "idem_legacy_1",
+    "audit_event_id": "aud_example01",
+    "guard_code": "bundle_complete",
+    "two_person_control": False,
+    "side_effects": [],
 }
 
 VALID_IDENTITY = {

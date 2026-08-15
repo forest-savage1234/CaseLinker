@@ -9,6 +9,8 @@ REQUEST = {
     "contract_kind": "disclosure_request",
     "request_id": "dreq_example01",
     "principal_id": "prin_example01",
+    "organization_id": "org_fixture01",
+    "jurisdiction": "unspecified_fixture",
     "audience": "public_aggregate",
     "purpose": "aggregate_research",
     "requested_fields": ["legal_event_type"],
