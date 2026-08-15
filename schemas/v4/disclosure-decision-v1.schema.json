@@ -1,0 +1,30 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/disclosure-decision-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal disclosure decision v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["eligibility_is_not_disclosure", "deny_without_policy"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "disclosure_decision", "type": "string"},
+    "request_id": {"type": "string", "pattern": "^dreq_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "decision_id": {"type": "string", "pattern": "^ddec_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "audience": {"type": "string", "enum": ["internal_review", "approved_research", "public_aggregate"]},
+    "outcome": {"type": "string", "enum": ["denied", "authorized", "minimized"]},
+    "policy_version": {"type": "string"},
+    "research_eligible": {"type": "boolean"},
+    "treat_eligible_as_disclosed": {"type": "boolean"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "request_id",
+    "decision_id",
+    "audience",
+    "outcome",
+    "policy_version",
+    "research_eligible",
+    "treat_eligible_as_disclosed"
+  ]
+}

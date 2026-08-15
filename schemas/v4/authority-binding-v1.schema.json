@@ -1,0 +1,23 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/authority-binding-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal authority binding v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "authority_binding", "type": "string"},
+    "principal_id": {"type": "string", "pattern": "^prin_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "organization_id": {"type": "string", "pattern": "^org_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "role": {"type": "string", "enum": ["reviewer", "adjudicator", "system"]},
+    "authority_interface": {"type": "string", "const": "declared_binding"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "principal_id",
+    "organization_id",
+    "role",
+    "authority_interface"
+  ]
+}
