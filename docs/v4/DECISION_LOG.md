@@ -164,6 +164,12 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not reopen:** disclosure or SoD contracts
 - **Next authorized product work:** one coherent W1-N15 revision only, tests first, then a new independent review that reruns the approved gates. No r5 disclosure/SoD patch.
 
+## D-2026-08-15-024 — Authorize W1-N15-only revision
+
+- **Label:** human decision required (decided)
+- **Decision:** Apply only the smallest policy-neutral v4 contract/test that allegation is not guilt. Do **not** perform another disclosure or SoD revision. After the repair, obtain a fresh independent review that **reruns** the approved gates. Only if that review is valid and finds no in-boundary critical/high defect may Wave 1 return to `gate_ready` for later human acceptance.
+- **Does not decide:** human acceptance, Wave 2, official version
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

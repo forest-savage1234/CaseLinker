@@ -19,11 +19,11 @@ wave_01:
   failed_verification_commit: "f41568e294e9becf032af0904f1ee51483742b4a"
   prior_failed_verification_commit: "e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22"
   assurance_boundary: "frozen"
-  process_state: "accepted_findings_complete"
+  process_state: "implementing_w1n15_only"
   independent_reviewer: "same-model Grok plan agent (not organizational independence)"
   independent_review_status: "review_invalid"
   independent_review_record: "docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md"
-  implementation_paused: true
+  implementation_paused: false
   human_accepted: false
   official_version_claim: false
 wave_02:
@@ -53,4 +53,4 @@ Frozen §21 + D-013 boundary and strategy remain adopted. Disclosure and SoD are
 
 ## Next safe action
 
-One coherent W1-N15 revision only (tests first). Then a new independent review that reruns the approved gates. Do not begin Wave 2. Do not reopen disclosure or SoD.
+Implement the authorized W1-N15-only contract (tests first). Then a new independent review that reruns the approved gates. Do not begin Wave 2. Do not reopen disclosure or SoD.
