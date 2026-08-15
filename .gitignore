@@ -81,8 +81,10 @@ models/*
 !jsconfig.json
 # Authored vNext contracts and policy-safe fixtures.
 !schemas/*.json
+!schemas/v4/*.json
 !data/manifests/*.json
 !data/fixtures/vnext/**/*.json
+!data/fixtures/v4/**/*.json
 !docs/vnext/traceability.v1.json
 # Case Studies authored content (read by the /case-studies tab and the /api/case-studies
 # endpoint). Must ship with the deploy or Railway shows "No content yet."

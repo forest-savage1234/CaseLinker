@@ -1,0 +1,13 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/envelope-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal contract envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_]*$"},
+    "payload": {"type": "object"}
+  },
+  "required": ["schema_version", "contract_kind", "payload"]
+}
