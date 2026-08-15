@@ -154,6 +154,16 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not reopen:** disclosure or SoD contracts
 - **Does not authorize:** implementation of a repair before the accepted critical/high set is complete
 
+## D-2026-08-15-023 — Withdraw `gate_ready` (reason 2 of 2): review procedurally invalid
+
+- **Label:** human decision required (decided)
+- **Decision:** The clean-room review that recommended `gate_ready` is `review_invalid`. Wave 1 remains `revision_required`. `human_accepted` remains false. Wave 2 remains `unstarted`.
+- **Traceable basis (reason 2):** `WAVE-01-ASSURANCE.md` §8 requires the independent verifier to rerun the approved gates. `STRATEGY.md` §5 step 4 and §7 require those gates and a valid independent review. The recorded reviewer did not rerun the gates and said so. That is insufficient execution, not a product finding.
+- **Governing IDs:** assurance §8 item 3; strategy §4 independent verifier; §5 step 4; §7 stopping rule; disposition `review_invalid`
+- **Accepted critical/high set is now complete:** GR-1 (W1-N15 executable allegation≠guilt) and GR-2 (this invalid review)
+- **Does not reopen:** disclosure or SoD contracts
+- **Next authorized product work:** one coherent W1-N15 revision only, tests first, then a new independent review that reruns the approved gates. No r5 disclosure/SoD patch.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

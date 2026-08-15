@@ -184,5 +184,7 @@ The frozen §21 + D-013 assurance boundary and `STRATEGY.md` remain adopted. Dis
 | ID | Finding | Governing basis | Confirm |
 |---|---|---|---|
 | GR-1 | W1-N15 allegation≠guilt is not an executable v4 demonstration. The map marked it implemented. Clean-room M2 admitted no v4 test or contract. v3-negative-proof is insufficient. | W1-N15; CONST-005; assurance §2 required distinctions | **Confirmed.** Evidence packet “Proof” table cites only unchanged v3 extractors. |
+| GR-2 | Recorded clean-room reviewer did not rerun the approved gates | Assurance §8 item 3; strategy §5 step 4, §7; disposition `review_invalid` | **Confirmed.** The review record states gates were not re-executed. |
 
-Reason 2 of the stated pair has not been received. No repair is authorized yet. Disclosure and SoD are not reopened. Wave 2 remains unstarted.
+**Decision:** D-2026-08-15-023  
+The accepted critical/high set is complete. The prior `gate_ready` review is `review_invalid`. Authorized product work is one W1-N15 revision only, then a new review that reruns gates. Disclosure and SoD are not reopened. Wave 2 remains unstarted.

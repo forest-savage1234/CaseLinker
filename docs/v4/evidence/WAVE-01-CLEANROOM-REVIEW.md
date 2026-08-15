@@ -6,6 +6,7 @@
 **Reviewer:** same-model Grok plan agent (worktree-isolated, read-only). Not organizational independence. Did not implement r3/r4 in that conversation.  
 **Gates:** not re-executed by the reviewer. Builder evidence at `7521bfb8` stands as complementary.  
 **Disposition recommended:** `gate_ready`  
+**Later human disposition:** `review_invalid` (D-2026-08-15-023). `gate_ready` withdrawn.  
 **Wave 2:** must not begin until explicit human acceptance.
 
 This file is the independent-review record for D-2026-08-15-020. It does not implement product changes.

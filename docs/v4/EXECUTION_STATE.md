@@ -19,9 +19,9 @@ wave_01:
   failed_verification_commit: "f41568e294e9becf032af0904f1ee51483742b4a"
   prior_failed_verification_commit: "e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22"
   assurance_boundary: "frozen"
-  process_state: "gate_ready_withdrawn"
+  process_state: "accepted_findings_complete"
   independent_reviewer: "same-model Grok plan agent (not organizational independence)"
-  independent_review_status: "gate_ready_withdrawn"
+  independent_review_status: "review_invalid"
   independent_review_record: "docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md"
   implementation_paused: true
   human_accepted: false
@@ -42,8 +42,15 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-`gate_ready` is withdrawn (D-2026-08-15-022). Wave 1 is `revision_required`. Reason 1: W1-N15 requires an executable v4 demonstration that allegation is not guilt; the requirements map’s `implemented` mark was false; unchanged v3 extractors are insufficient. Reason 2 has not been received. Frozen §21 + D-013 boundary and strategy remain adopted. Disclosure and SoD are not reopened. Wave 0 remains closed. Wave 2 remains unstarted.
+`gate_ready` is withdrawn (D-022, D-023). Wave 1 is `revision_required`. The recorded clean-room review is `review_invalid`.
+
+Accepted findings:
+
+1. W1-N15 has no executable v4 demonstration that allegation is not guilt.
+2. The reviewer did not rerun the approved gates, so that review is procedurally invalid.
+
+Frozen §21 + D-013 boundary and strategy remain adopted. Disclosure and SoD are not reopened. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Receive the second stated reason. Do not implement a repair until the accepted critical/high set is complete. Do not begin Wave 2. Do not reopen disclosure or SoD.
+One coherent W1-N15 revision only (tests first). Then a new independent review that reruns the approved gates. Do not begin Wave 2. Do not reopen disclosure or SoD.
