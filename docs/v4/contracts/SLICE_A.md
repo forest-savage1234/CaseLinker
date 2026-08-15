@@ -1,7 +1,7 @@
 # Slice A — versioned contract kernel
 
 **Wave:** 1  
-**State at this commit:** tests must fail; validator not implemented  
+**State:** implemented (kernel validator + envelope schema)  
 **Requirements:** CONST-015, CONST-018, GOV-002  
 **Distinctions:** a document is not valid merely because it is JSON; unknown security-sensitive fields fail closed
 
