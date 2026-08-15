@@ -188,3 +188,16 @@ The frozen §21 + D-013 assurance boundary and `STRATEGY.md` remain adopted. Dis
 
 **Decision:** D-2026-08-15-023  
 The accepted critical/high set is complete. The prior `gate_ready` review is `review_invalid`. Authorized product work is one W1-N15 revision only, then a new review that reruns gates. Disclosure and SoD are not reopened. Wave 2 remains unstarted.
+
+## W1-N15 revision self-verification (appended)
+
+**Decision:** D-2026-08-15-024  
+**Tests first:** `34930959`  
+**Contract:** `740862d3`  
+**Surface:** `schemas/v4/reported-claim-v1.schema.json`; `allegation_is_not_guilt`; `tests/unit/v4/test_revision_w1n15.py`; Proposed ADR W1-011
+
+A reported claim cannot set `treat_allegation_as_guilt` or `finding: guilt`. No disclosure or SoD files were changed.
+
+Builder gates: `tests/unit/v4` 107 passed. Full suite 481 passed, same 3 Windows baseline exceptions. Coverage 93.81%. Repository, traceability, ruff, mypy, smoke, pip-audit, bandit passed.
+
+Wave 1 is `self_verified`. Not `gate_ready`. The prior clean-room review remains `review_invalid`. A new independent review that reruns gates is required. Wave 2 unstarted.
