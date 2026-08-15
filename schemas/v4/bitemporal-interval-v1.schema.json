@@ -1,0 +1,40 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/bitemporal-interval-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal bitemporal interval v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": [
+    "reject_collapsed_clock",
+    "reject_inverted_interval",
+    "reject_invented_precision"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "bitemporal_interval", "type": "string"},
+    "event_time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "precision"],
+      "properties": {
+        "start": {"type": "string", "minLength": 4},
+        "end": {"type": "string", "minLength": 4},
+        "precision": {"type": "string", "enum": ["year", "month", "day", "unknown"]}
+      }
+    },
+    "knowledge_time": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "precision_source": {"type": "string", "enum": ["source_text", "unknown", "invented"]},
+    "time_model": {"type": "string", "enum": ["bitemporal", "collapsed"]}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "event_time",
+    "knowledge_time",
+    "precision_source",
+    "time_model"
+  ]
+}

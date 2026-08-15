@@ -27,6 +27,8 @@ def validate_instance(schema_name: str, instance: object) -> None:
     if not isinstance(schema, dict):
         raise ContractError(f"schema {schema_name} must be a JSON object")
     _validate(instance, schema, path="$")
+    if isinstance(instance, dict):
+        _apply_invariants(instance, schema)
 
 
 def _validate(instance: object, schema: Mapping[str, object], *, path: str) -> None:
@@ -57,7 +59,7 @@ def _validate(instance: object, schema: Mapping[str, object], *, path: str) -> N
             raise ContractError(f"{path} must be a string")
         const = schema.get("const")
         if const is not None and instance != const:
-            raise ContractError(f"{path} schema_version mismatch: expected {const}")
+            raise ContractError(f"{path} must equal the declared const")
         enum = schema.get("enum")
         if isinstance(enum, list) and instance not in enum:
             raise ContractError(f"{path} must be one of the declared enum values")
@@ -101,3 +103,58 @@ def _validate(instance: object, schema: Mapping[str, object], *, path: str) -> N
             raise ContractError(f"{path} has fewer than minItems")
         return
     raise ContractError(f"{path} schema is missing a supported type")
+
+
+def _apply_invariants(instance: dict[str, object], schema: Mapping[str, object]) -> None:
+    raw = schema.get("x-caselinker-invariants")
+    if not isinstance(raw, list):
+        return
+    for name in raw:
+        if name == "reject_collapsed_clock" and instance.get("time_model") != "bitemporal":
+            raise ContractError("event time is not knowledge time")
+        if name == "reject_inverted_interval":
+            event = instance.get("event_time")
+            if isinstance(event, dict):
+                start = event.get("start")
+                end = event.get("end")
+                if isinstance(start, str) and isinstance(end, str) and start > end:
+                    raise ContractError("inverted interval")
+        if name == "reject_invented_precision":
+            if instance.get("precision_source") == "invented":
+                raise ContractError("precision must not be invented")
+            event = instance.get("event_time")
+            if isinstance(event, dict) and event.get("precision") == "day":
+                start = event.get("start")
+                if isinstance(start, str) and len(start) < 10:
+                    raise ContractError("day precision requires a full date")
+        if name == "legal_transition":
+            allowed = schema.get("x-caselinker-allowed-transitions")
+            pair = [instance.get("from_state"), instance.get("to_state")]
+            if not isinstance(allowed, list) or pair not in allowed:
+                raise ContractError("illegal transition")
+        _apply_named_safety_invariant(str(name), instance)
+
+
+def _apply_named_safety_invariant(name: str, instance: Mapping[str, object]) -> None:
+    if name == "similarity_is_not_identity" and instance.get(
+        "creates_canonical_identity"
+    ) is True:
+        raise ContractError("similarity is not identity")
+    if name == "no_blind_transitivity" and instance.get("inference_method") == (
+        "transitive_closure"
+    ):
+        raise ContractError("blind transitivity is not identity evidence")
+    if name == "derivation_is_not_corroboration":
+        same_family = instance.get("same_source_family") is True
+        if instance.get("relation") == "corroboration" and same_family:
+            raise ContractError("derivation is not corroboration")
+    if name == "eligibility_is_not_disclosure" and instance.get(
+        "treat_eligible_as_disclosed"
+    ) is True:
+        raise ContractError("eligibility is not disclosure permission")
+    if name == "deny_without_policy" and not instance.get("policy_version"):
+        raise ContractError("missing policy version denies disclosure")
+    if name == "projection_not_authoritative" and instance.get("authoritative") is True:
+        raise ContractError("a projection is not a source of truth")
+    if name == "ai_cannot_publish" and instance.get("disposition") == "published":
+        raise ContractError("AI execution cannot publish")

@@ -1,0 +1,32 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/state-transition-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal state transition v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["legal_transition"],
+  "x-caselinker-allowed-transitions": [
+    ["extracted", "resolved"],
+    ["extracted", "contested"],
+    ["resolved", "retracted"],
+    ["resolved", "superseded"]
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "state_transition", "type": "string"},
+    "subject_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "from_state": {"type": "string", "minLength": 1},
+    "to_state": {"type": "string", "minLength": 1},
+    "actor_kind": {"type": "string", "enum": ["reviewer", "system", "policy"]},
+    "reason_code": {"type": "string", "minLength": 1}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "subject_id",
+    "from_state",
+    "to_state",
+    "actor_kind",
+    "reason_code"
+  ]
+}

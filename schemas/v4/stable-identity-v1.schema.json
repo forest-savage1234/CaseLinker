@@ -1,0 +1,25 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/stable-identity-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal stable identity bundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "stable_identity", "type": "string"},
+    "assertion_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "document_version_id": {"type": "string", "pattern": "^docv_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "review_id": {"type": "string", "pattern": "^rvw_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "event_id": {"type": "string", "pattern": "^evt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "dependency_id": {"type": "string", "pattern": "^dep_[a-z0-9][a-z0-9._-]{2,127}$"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "assertion_id",
+    "document_version_id",
+    "review_id",
+    "event_id",
+    "dependency_id"
+  ]
+}
