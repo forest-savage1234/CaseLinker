@@ -7,7 +7,7 @@ This file is not required to contain the final branch HEAD after later commits. 
 
 ```yaml
 wave: "00"
-legal_state: "self_verified"
+legal_state: "gate_ready"
 gate_0: "not_complete"
 human_accepted: false
 official_version_claim: false
@@ -17,6 +17,9 @@ recorded_upstream_product_baseline: "9da0a4ff8b45df03fed073a9af5c00d22aab0d9d"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
 artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
 revision_commit: "dd2ad4c81af3680d243a10ca55b4e842246302f0"
+reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
+independent_reviewer: "Codex"
+independent_review_status: "pass"
 result_commit: "uncommitted_at_write_time"
 branch: "proposal/v4-research-network"
 worktree: "C:\\Users\\fores\\Downloads\\CaseLinker-v4-research-network"
@@ -36,7 +39,8 @@ primary_proof_obligation: "proposed program is based on the actual repository, a
 - Governing program copied from the home file, hash-verified, v3 untracked copy left in place, committed unchanged as `1d36a51d`.
 - Discovery artifacts written (`bc5d02c3`).
 - Independent verification failed (documentation/governance). §32 revision applied at `dd2ad4c8`.
-- Further documentation-only revision: program-section crosswalk; aggregated IDs for observability, security/privacy operations, reviewer governance, evaluation; conceptual Gate 0 architecture flows; evidence buckets 0/42/31.
+- Further documentation-only revision: program-section crosswalk; aggregated IDs for observability, security/privacy operations, reviewer governance, evaluation; conceptual Gate 0 architecture flows; evidence buckets 0/42/31 (`8cf2d8d1`).
+- Independent Wave 0 verification by **Codex** of commit `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e`: **pass**. Wave state `gate_ready`. Not `human_accepted`.
 
 ## Test evidence
 
@@ -50,7 +54,7 @@ See `docs/v4/evidence/WAVE-00-EVIDENCE.md`. Distinguish pristine-base, final-sta
 
 ## Next safe action
 
-Independent Wave 0 verification of the pushed `proposal/v4-research-network` commits. Do not start Wave 1. Do not mark Gate 0 `human_accepted`.
+Operator may set Wave 0 `human_accepted` after inspecting the Codex pass on `8cf2d8d1`. Do not start Wave 1 until that explicit acceptance. Phase 0 / Gate 0 remain incomplete.
 
 ## What this file does not claim
 

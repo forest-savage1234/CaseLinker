@@ -74,6 +74,13 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Authority:** operator instruction after further Wave 0 review
 - **Consequence:** `REQUIREMENTS_TRACEABILITY.md` crosswalk + 73 IDs; `architecture/GATE0_PROPOSAL.md`; evidence buckets reconciled to 0/42/31
 
+## D-2026-08-15-011 — Record Codex Wave 0 verification pass
+
+- **Label:** repository fact of an operator instruction to record a completed independent review
+- **Decision:** Record that **Codex** independently verified commit `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e` with disposition **pass**. Set Wave 0 `independent_review_status: pass` and legal state `gate_ready`. Do **not** set `human_accepted`. Do **not** begin Wave 1.
+- **Authority:** operator administrative closeout after the named independent review
+- **Consequence:** control-plane status only; no product change; Phase 0 remains incomplete
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
@@ -94,7 +101,7 @@ Later waves append. Do not erase. Software does not convert conservative default
 | OD-007 | Tenancy model | program operator (tracking) | unassigned organizational sponsor (same as OD-002 unless split) | OPS-004; Wave 8 tenant tests | **blocked** |
 | OD-008 | Acceptable infrastructure and operational environment | program operator (tracking) | unassigned infrastructure/operations authority | Wave 8 / Gate 6; object store, Postgres production claim | **blocked** |
 | OD-009 | Pilot corpus and shadow-mode protocol | program operator (tracking) | unassigned scientific + disclosure authority | Wave 7; Phase 0 “approved pilot” | **blocked** |
-| OD-010 | Who performs independent Wave 0 verification | program operator (tracking) | program operator may **request**; `gate_ready` requires an independent reviewer to be named | Wave 0 `gate_ready`; Wave 1 must not start | **blocked** until a named independent reviewer records a pass |
+| OD-010 | Who performs independent Wave 0 verification | program operator (tracking) | Wave 0 review: **Codex** (pass on `8cf2d8d1`). `human_accepted` remains the operator | Wave 1 must not start until `human_accepted` | Wave 0 verify **closed**; acceptance **open** |
 | OD-011 | Whether to add a read-only `upstream` remote | program operator (tracking) | program operator (local git config only); does not create upstream authority | not required for Wave 0; optional later | open, not blocking Wave 0 re-verification |
 
 No policy, legal rule, reviewer qualification, or numerical quality threshold is recorded as decided.

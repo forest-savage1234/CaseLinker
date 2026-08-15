@@ -14,7 +14,7 @@ Wave state machine (repository fact of the program text): only the operator may 
 |---|---|---|
 | Scope | discovery artifacts, requirement registry, risk/decision logs, non-mutating checks | maintainer feedback, controlled shadow mode, error taxonomy, reviewer disagreement, domain/privacy/scientific consultation, v4 vision and threat model |
 | What “accept” would mean | independent reviewer + operator accept **these documents** as `human_accepted` for Wave 0 | approved baseline, approved pilot, measured v3 limitations, **named** decision owners, Gate 0 architecture disposition |
-| Current state | Wave 0 may return to `self_verified` after revision; **not** `gate_ready`; **not** `human_accepted` | **incomplete**. OD-001, OD-002, OD-003, OD-009 remain blocked. No approved pilot. |
+| Current state | Wave 0 is `gate_ready` after Codex pass on `8cf2d8d1`; **not** `human_accepted` | **incomplete**. OD-001, OD-002, OD-003, OD-009 remain blocked. No approved pilot. |
 | Implementation | none | HUMAN GATE 0 still forbids product implementation until Phase 0 / Gate 0 is actually complete |
 
 Independent acceptance of Wave 0 documents, if it later occurs, authorizes **only** Wave 1 contract design if the operator also explicitly accepts Wave 0. It does **not** complete Phase 0 and does **not** authorize product implementation, live data, or an official version.

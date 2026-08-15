@@ -1,14 +1,16 @@
 # WAVE-00 evidence packet
 
-Revised after independent verification failed. Original narrative §§1–8 is preserved. Original YAML as of `bc5d02c3` is copied in §9. Do not treat this file as Gate 0 acceptance.
+Revised after independent verification failed. Original narrative §§1–8 is preserved. Original YAML as of `bc5d02c3` is copied in §9. Later revisions are in §§10–11. Wave 0 is `gate_ready` after the Codex pass on `8cf2d8d1`. This is **not** Wave 0 `human_accepted` and **not** Phase 0 / Gate 0 completion.
 
 ```yaml
 wave: "00"
-status: "self_verified"
+status: "gate_ready"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
 prior_artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
 prior_revision_commit: "dd2ad4c81af3680d243a10ca55b4e842246302f0"
+reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
+independent_reviewer: "Codex"
 result_commit: "uncommitted"
 primary_proof_obligation: "demonstrate that the proposed program is based on the actual repository, actual v3 boundaries, and named human decisions rather than assumptions"
 requirements_closed: []
@@ -131,12 +133,14 @@ residual_risks:
   - "R-GOV communication drift"
   - "R-WIN"
 rollback_tested: false
-independent_review_status: "not_started"
+independent_review_status: "pass"
 prior_independent_review_status: "fail"
+human_accepted: false
 human_decisions_required:
   - "OD-001 upstream disposition (unknown, blocked)"
-  - "OD-002..OD-010 blocked pending named authorities"
-  - "OD-011 optional, not blocking Wave 0 re-verification"
+  - "OD-002..OD-009 blocked pending named authorities"
+  - "OD-010 Wave 0 Codex pass recorded; human_accepted still required before Wave 1"
+  - "OD-011 optional"
 ```
 
 ## 1. Proof obligation
@@ -317,4 +321,21 @@ No product-code diff. No new test failure class.
 ### 10.4 Validation of this revision
 
 Session `wave0-docs2`: `check_repository` pass (8537 files, +1 Gate 0 proposal); `check_traceability` pass; smoke 2 passed; pytest 374 passed, **same 3 Windows environment failures** as pristine. No product-code diff.
+
+## 11. Independent verification pass (appended; §§1–10 not erased)
+
+| Field | Value |
+|---|---|
+| Reviewer | Codex |
+| Role | independent Wave 0 verifier |
+| Reviewed commit | `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e` |
+| Disposition | **pass** |
+| Wave legal state after this closeout | `gate_ready` |
+| `human_accepted` | false |
+| Phase 0 / Gate 0 | not complete |
+| Wave 1 | not started |
+
+Prior independent cycle remains recorded as **fail** in §9 (`bc5d02c3` findings F1–F6, corrected in `dd2ad4c8` and completed in `8cf2d8d1`). This section does not retract that history.
+
+A verifier may recommend `gate_ready`. Only the human operator may set `human_accepted`.
 
