@@ -11,8 +11,10 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "gate_ready"
+  legal_state: "closed"
   implementation_commit: "740862d339d8e1ea29f42d30144d51cb076045b0"
+  accepted_implementation_commit: "740862d339d8e1ea29f42d30144d51cb076045b0"
+  accepted_gate_ready_commit: "c30a1d3f4175d50b5461799194ea54b960d41624"
   prior_implementation_commit: "ac52ab84dead1ef5aebd74e0291c01bca0b461d5"
   withdrawn_gate_ready_commit: "ae7ce4947efe0dbdd15e645b4df14ecc7c68fdcb"
   w1n15_tests_first_commit: "34930959e884b8c188c99eaf11012625ede82ef0"
@@ -21,14 +23,14 @@ wave_01:
   failed_verification_commit: "f41568e294e9becf032af0904f1ee51483742b4a"
   prior_failed_verification_commit: "e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22"
   assurance_boundary: "frozen"
-  process_state: "awaiting_human_acceptance"
+  process_state: "human_accepted"
   independent_reviewer: "same-model Grok (worktree-isolated; reran gates)"
   independent_review_status: "gate_ready_recommended"
   independent_review_record: "docs/v4/evidence/WAVE-01-W1N15-REVIEW.md"
   prior_review_status: "review_invalid"
   prior_review_record: "docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md"
   implementation_paused: true
-  human_accepted: false
+  human_accepted: true
   official_version_claim: false
 wave_02:
   legal_state: "unstarted"
@@ -46,8 +48,8 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-W1-N15-only repair is in. A new independent review reran the approved gates and found no in-boundary critical/high defect. Wave 1 is `gate_ready` for later human acceptance. The prior clean-room review remains `review_invalid`. Not `human_accepted`. Disclosure and SoD were not reopened. Wave 2 remains unstarted.
+Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1d3f` (D-026), including the valid W1-N15 review. The prior clean-room review remains `review_invalid`. Disclosure and SoD were not reopened. This does **not** complete Phase 0 or Gate 0, establish an official version, authorize deployment or upstream adoption, resolve any blocked OD-* decision, or authorize Wave 2 implementation. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Human gate owner accepts or rejects Wave 1. Do not begin Wave 2 until acceptance is explicit. Do not reopen disclosure or SoD.
+Wave 1 is closed. Wave 2 remains `unstarted`. Wave 2 planning may be presented separately; Wave 2 implementation is not authorized. Phase 0 / Gate 0 remain incomplete. Do not reopen disclosure or SoD.

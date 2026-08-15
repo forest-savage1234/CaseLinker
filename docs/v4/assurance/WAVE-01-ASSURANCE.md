@@ -3,7 +3,7 @@
 **Status:** frozen 2026-08-15.  
 **Wave:** 1 — formal contracts before infrastructure.  
 **Implementation commit under review:** `ac52ab84dead1ef5aebd74e0291c01bca0b461d5`  
-**Legal state:** `gate_ready` (D-025) after W1-N15 repair. Not `human_accepted`.  
+**Legal state:** `human_accepted` and `closed` (D-026). Accepted implementation `740862d339d8e1ea29f42d30144d51cb076045b0`. Accepted gate-ready record `c30a1d3f4175d50b5461799194ea54b960d41624`.  
 **Wave 2:** unstarted.
 
 This file is the frozen Wave 1 acceptance boundary. Later useful ideas that cannot be traced here are later-wave or `program_clarification_required`. They are not automatically Wave 1 defects.

@@ -177,6 +177,15 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Independence limitation:** same-model reviewer. Unlike the prior review, gates were rerun, so this review is not `review_invalid`.
 - **Does not decide:** human acceptance, Phase 0, official version, Wave 2
 
+## D-2026-08-15-026 — Operator accepts and closes Wave 1
+
+- **Label:** human decision required (decided)
+- **Decision:** Forest Savage, as human gate owner, explicitly human-accepts Wave 1. Accepted implementation `740862d339d8e1ea29f42d30144d51cb076045b0`. Accepted gate-ready record `c30a1d3f4175d50b5461799194ea54b960d41624`. Acceptance boundary: the frozen Wave 1 assurance contract derived from `GROK_BUILD_PROGRAM.md` §21 and D-2026-08-15-013. Set Wave 1 to `human_accepted` and `closed`.
+- **Accepted residuals:** documented same-model independence limitation; three unchanged Windows baseline exceptions; recorded medium/low residual items as non-blocking carry-forward work.
+- **Valid review:** `docs/v4/evidence/WAVE-01-W1N15-REVIEW.md`. The earlier clean-room review remains `review_invalid`.
+- **Does not decide:** Phase 0 or Gate 0 completion; official version; deployment or upstream adoption; any blocked OD-* decision; Wave 2 implementation.
+- **Consequence:** Wave 1 is closed. Wave 2 planning is permitted but remains `unstarted`. Wave 2 implementation is not authorized.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

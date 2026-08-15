@@ -1,8 +1,10 @@
 # WAVE-01 evidence packet
 
+Wave 1 is `human_accepted` and `closed` after operator acceptance of implementation `740862d3` and gate-ready record `c30a1d3f` (D-026). Historical review, repair, and invalid-review records below are preserved. This is **not** Phase 0 / Gate 0 completion, not a deployment authorization, and not an official version. Wave 2 remains `unstarted`.
+
 ```yaml
 wave: "01"
-status: "self_verified"
+status: "closed"
 prior_independent_review_status: "fail"
 failed_verification_commit: "b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
@@ -31,8 +33,13 @@ implementation:
   - schemas/v4/
 tests:
   - tests/unit/v4/
-independent_review_status: "not_started"
-human_accepted: false
+independent_review_status: "gate_ready_recommended"
+independent_review_record: "docs/v4/evidence/WAVE-01-W1N15-REVIEW.md"
+prior_review_status: "review_invalid"
+human_accepted: true
+legal_state: "closed"
+accepted_implementation_commit: "740862d339d8e1ea29f42d30144d51cb076045b0"
+accepted_gate_ready_commit: "c30a1d3f4175d50b5461799194ea54b960d41624"
 wave_02: "unstarted"
 ```
 
@@ -210,3 +217,17 @@ Wave 1 is `self_verified`. Not `gate_ready`. The prior clean-room review remains
 **GR-1:** closed. **Critical/high:** none.
 
 Wave 1 is `gate_ready` for later human acceptance. Not `human_accepted`. Wave 2 unstarted.
+
+## Human acceptance (appended)
+
+**Decision:** D-2026-08-15-026  
+**Authority:** Forest Savage, human gate owner  
+**Accepted implementation:** `740862d339d8e1ea29f42d30144d51cb076045b0`  
+**Accepted gate-ready record:** `c30a1d3f4175d50b5461799194ea54b960d41624`  
+**Valid review:** `docs/v4/evidence/WAVE-01-W1N15-REVIEW.md`  
+**Prior review:** remains `review_invalid` (`docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md`)  
+**Boundary:** frozen Wave 1 assurance contract from `GROK_BUILD_PROGRAM.md` §21 and D-2026-08-15-013
+
+Accepted residuals (non-blocking carry-forward): same-model independence limitation; three unchanged Windows baseline exceptions; recorded medium/low residual items.
+
+Wave 1 is `human_accepted` and `closed`. This does not complete Phase 0 or Gate 0, establish an official version, authorize deployment or upstream adoption, resolve any blocked OD-* decision, or authorize Wave 2 implementation. Wave 2 remains `unstarted`.
