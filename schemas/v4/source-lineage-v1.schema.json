@@ -1,0 +1,26 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/source-lineage-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal source lineage v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["derivation_is_not_corroboration"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "source_lineage", "type": "string"},
+    "source_family_id": {"type": "string", "pattern": "^sfam_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "left_version_id": {"type": "string", "pattern": "^docv_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "right_version_id": {"type": "string", "pattern": "^docv_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "relation": {"type": "string", "enum": ["derivation", "corroboration", "contradiction"]},
+    "same_source_family": {"type": "boolean"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "source_family_id",
+    "left_version_id",
+    "right_version_id",
+    "relation",
+    "same_source_family"
+  ]
+}
