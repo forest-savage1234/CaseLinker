@@ -14,6 +14,23 @@ SCHEMA_ROOT: Final = Path(__file__).resolve().parents[3] / "schemas" / "v4"
 SCHEMA_NAME_PATTERN: Final = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UTC_TIMESTAMP: Final = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$")
 OPAQUE_ID: Final = re.compile(r"^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$")
+DISCLOSURE_CONTEXT_FIELDS: Final[tuple[str, ...]] = (
+    "principal_id",
+    "organization_id",
+    "audience",
+    "purpose",
+    "requested_fields",
+    "channel",
+    "jurisdiction",
+    "data_subject_role",
+    "vulnerability_classification",
+    "procedural_status",
+    "correction_state",
+    "source_restrictions",
+    "collection_policy",
+    "granularity",
+    "time_window",
+)
 
 MACHINE_TRANSITIONS: Final[dict[str, list[list[str]]]] = {
     "source_version": [
@@ -122,76 +139,94 @@ def canonical_dumps(instance: object) -> bytes:
 def decide_disclosure(
     request: Mapping[str, object],
     *,
-    policy_version: str | None,
     research_eligible: bool,
-    policy_result: str | None = None,
+    policy_decision: Mapping[str, object] | None = None,
 ) -> dict[str, object]:
-    """Return a policy-neutral decision bound to *request*. Missing policy denies."""
+    """Bind an external policy decision to *request*, or return default denied."""
     request_dict = dict(request)
     validate_instance("disclosure-request-v1", request_dict)
     request_id = request_dict["request_id"]
     if not isinstance(request_id, str):
         raise ContractError("disclosure request context is malformed")
-    if (
-        policy_version is not None
-        and policy_version != ""
-        and OPAQUE_ID.fullmatch(policy_version) is None
-    ):
-        raise ContractError("policy.version is not a valid opaque identifier")
-    missing_policy = policy_version is None or policy_version == ""
-    allowed_results = {"authorized", "denied", "minimized", "pending"}
-    if missing_policy or policy_result is None or policy_result not in allowed_results:
-        outcome = "denied"
-        recorded_result = "denied"
-        reason = "missing_policy" if missing_policy else "policy_result_absent"
+    request_digest = hashlib.sha256(canonical_dumps(request_dict)).hexdigest()
+    if policy_decision is None:
+        governed: dict[str, object] = {
+            "policy_decision_id": None,
+            "policy_version": "",
+            "policy_result": "denied",
+            "transformations": {
+                "minimization": False,
+                "pseudonymization": False,
+                "aggregation": False,
+                "redaction": False,
+                "watermarking": False,
+            },
+            "expiry": None,
+            "revocation_state": "not_applicable",
+            "decision_reason": "missing_policy",
+            "authority_binding_id": None,
+            "audit_event_id": "aud_default_" + request_id.removeprefix("dreq_"),
+        }
     else:
-        outcome = policy_result
-        recorded_result = policy_result
-        reason = f"policy_{policy_result}"
-    context_fields = (
-        "principal_id",
-        "organization_id",
-        "audience",
-        "purpose",
-        "requested_fields",
-        "channel",
-        "jurisdiction",
-        "data_subject_role",
-        "vulnerability_classification",
-        "procedural_status",
-        "correction_state",
-        "source_restrictions",
-        "collection_policy",
-        "granularity",
-        "time_window",
-    )
+        external = dict(policy_decision)
+        external_version = external.get("policy_version")
+        if (
+            not isinstance(external_version, str)
+            or re.fullmatch(r"^pol_[a-z0-9][a-z0-9._-]{2,127}$", external_version) is None
+        ):
+            raise ContractError("policy.version is not a valid opaque identifier")
+        validate_instance("disclosure-policy-decision-v1", external)
+        if (
+            external.get("request_id") != request_id
+            or external.get("request_digest") != request_digest
+        ):
+            raise ContractError("external policy decision has a request binding mismatch")
+        governed = {
+            field: external[field]
+            for field in (
+                "policy_decision_id",
+                "policy_version",
+                "policy_result",
+                "transformations",
+                "expiry",
+                "revocation_state",
+                "decision_reason",
+                "authority_binding_id",
+                "audit_event_id",
+            )
+        }
     decision: dict[str, object] = {
         "schema_version": "1.0",
         "contract_kind": "disclosure_decision",
         "request_id": request_id,
         "decision_id": "ddec_" + request_id.removeprefix("dreq_"),
-        **{field: request_dict[field] for field in context_fields},
-        "outcome": outcome,
-        "policy_version": "" if missing_policy else policy_version,
-        "policy_result": recorded_result,
+        **{field: request_dict[field] for field in DISCLOSURE_CONTEXT_FIELDS},
+        **governed,
+        "outcome": governed["policy_result"],
         "research_eligible": research_eligible,
         "treat_eligible_as_disclosed": False,
-        "transformations": {
-            "minimization": outcome == "minimized",
-            "pseudonymization": False,
-            "aggregation": False,
-            "redaction": False,
-            "watermarking": False,
-        },
-        "expiry": None,
-        "revocation_state": "not_applicable",
-        "decision_reason": reason,
-        "authority": "declared_binding",
-        "audit_event_id": "aud_" + request_id.removeprefix("dreq_"),
-        "request_digest": hashlib.sha256(canonical_dumps(request_dict)).hexdigest(),
+        "request_digest": request_digest,
     }
-    validate_instance("disclosure-decision-v1", decision)
+    validate_disclosure_binding(request_dict, decision)
     return decision
+
+
+def validate_disclosure_binding(
+    request: Mapping[str, object], decision: Mapping[str, object]
+) -> None:
+    """Validate a disclosure decision and prove its exact request binding."""
+    request_dict = dict(request)
+    decision_dict = dict(decision)
+    validate_instance("disclosure-request-v1", request_dict)
+    validate_instance("disclosure-decision-v1", decision_dict)
+    expected_digest = hashlib.sha256(canonical_dumps(request_dict)).hexdigest()
+    if decision_dict.get("request_digest") != expected_digest:
+        raise ContractError("request binding digest mismatch")
+    if decision_dict.get("request_id") != request_dict.get("request_id"):
+        raise ContractError("request binding id mismatch")
+    for field in DISCLOSURE_CONTEXT_FIELDS:
+        if decision_dict.get(field) != request_dict.get(field):
+            raise ContractError(f"request binding context mismatch: {field}")
 
 
 def validate_instance(schema_name: str, instance: object) -> None:
@@ -406,14 +441,41 @@ def _run_invariant(name: str, instance: Mapping[str, object], schema: Mapping[st
             )
         if explicit != outcome:
             raise ContractError("outcome must match policy_result")
-    if (
-        name == "distinct_approvers_when_required"
-        and instance.get("separation_of_duties_required") is True
-    ):
+    if name == "external_policy_binding":
+        version = instance.get("policy_version")
+        policy_decision_id = instance.get("policy_decision_id")
+        authority_binding_id = instance.get("authority_binding_id")
+        if version == "":
+            if policy_decision_id is not None or authority_binding_id is not None:
+                raise ContractError("default-denied decision must not claim external authority")
+        elif not isinstance(policy_decision_id, str) or not isinstance(authority_binding_id, str):
+            raise ContractError("external policy decision requires authority binding")
+    if name == "minimized_requires_transformation" and instance.get("policy_result") == "minimized":
+        transformations = instance.get("transformations")
+        if not isinstance(transformations, dict) or not any(
+            value is True for value in transformations.values()
+        ):
+            raise ContractError("minimized disclosure requires a transformation")
+    if name == "valid_time_window":
+        _check_time_window(instance)
+    if name == "distinct_approvers_when_required":
+        governance_decision = instance.get("separation_of_duties_decision_id")
+        if not isinstance(governance_decision, str):
+            raise ContractError("external governance decision is required")
+        if instance.get("separation_of_duties_required") is not True:
+            return
         first = instance.get("first_approver_id")
         second = instance.get("second_approver_id")
         if not isinstance(first, str) or not isinstance(second, str) or first == second:
             raise ContractError("distinct approvers required")
+        first_authority = instance.get("first_approver_authority_binding_id")
+        second_authority = instance.get("second_approver_authority_binding_id")
+        if (
+            not isinstance(first_authority, str)
+            or not isinstance(second_authority, str)
+            or first_authority == second_authority
+        ):
+            raise ContractError("distinct approver authority bindings required")
     if name == "projection_not_authoritative" and instance.get("authoritative") is True:
         raise ContractError("a projection is not a source of truth")
     if name == "ai_cannot_publish" and instance.get("disposition") == "published":
@@ -444,6 +506,24 @@ def _check_interval(instance: Mapping[str, object]) -> None:
     knowledge = instance.get("knowledge_time")
     if isinstance(knowledge, str):
         _require_utc(knowledge, path="$.knowledge_time")
+
+
+def _check_time_window(instance: Mapping[str, object]) -> None:
+    window = instance.get("time_window")
+    if not isinstance(window, dict):
+        raise ContractError("time_window is required")
+    start = window.get("start")
+    end = window.get("end")
+    if not isinstance(start, str):
+        raise ContractError("time_window.start is required")
+    start_date = _parse_calendar(start, precision="day", path="$.time_window.start")
+    if end is None:
+        return
+    if not isinstance(end, str):
+        raise ContractError("time_window.end must be a date or null")
+    end_date = _parse_calendar(end, precision="day", path="$.time_window.end")
+    if start_date is not None and end_date is not None and start_date > end_date:
+        raise ContractError("time_window must not be inverted")
 
 
 def _check_evidence_polarity(instance: Mapping[str, object]) -> None:

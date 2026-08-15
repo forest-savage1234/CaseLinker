@@ -13,16 +13,14 @@ from caselinker.v4_contracts import (
 from tests.unit.v4.test_bitemporal_identity import VALID_TRANSITION
 from tests.unit.v4.test_disclosure_authority import VALID_DECISION
 from tests.unit.v4.test_revision_audit_ai import VALID_AI
-from tests.unit.v4.test_revision_disclosure import REQUEST
+from tests.unit.v4.test_revision_disclosure import POLICY_DECISION, REQUEST
 from tests.unit.v4.test_revision_hypotheses import EVENT, PERSON
 
 # --- 1. nonempty policy_version must not authorize ---
 
 
 def test_arbitrary_policy_version_does_not_authorize() -> None:
-    decision = decide_disclosure(
-        REQUEST, policy_version="pol_arbitrary_string", research_eligible=True
-    )
+    decision = decide_disclosure(REQUEST, research_eligible=True)
     assert decision["outcome"] != "authorized"
     assert decision["outcome"] in {"denied", "pending"}
 
@@ -30,9 +28,8 @@ def test_arbitrary_policy_version_does_not_authorize() -> None:
 def test_explicit_external_policy_result_is_required_to_authorize() -> None:
     decision = decide_disclosure(
         REQUEST,
-        policy_version="pol_fixture_unspecified",
         research_eligible=True,
-        policy_result="authorized",
+        policy_decision=POLICY_DECISION,
     )
     assert decision["outcome"] == "authorized"
     assert decision["policy_result"] == "authorized"
@@ -49,9 +46,7 @@ def test_disclosure_decision_requires_purpose() -> None:
 
 
 def test_decision_preserves_request_fields() -> None:
-    decision = decide_disclosure(
-        REQUEST, policy_version=None, research_eligible=False, policy_result=None
-    )
+    decision = decide_disclosure(REQUEST, research_eligible=False)
     for field in (
         "principal_id",
         "organization_id",
@@ -96,7 +91,9 @@ def test_publication_does_not_hardcode_two_person_control() -> None:
         "audit_event_id": "aud_example01",
         "guard_code": "publication_ready",
         "separation_of_duties_required": False,
+        "separation_of_duties_decision_id": "govdec_fixture01",
         "first_approver_id": "prin_example01",
+        "first_approver_authority_binding_id": "auth_fixture01",
         "side_effects": ["notify_subscribers"],
     }
     validate_instance("state-transition-v1", instance)

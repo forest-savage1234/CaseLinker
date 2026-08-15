@@ -7,6 +7,10 @@
   "properties": {
     "schema_version": {"const": "1.0", "type": "string"},
     "contract_kind": {"const": "authority_binding", "type": "string"},
+    "authority_binding_id": {
+      "type": "string",
+      "pattern": "^auth_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
     "principal_id": {"type": "string", "pattern": "^prin_[a-z0-9][a-z0-9._-]{2,127}$"},
     "organization_id": {"type": "string", "pattern": "^org_[a-z0-9][a-z0-9._-]{2,127}$"},
     "role": {"type": "string", "enum": ["reviewer", "adjudicator", "system"]},
@@ -15,6 +19,7 @@
   "required": [
     "schema_version",
     "contract_kind",
+    "authority_binding_id",
     "principal_id",
     "organization_id",
     "role",

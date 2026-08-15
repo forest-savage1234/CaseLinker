@@ -35,7 +35,9 @@ VALID_SOURCE_TRANSITION = {
     "audit_event_id": "aud_example01",
     "guard_code": "hash_present",
     "separation_of_duties_required": False,
+    "separation_of_duties_decision_id": "govdec_fixture01",
     "first_approver_id": "prin_example01",
+    "first_approver_authority_binding_id": "auth_fixture01",
     "side_effects": [],
 }
 

@@ -10,7 +10,7 @@ from caselinker.v4_contracts import (
 )
 from tests.unit.v4.test_bitemporal_identity import VALID_TRANSITION
 from tests.unit.v4.test_disclosure_authority import VALID_DECISION
-from tests.unit.v4.test_revision_disclosure import REQUEST
+from tests.unit.v4.test_revision_disclosure import POLICY_DECISION, REQUEST
 
 # Accepted incomplete decision at e968bdfb: request context only, no §7.8 bindings.
 INCOMPLETE_DECISION = {
@@ -37,9 +37,11 @@ def test_whitespace_policy_version_is_invalid() -> None:
     with pytest.raises(ContractError, match=r"policy\.version"):
         decide_disclosure(
             REQUEST,
-            policy_version="  pol_fixture_unspecified  ",
             research_eligible=True,
-            policy_result="authorized",
+            policy_decision={
+                **POLICY_DECISION,
+                "policy_version": "  pol_fixture_unspecified  ",
+            },
         )
 
 
@@ -47,9 +49,8 @@ def test_non_opaque_policy_version_is_invalid() -> None:
     with pytest.raises(ContractError, match=r"policy\.version"):
         decide_disclosure(
             REQUEST,
-            policy_version="not a policy id",
             research_eligible=True,
-            policy_result="authorized",
+            policy_decision={**POLICY_DECISION, "policy_version": "not a policy id"},
         )
 
 
@@ -80,7 +81,7 @@ def test_decision_requires_section_78_bindings() -> None:
 
 
 def test_decision_request_digest_matches_request() -> None:
-    decision = decide_disclosure(REQUEST, policy_version=None, research_eligible=False)
+    decision = decide_disclosure(REQUEST, research_eligible=False)
     assert "request_digest" in decision
     assert (
         decision["request_digest"]
@@ -103,7 +104,9 @@ def test_publication_without_external_sod_is_accepted() -> None:
         "guard_code": "publication_ready",
         "side_effects": ["notify_subscribers"],
         "separation_of_duties_required": False,
+        "separation_of_duties_decision_id": "govdec_fixture01",
         "first_approver_id": "prin_example01",
+        "first_approver_authority_binding_id": "auth_fixture01",
     }
     validate_instance("state-transition-v1", instance)
 
@@ -114,6 +117,7 @@ def test_external_sod_requires_distinct_approvers() -> None:
         "separation_of_duties_required": True,
         "first_approver_id": "prin_example01",
         "second_approver_id": "prin_example01",
+        "second_approver_authority_binding_id": "auth_fixture02",
     }
     instance.pop("two_person_control", None)
     with pytest.raises(ContractError, match="distinct"):
@@ -126,7 +130,9 @@ def test_two_person_boolean_is_not_a_governance_rule() -> None:
         "two_person_control": False,
     }
     instance.pop("separation_of_duties_required", None)
+    instance.pop("separation_of_duties_decision_id", None)
     instance.pop("first_approver_id", None)
+    instance.pop("first_approver_authority_binding_id", None)
     instance.pop("second_approver_id", None)
     with pytest.raises(ContractError, match="unknown field"):
         validate_instance("state-transition-v1", instance)

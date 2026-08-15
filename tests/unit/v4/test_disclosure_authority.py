@@ -5,7 +5,7 @@ import hashlib
 import pytest
 
 from caselinker.v4_contracts import ContractError, canonical_dumps, validate_instance
-from tests.unit.v4.test_revision_disclosure import REQUEST
+from tests.unit.v4.test_revision_disclosure import POLICY_DECISION, REQUEST
 
 VALID_DECISION = {
     "schema_version": "1.0",
@@ -30,6 +30,7 @@ VALID_DECISION = {
     "outcome": "denied",
     "policy_version": "pol_fixture_unspecified",
     "policy_result": "denied",
+    "policy_decision_id": "pdec_fixture01",
     "research_eligible": True,
     "treat_eligible_as_disclosed": False,
     "transformations": {
@@ -41,8 +42,8 @@ VALID_DECISION = {
     },
     "expiry": None,
     "revocation_state": "not_applicable",
-    "decision_reason": "policy_denied",
-    "authority": "declared_binding",
+    "decision_reason": "denied_fixture_policy",
+    "authority_binding_id": "auth_fixture01",
     "audit_event_id": "aud_example01",
     "request_digest": hashlib.sha256(canonical_dumps(REQUEST)).hexdigest(),
 }
@@ -50,6 +51,7 @@ VALID_DECISION = {
 VALID_PRINCIPAL = {
     "schema_version": "1.0",
     "contract_kind": "authority_binding",
+    "authority_binding_id": "auth_fixture01",
     "principal_id": "prin_example01",
     "organization_id": "org_fixture01",
     "role": "reviewer",
@@ -59,6 +61,10 @@ VALID_PRINCIPAL = {
 
 def test_disclosure_decision_is_accepted() -> None:
     validate_instance("disclosure-decision-v1", VALID_DECISION)
+
+
+def test_external_policy_decision_is_accepted() -> None:
+    validate_instance("disclosure-policy-decision-v1", POLICY_DECISION)
 
 
 def test_eligibility_is_not_disclosure() -> None:
@@ -91,6 +97,7 @@ def test_missing_policy_version_denies() -> None:
         "outcome": "authorized",
         "policy_version": "",
         "policy_result": "authorized",
+        "policy_decision_id": None,
         "research_eligible": True,
         "treat_eligible_as_disclosed": False,
         "transformations": {
@@ -102,8 +109,8 @@ def test_missing_policy_version_denies() -> None:
         },
         "expiry": None,
         "revocation_state": "not_applicable",
-        "decision_reason": "policy_authorized",
-        "authority": "declared_binding",
+        "decision_reason": "missing_policy",
+        "authority_binding_id": None,
         "audit_event_id": "aud_example01",
         "request_digest": hashlib.sha256(canonical_dumps(REQUEST)).hexdigest(),
     }

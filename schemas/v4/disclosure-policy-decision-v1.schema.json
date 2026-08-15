@@ -1,0 +1,67 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/disclosure-policy-decision-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal externally supplied disclosure policy decision v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["minimized_requires_transformation"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "disclosure_policy_decision", "type": "string"},
+    "policy_decision_id": {
+      "type": "string",
+      "pattern": "^pdec_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "request_id": {"type": "string", "pattern": "^dreq_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "request_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "policy_version": {"type": "string", "pattern": "^pol_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "policy_result": {
+      "type": "string",
+      "enum": ["authorized", "denied", "minimized", "pending"]
+    },
+    "transformations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minimization": {"type": "boolean"},
+        "pseudonymization": {"type": "boolean"},
+        "aggregation": {"type": "boolean"},
+        "redaction": {"type": "boolean"},
+        "watermarking": {"type": "boolean"}
+      },
+      "required": [
+        "minimization",
+        "pseudonymization",
+        "aggregation",
+        "redaction",
+        "watermarking"
+      ]
+    },
+    "expiry": {"type": ["string", "null"], "format": "utc-date-time"},
+    "revocation_state": {
+      "type": "string",
+      "enum": ["not_applicable", "not_revoked", "revoked"]
+    },
+    "decision_reason": {"type": "string", "minLength": 1},
+    "authority_binding_id": {
+      "type": "string",
+      "pattern": "^auth_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "policy_decision_id",
+    "request_id",
+    "request_digest",
+    "policy_version",
+    "policy_result",
+    "transformations",
+    "expiry",
+    "revocation_state",
+    "decision_reason",
+    "authority_binding_id",
+    "audit_event_id"
+  ]
+}

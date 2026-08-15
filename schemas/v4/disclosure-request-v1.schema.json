@@ -4,6 +4,7 @@
   "title": "v4 proposal disclosure request v1",
   "type": "object",
   "additionalProperties": false,
+  "x-caselinker-invariants": ["valid_time_window"],
   "properties": {
     "schema_version": {"const": "1.0", "type": "string"},
     "contract_kind": {"const": "disclosure_request", "type": "string"},

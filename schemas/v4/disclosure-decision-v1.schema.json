@@ -4,7 +4,13 @@
   "title": "v4 proposal disclosure decision v1",
   "type": "object",
   "additionalProperties": false,
-  "x-caselinker-invariants": ["eligibility_is_not_disclosure", "deny_without_policy"],
+  "x-caselinker-invariants": [
+    "eligibility_is_not_disclosure",
+    "deny_without_policy",
+    "external_policy_binding",
+    "minimized_requires_transformation",
+    "valid_time_window"
+  ],
   "properties": {
     "schema_version": {"const": "1.0", "type": "string"},
     "contract_kind": {"const": "disclosure_decision", "type": "string"},
@@ -53,6 +59,10 @@
       "type": "string",
       "enum": ["authorized", "denied", "minimized", "pending"]
     },
+    "policy_decision_id": {
+      "type": ["string", "null"],
+      "pattern": "^pdec_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
     "research_eligible": {"type": "boolean"},
     "treat_eligible_as_disclosed": {"type": "boolean"},
     "transformations": {
@@ -79,7 +89,10 @@
       "enum": ["not_applicable", "not_revoked", "revoked"]
     },
     "decision_reason": {"type": "string", "minLength": 1},
-    "authority": {"type": "string", "minLength": 1},
+    "authority_binding_id": {
+      "type": ["string", "null"],
+      "pattern": "^auth_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
     "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"},
     "request_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
   },
@@ -106,13 +119,14 @@
     "outcome",
     "policy_version",
     "policy_result",
+    "policy_decision_id",
     "research_eligible",
     "treat_eligible_as_disclosed",
     "transformations",
     "expiry",
     "revocation_state",
     "decision_reason",
-    "authority",
+    "authority_binding_id",
     "audit_event_id",
     "request_digest"
   ]

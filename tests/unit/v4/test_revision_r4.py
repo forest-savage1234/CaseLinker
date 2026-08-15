@@ -8,7 +8,6 @@ from tests.unit.v4.test_bitemporal_identity import VALID_TRANSITION
 from tests.unit.v4.test_disclosure_authority import VALID_DECISION
 from tests.unit.v4.test_revision_disclosure import REQUEST
 
-
 EXTERNAL_POLICY_DECISION = {
     "schema_version": "1.0",
     "contract_kind": "disclosure_policy_decision",
@@ -105,3 +104,13 @@ def test_sod_requirement_must_reference_external_governance_decision() -> None:
     bad.pop("separation_of_duties_decision_id", None)
     with pytest.raises(ContractError, match="governance"):
         validate_instance("state-transition-v1", bad)
+
+
+def test_sod_accepts_distinct_authorized_approvers() -> None:
+    governed = {
+        **VALID_TRANSITION,
+        "separation_of_duties_required": True,
+        "second_approver_id": "prin_example02",
+        "second_approver_authority_binding_id": "auth_fixture02",
+    }
+    validate_instance("state-transition-v1", governed)
