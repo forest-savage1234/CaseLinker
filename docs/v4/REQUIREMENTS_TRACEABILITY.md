@@ -103,11 +103,11 @@ Required fields on every row: `requirement_id`, `constitutional_invariant`, `cur
 
 | requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
 |---|---|---|---|---|---|---|---|---|
-| RESOLVE-001 | CONST-002, CONST-011 | absent | no source-family/derivation type | syndicated copies counted as independent | multi-source context | later derivation tests | none | absent |
-| RESOLVE-002 | CONST-010 | absent | no corroboration vs syndication distinction | inflated confirmation | multi-source context | later family-count tests | none | absent |
-| RESOLVE-003 | CONST-006 | absent in vNext | no reversible hypothesis | silent false merge (R-ID) | identity-hypothesis context | false-merge-first tests | OD-006 | absent |
-| RESOLVE-004 | CONST-007 | no vNext transitivity write | legacy clustering residual | blind A≈B≈C | same as RESOLVE-003 | transitivity adversarial tests | OD-006 | absent |
-| RESOLVE-005 | CONST-006 | resolver is single-bundle, not multi-source | no same-event hypothesis type | manufactured same-event | event-hypothesis context | later same-event tests | OD-006 | absent |
+| RESOLVE-001 | CONST-002, CONST-011 | `schemas/v4/source-lineage-v1.schema.json` | no persistence or extractor | syndicated copies if callers skip the contract | multi-source context | Wave 1 lineage tests | none | partial |
+| RESOLVE-002 | CONST-010 | same-family corroboration rejected by contract | no runtime family detector | inflated confirmation if contract unused | multi-source context | Wave 1 lineage tests | none | partial |
+| RESOLVE-003 | CONST-006 | `identity-hypothesis-v1` forbids canonical identity | no store; OD-006 scope unset | silent merge if legacy clustering used | identity-hypothesis context | Wave 1 hypothesis tests | OD-006 | partial |
+| RESOLVE-004 | CONST-007 | `transitive_closure` rejected | legacy clustering residual | blind A≈B≈C | same as RESOLVE-003 | Wave 1 transitivity tests | OD-006 | partial |
+| RESOLVE-005 | CONST-006 | hypothesis `possibly_same` state exists | not wired to resolver | manufactured same-event | event-hypothesis context | Wave 1 hypothesis tests | OD-006 | partial |
 
 ---
 
@@ -158,9 +158,9 @@ Required fields on every row: `requirement_id`, `constitutional_invariant`, `cur
 
 | requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
 |---|---|---|---|---|---|---|---|---|
-| AI-001 | CONST-008 | restraint stated; no record type | models could be wired later without provenance | self-approval | AI execution record | later AI-governance tests | none | absent |
-| AI-002 | CONST-008, CONST-017 | absent | no execution provenance | unreproducible model output | AI execution record | later provenance tests | none | absent |
-| OPS-001 | CONST-003 | SQLite only; Postgres is a proposal | no isolation analysis | concurrency loss | later technical experiment | later Postgres tests | OD-008 | absent |
+| AI-001 | CONST-008 | `ai-execution-v1` rejects `published` | no runtime AI path | self-approval if a later path ignores the contract | AI execution record | Wave 1 AI tests | none | partial |
+| AI-002 | CONST-008, CONST-017 | execution id + model + prompt digest required | no live capture | unreproducible model output | AI execution record | Wave 1 AI tests | none | partial |
+| OPS-001 | CONST-003 | logical analysis in `POSTGRES_LOGICAL_MODEL.md` | no executable migration or running DB | concurrency loss if treated as proven | later technical experiment | Wave 2+ | OD-008 | partial |
 | OPS-002 | CONST-002 | no object store (see `DATA_AUTHORITY.md`) | bytes unrestorable | evidence loss | future object store | later restore tests | OD-008 | absent |
 | OPS-003 | CONST-016, CONST-017 | absent | no outbox/queue | dual-write / lost jobs | later hardening | later idempotency tests | OD-008 | absent |
 | OPS-004 | CONST-009 | absent | no tenant model | cross-org leak | later isolation | later isolation tests | OD-007 | policy_blocked |
@@ -228,11 +228,11 @@ Particular areas called out for this revision:
 
 **closed (0):** none.
 
-**partially_met (42):** CONST-001, CONST-002, CONST-003, CONST-004, CONST-005, CONST-006, CONST-007, CONST-008, CONST-009, CONST-010, CONST-011, CONST-012, CONST-013, CONST-015, CONST-016, CONST-017, CONST-018, PROHIB-001, PROHIB-002, PROHIB-005, PROHIB-006, PROHIB-007, PROHIB-008, PROHIB-010, PROHIB-012, PROHIB-013, TEMP-001, TEMP-003, SOURCE-001, SOURCE-003, REVIEW-002, DISCLOSE-001, CORRECT-001, CORRECT-002, CORRECT-003, SCI-001, SCI-003, OPS-007, EVAL-001, GOV-001, GOV-002, GOV-003.
+**partially_met (50):** CONST-001, CONST-002, CONST-003, CONST-004, CONST-005, CONST-006, CONST-007, CONST-008, CONST-009, CONST-010, CONST-011, CONST-012, CONST-013, CONST-015, CONST-016, CONST-017, CONST-018, PROHIB-001, PROHIB-002, PROHIB-005, PROHIB-006, PROHIB-007, PROHIB-008, PROHIB-010, PROHIB-012, PROHIB-013, TEMP-001, TEMP-003, SOURCE-001, SOURCE-003, RESOLVE-001, RESOLVE-002, RESOLVE-003, RESOLVE-004, RESOLVE-005, REVIEW-002, DISCLOSE-001, CORRECT-001, CORRECT-002, CORRECT-003, SCI-001, SCI-003, AI-001, AI-002, OPS-001, OPS-007, EVAL-001, GOV-001, GOV-002, GOV-003.
 
-**unmet (31):** CONST-014, PROHIB-003, PROHIB-004, PROHIB-009, PROHIB-011, TEMP-002, SOURCE-002, RESOLVE-001, RESOLVE-002, RESOLVE-003, RESOLVE-004, RESOLVE-005, REVIEW-001, REVIEW-003, REVIEW-004, REVIEW-005, DISCLOSE-002, DISCLOSE-003, DISCLOSE-004, SCI-002, AI-001, AI-002, OPS-001, OPS-002, OPS-003, OPS-004, OPS-005, OPS-006, FED-001, UX-001, UX-002.
+**unmet (23):** CONST-014, PROHIB-003, PROHIB-004, PROHIB-009, PROHIB-011, TEMP-002, SOURCE-002, REVIEW-001, REVIEW-003, REVIEW-004, REVIEW-005, DISCLOSE-002, DISCLOSE-003, DISCLOSE-004, SCI-002, OPS-002, OPS-003, OPS-004, OPS-005, OPS-006, FED-001, UX-001, UX-002.
 
-Count check: 0 + 42 + 31 = 73 IDs (CONST 18 + PROHIB 13 + TEMP 3 + SOURCE 3 + RESOLVE 5 + REVIEW 5 + DISCLOSE 4 + CORRECT 3 + SCI 3 + AI 2 + OPS 7 + EVAL 1 + FED 1 + UX 2 + GOV 3).
+Count check: 0 + 50 + 23 = 73 IDs (CONST 18 + PROHIB 13 + TEMP 3 + SOURCE 3 + RESOLVE 5 + REVIEW 5 + DISCLOSE 4 + CORRECT 3 + SCI 3 + AI 2 + OPS 7 + EVAL 1 + FED 1 + UX 2 + GOV 3).
 
 ## Capability classification (v3 → v4 working class)
 

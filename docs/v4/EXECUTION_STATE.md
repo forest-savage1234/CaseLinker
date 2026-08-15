@@ -11,7 +11,7 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "human_approved"
+  legal_state: "self_verified"
   human_accepted: false
   official_version_claim: false
 wave_02:
@@ -22,16 +22,14 @@ branch: "proposal/v4-research-network"
 primary_proof_obligation: "temporal evidence network expressed as versioned policy-neutral contracts before infrastructure"
 ```
 
-## Wave 0 (closed)
+## Wave 0
 
-Operator accepted the packet at `a370cfbc` including the Codex pass of `8cf2d8d1`. That does not complete Phase 0, approve a pilot, authorize deployment, or confer an official version.
+Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Phase 0 complete.
 
-## Wave 1 (human_approved → implementing)
+## Wave 1
 
-Approved plan with binding modifications: dependency-ordered contract slices; tests before implementation; schemas/validators as the executable surface; ADRs `Status: Proposed` in `docs/v4/adr/`; PostgreSQL logical analysis only.
-
-Slices: A kernel → B time/identity/state → C lineage/hypotheses → D eligibility/disclosure/authority → E projections/audit/AI + logical Postgres.
+`human_approved` then implemented as slices A–E (tests before schemas). Now `self_verified`. See `docs/v4/evidence/WAVE-01-EVIDENCE.md`.
 
 ## Next safe action
 
-Implement Wave 1 slices in order. Stop at `self_verified`. Do not begin Wave 2.
+Independent Wave 1 verification. Do not begin Wave 2. Do not mark Wave 1 `human_accepted` here.
