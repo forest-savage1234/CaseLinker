@@ -60,20 +60,34 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Label:** human decision required (decided)
 - **Decision:** Every material Wave 0 statement is `repository fact`, `inference`, `proposal`, or `human decision required`.
 
+## D-2026-08-15-009 — Wave 0 verification revision
+
+- **Label:** human decision required (decided)
+- **Decision:** Apply `GROK_BUILD_PROGRAM.md` §32. Correct documentation/governance findings only. Do not begin Wave 1 or modify product code.
+- **Authority:** operator revision instruction after independent verification failed
+- **Consequence:** replace false byte-store implication; complete the 69-ID registry with one bucket each; mark GOV-003 `partial`; assign owner / decision authority / blocking gate or `blocked`; complete phase-gate fields; distinguish Wave 0 artifact acceptance from Phase 0; append findings to the evidence packet without erasure
+
+## Ownership convention
+
+- **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
+- **Decision authority:** who may decide the substance. If unnamed, the item is **blocked**.
+- **Blocking gate:** earliest wave/phase that must not start, or must not be marked complete, until the decision exists.
+- Software defaults are not authority.
+
 ## Open decisions (no software default is authority)
 
-| ID | Question | Label | Blocks |
-|---|---|---|---|
-| OD-001 | Upstream maintainer disposition of the v3 proposal | human decision required; currently **unknown** | official naming, merge, any later “adopted” claim |
-| OD-002 | Initial users, organizations, audiences, deployment boundary | human decision required | Phase 3+ and any pilot |
-| OD-003 | Governing privacy/disclosure authority and jurisdictions | human decision required | disclosure engine **content** |
-| OD-004 | Approved source classes, retention, takedown | human decision required | live or even expanded fixture collection |
-| OD-005 | Reviewer roles, qualifications, independence, adjudication | human decision required | authenticated review beyond the current enum |
-| OD-006 | Acceptable identity-resolution scope | human decision required | Wave 4 identity work |
-| OD-007 | Tenancy model | human decision required | isolation design |
-| OD-008 | Acceptable infrastructure and operational environment | human decision required | Wave 8 hardening |
-| OD-009 | Pilot corpus and shadow-mode protocol | human decision required | scientific evaluation beyond fixtures |
-| OD-010 | Who performs independent Wave 0 verification | human decision required | `gate_ready` recommendation |
-| OD-011 | Whether to add a read-only `upstream` remote | human decision required | not in Wave 0 |
+| ID | Question | Accountable owner | Decision authority | Blocking gate | Status |
+|---|---|---|---|---|---|
+| OD-001 | Upstream maintainer disposition of the v3 proposal | program operator (tracking) | upstream maintainer (`mrinaalr`) — named by charter, not yet recorded as responding | any official naming, merge, or “adopted” claim; Phase 0 exit | **blocked** (disposition **unknown**) |
+| OD-002 | Initial users, organizations, audiences, deployment boundary | program operator (tracking) | unassigned organizational sponsor | Phase 3 / Wave 5 entry; any pilot | **blocked** |
+| OD-003 | Governing privacy/disclosure authority and jurisdictions | program operator (tracking) | unassigned authorized privacy/legal authority | Wave 5 / Gate 3; DISCLOSE-002/003 content | **blocked** |
+| OD-004 | Approved source classes, retention, takedown | program operator (tracking) | unassigned source-governance / legal authority | live or expanded collection; SOURCE-002 | **blocked** |
+| OD-005 | Reviewer roles, qualifications, independence, adjudication | program operator (tracking) | unassigned review-governance authority | Wave 5 authenticated review | **blocked** |
+| OD-006 | Acceptable identity-resolution scope | program operator (tracking) | unassigned child-safety + scientific authority | Wave 4 / Gate 2; R-ID | **blocked** |
+| OD-007 | Tenancy model | program operator (tracking) | unassigned organizational sponsor (same as OD-002 unless split) | OPS-004; Wave 8 tenant tests | **blocked** |
+| OD-008 | Acceptable infrastructure and operational environment | program operator (tracking) | unassigned infrastructure/operations authority | Wave 8 / Gate 6; object store, Postgres production claim | **blocked** |
+| OD-009 | Pilot corpus and shadow-mode protocol | program operator (tracking) | unassigned scientific + disclosure authority | Wave 7; Phase 0 “approved pilot” | **blocked** |
+| OD-010 | Who performs independent Wave 0 verification | program operator (tracking) | program operator may **request**; `gate_ready` requires an independent reviewer to be named | Wave 0 `gate_ready`; Wave 1 must not start | **blocked** until a named independent reviewer records a pass |
+| OD-011 | Whether to add a read-only `upstream` remote | program operator (tracking) | program operator (local git config only); does not create upstream authority | not required for Wave 0; optional later | open, not blocking Wave 0 re-verification |
 
 No policy, legal rule, reviewer qualification, or numerical quality threshold is recorded as decided.

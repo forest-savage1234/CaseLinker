@@ -5,138 +5,183 @@
 **vNext historical checkpoint (not the v4 base):** `802fb7d244e3751b42dbb20cc8d258e1b71adbc7`  
 **Labels:** `repository fact` | `inference` | `proposal` | `human decision required`
 
-Status values used here:
+No requirement is “done.” Wave 0 only registers requirements. Closure needs an implementation or policy artifact, one positive test, one negative/adversarial test, a traceability link, **and** any required human authority (`GROK_BUILD_PROGRAM.md` §18.4). Therefore `requirements_closed` is empty.
 
-- `present_in_v3` — implemented on the proposal branch with tests
-- `partial` — some structure exists; the requirement is not met
-- `absent` — no implementation
-- `policy_blocked` — software cannot close this without named human authority
-- `out_of_scope_wave0` — recorded only
+## Status vocabulary (exactly one per ID)
 
-No requirement is “done.” Wave 0 creates the registry. Closure needs implementation or policy artifact, a positive test, a negative/adversarial test, and a later gate.
+| Status | Meaning |
+|---|---|
+| `present_in_v3` | Implemented on the proposal branch with tests for a **narrow** declared scope |
+| `partial` | Some structure exists; the v4 requirement is not met |
+| `absent` | No implementation of the required control |
+| `policy_blocked` | Software cannot close this without named human authority |
 
-Columns: `id`, invariant, current evidence, gap, risk, proposed boundary, acceptance evidence, human authority, status.
+## Evidence-status buckets (exactly one per ID)
+
+Used in `docs/v4/evidence/WAVE-00-EVIDENCE.md`:
+
+| Bucket | Rule |
+|---|---|
+| `closed` | Meets §18.4 closure. **None** in Wave 0. |
+| `partially_met` | Status is `present_in_v3` or `partial` |
+| `unmet` | Status is `absent` or `policy_blocked` |
+
+Dual statuses such as “present_in_v3 / partial globally” are forbidden. Residual legacy risk is recorded in **Gap** and **Risk**, not by splitting the status.
+
+Required fields on every row: `requirement_id`, `constitutional_invariant`, `current_evidence`, `gap`, `risk`, `proposed_boundary`, `acceptance_evidence`, `human_authority_required`, `status`.
+
+---
 
 ## Constitutional invariants (CONST-001…018)
 
-| ID | Invariant | Current evidence (fact) | Gap | Risk | Proposed boundary | Acceptance evidence | Human authority | Status |
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
 |---|---|---|---|---|---|---|---|---|
-| CONST-001 | No factual claim without exact evidence | `Assertion` requires evidence or typed span-unavailable reason (`assertions/models.py` 289–302; ADR 0003) | none for v3 assertions; UI/legacy paths unenforced | evidence-free claims in unused stacks | keep ledger; do not serialize legacy dicts as claims | existing unit tests; later export tests | none for the kernel | present_in_v3 / partial globally |
-| CONST-002 | No evidence without immutable source identity | `SourceDocumentVersion` + digest (`documents/models.py`; ADR 0002) | no authenticity/mutation machine | substituted or rotated web pages | source governance context | mutation/version tests (later) | OD-004 | partial |
-| CONST-003 | No silent overwriting | SQL abort triggers; append-only reviews (ADR 0004) | no general correction/supersession engine for dependents | silent history loss | temporal kernel | trigger + lineage tests (exist); impact tests (absent) | none | present_in_v3 for rows; partial for dependents |
+| CONST-001 | No factual claim without exact evidence | `Assertion` requires evidence or typed span-unavailable reason (`assertions/models.py` 289–302; ADR 0003) | Legacy UI/dicts are unenforced | evidence-free claims outside the ledger | keep ledger; do not serialize legacy dicts as claims | existing assertion unit tests; later export tests | none for the kernel | partial |
+| CONST-002 | No evidence without immutable source identity | `SourceDocumentVersion` + digest (`documents/models.py`; ADR 0002) | no authenticity/mutation machine; **bytes not stored** | substituted pages; unrestorable evidence | source governance + future object store | mutation/version tests (later) | OD-004 | partial |
+| CONST-003 | No silent overwriting | SQL abort triggers; append-only reviews (ADR 0004) | no general dependent-invalidation engine | silent history loss downstream | temporal kernel + dependency registry | trigger tests exist; impact tests absent | none | partial |
 | CONST-004 | Preserve two kinds of time | `valid_from`/`valid_to` + `created_at` | no as-known/valid-time query contract | time collapse | temporal kernel | January/February scenario (later) | none | partial |
-| CONST-005 | No allegation as guilt | reported predicates; six distinct event types (ADR 0006; `claims.py` limitations) | UX/legacy `booking_status` still exists | readers infer guilt | keep reported vs resolved; UX later | existing extractor tests; later comprehension study | none for kernel | present_in_v3 / partial globally |
-| CONST-006 | No opaque identity claims | `AttributedSubject` is caller-supplied; no merge type in `src/caselinker` | no hypothesis type; legacy clustering exists | silent person merge | identity hypothesis context; isolate clustering | false-merge tests (later) | OD-006 | partial / research first |
-| CONST-007 | No blind transitive merging | no merge implementation in vNext | clustering/legacy similarity | A≈B≈C collapse | same as CONST-006 | transitivity adversarial tests | OD-006 | absent (good) / residual in legacy |
+| CONST-005 | No allegation as guilt | reported predicates; six event types (ADR 0006; `claims.py` limitations) | UX/legacy `booking_status` still exists | readers infer guilt | keep reported vs resolved; UX later | existing extractor tests; later comprehension study | none for the kernel | partial |
+| CONST-006 | No opaque identity claims | `AttributedSubject` is caller-supplied; no merge type in `src/caselinker` | no hypothesis type; legacy clustering exists | silent person merge | identity-hypothesis context; isolate clustering | false-merge tests (later) | OD-006 | partial |
+| CONST-007 | No blind transitive merging | no merge implementation in vNext | legacy similarity/clustering can still imply transitivity | A≈B≈C collapse | same as CONST-006 | transitivity adversarial tests | OD-006 | partial |
 | CONST-008 | AI is an untrusted proposer | no vNext model path writes canonical facts; charter §4 | legacy ML extra exists; not in core CI | self-approval | AI execution record | later AI-governance tests | none yet | partial |
-| CONST-009 | Eligibility ≠ disclosure | ADR 0007; `publication.py` 37–38; Evidence Pack exclusion | no PDP/PEP | eligible data published | disclosure context | three-view tests (later) | OD-003 | partial (separation stated; enforcement absent) |
-| CONST-010 | No statistic without unit/denominator/membership/limitations | cohort unit `legal_event`; full membership; `LIMITATIONS` | only one unit; no study registry | unit confusion | scientific workbench later | existing cohort tests | none for current unit | present_in_v3 for that unit |
-| CONST-011 | Ontology mapping must not erase source precision | `cl:legalEventType` kept beside broader CAC class (ADR 0008) | limited mapping set | term collapse | keep projection adapter | existing golden digest tests | ontology maintainer later | present_in_v3 for legal-event profile |
+| CONST-009 | Eligibility ≠ disclosure | ADR 0007; `publication.py` 37–38; Evidence Pack exclusion | no PDP/PEP | eligible data published | disclosure context | three-view tests (later) | OD-003 | partial |
+| CONST-010 | No statistic without unit/denominator/membership/limitations | cohort unit `legal_event`; full membership; `LIMITATIONS` | only one unit; no study registry | unit confusion | scientific workbench later | existing cohort tests | none for that unit | present_in_v3 |
+| CONST-011 | Ontology mapping must not erase source precision | `cl:legalEventType` kept beside broader CAC class (ADR 0008) | limited mapping set | term collapse | keep projection adapter | existing golden digest tests | ontology maintainer (unnamed; blocked for expansion) | present_in_v3 |
 | CONST-012 | Corrections invalidate dependencies | live eligibility on review change (ADR 0007) | no transitive dependency graph | stale Claim Cards/packs remain usable | correction/impact engine | completeness tests (later) | none | partial |
-| CONST-013 | No publication without reproducible snapshot | snapshot manifests + pipeline re-verify (ADR 0001, 0011) | no signed publication object | unverifiable outputs | keep snapshots; publication later | existing CLI tests | none | present_in_v3 for research artifacts |
+| CONST-013 | No publication without reproducible snapshot | snapshot manifests + pipeline re-verify (ADR 0001, 0011) | no signed publication object | unverifiable outputs | keep snapshots; publication later | existing CLI tests | none | present_in_v3 |
 | CONST-014 | No public-availability assumption | threat model boundary 1; handoff non-goals | README live-demo language exists | over-collection / republication | do not treat README as policy | human review of communications | OD-004 | policy_blocked |
-| CONST-015 | No official version without upstream | ADR 0000; AGENTS.md; pyproject 0.0.0 | communication drift | false v4.0.0 claim | proposal language only | this program | upstream only | present_in_v3 / standing |
+| CONST-015 | No official version without upstream | ADR 0000; AGENTS.md; pyproject 0.0.0 | communication drift | false v4.0.0 claim | proposal language only | this program + no tags | upstream maintainer | present_in_v3 |
 | CONST-016 | No competing source of truth | vNext projections are derived | legacy DB/UI/RDF pools coexist | dual-write ambiguity | isolate stacks | later reconciliation tests | none | partial |
-| CONST-017 | No hidden state transition | review/resolution records actor-ish ids and times | no authn; limited reason codes | unauditable authority | review workspace later | later audit tests | OD-005 | partial |
-| CONST-018 | Fail closed | many v3 fail-closed constructors and CLI exits | missing policy currently yields “no disclosure engine” rather than an explicit deny decision object | implicit allow via leftover serializers | default-deny PDP later | alternate-path tests | OD-003 | partial |
+| CONST-017 | No hidden state transition | review/resolution record ids and times | no authn; limited reason codes | unauditable authority | review workspace later | later audit tests | OD-005 | partial |
+| CONST-018 | Fail closed | many v3 fail-closed constructors and CLI exits | missing policy yields no deny object rather than explicit deny | implicit allow via leftover serializers | default-deny PDP later | alternate-path tests | OD-003 | partial |
 
-## Prohibited capabilities (PROHIB)
+---
 
-| ID | Prohibition | Current evidence | Gap / containment | Status |
-|---|---|---|---|---|
-| PROHIB-001 | Predictive policing / individual risk scores | not in `src/caselinker` | do not extend triage toward individual danger | absent in vNext; watch legacy triage |
-| PROHIB-002 | Autonomous guilt/credibility | extractors do not accept their own output (ADR 0005–0006) | keep | present_in_v3 restraint |
-| PROHIB-003 | Victim/minor identification or public person-tracking | aliases are matching inputs, not published | no disclosure engine | policy_blocked |
-| PROHIB-004 | Facial recognition / biometrics | not present | do not add | absent |
-| PROHIB-005 | Opaque person matching / irreversible auto-merge | no vNext merge | isolate legacy clustering | research first |
-| PROHIB-006 | Platform danger rankings without denominators | Claim limitations forbid it (`claims.py` 12–21) | watch stats UI | partial globally |
-| PROHIB-007 | Unreviewed AI facts | no vNext AI writer | ML extra exists | partial |
-| PROHIB-008 | Ungoverned scraping | `scripts/scraper/` exists | do not extend; record in risk register | residual |
-| PROHIB-009 | Public ⇒ republish | stated in threat model | no operational takedown | policy_blocked |
-| PROHIB-010 | Direct model access to unrestricted corpora | core CI excludes ML extra (`quality.yml` `no-extra ml`) | keep | partial |
-| PROHIB-011 | Bypass disclosure via export/log/cache/admin | no PDP; Evidence Pack excludes source text | alternate paths untested | absent enforcement |
-| PROHIB-012 | Production deploy / live migrate / publish under this program | not done | standing stop | standing |
-| PROHIB-013 | Official version designation | no tags | standing stop | standing |
+## Prohibited capabilities (PROHIB-001…013)
 
-## Domain families
+`constitutional_invariant` names the CONST the prohibition protects.
 
-### TEMP — temporal evidence
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| PROHIB-001 | CONST-005, CONST-010 | not in `src/caselinker` | legacy triage exists | individual danger scores | do not extend triage toward individual risk | later adversarial scan of scoring APIs | none | partial |
+| PROHIB-002 | CONST-005, CONST-008 | extractors do not accept their own output (ADR 0005–0006) | other stacks | autonomous guilt | keep extractor restraint | existing extractor tests | none | present_in_v3 |
+| PROHIB-003 | CONST-006, CONST-009 | aliases are matching inputs | no disclosure engine | victim/minor identification | no person-tracking features | later export/redaction tests | OD-003, OD-006 | policy_blocked |
+| PROHIB-004 | CONST-006 | no facial/biometric code in `src/caselinker` | no regression that forbids adding it | biometric identity | do not add | later prohibited-capability scan | none | absent |
+| PROHIB-005 | CONST-006, CONST-007 | no vNext merge type | isolate legacy clustering | irreversible auto-merge | hypothesis context only | false-merge tests | OD-006 | partial |
+| PROHIB-006 | CONST-010 | Claim limitations forbid platform-danger (`claims.py` 12–21) | other stats UIs | unsupported rankings | keep generated claim text | existing claim tests; later UI audit | none | partial |
+| PROHIB-007 | CONST-008 | no vNext AI writer | ML extra exists | unreviewed AI facts | AI execution record | later AI-governance tests | none | partial |
+| PROHIB-008 | CONST-002, CONST-014 | `scripts/scraper/` exists | ungoverned collection | hostile/unlawful ingest | do not extend scrapers | later collection-policy tests | OD-004 | partial |
+| PROHIB-009 | CONST-014 | stated in threat model | no operational takedown | republication | policy-gated collection | later retention/takedown tests | OD-004 | policy_blocked |
+| PROHIB-010 | CONST-008 | core CI uses `--no-extra ml` (`quality.yml`) | optional extra still lockable | unrestricted model corpus | keep extra out of core CI | CI config review | none | partial |
+| PROHIB-011 | CONST-009, CONST-018 | no PDP; Evidence Pack excludes source text | alternate paths untested | disclosure bypass | default-deny at every serializer | later alternate-path tests | OD-003 | absent |
+| PROHIB-012 | CONST-015, CONST-018 | no deploy/migrate/publish from this program | standing stop must be re-asserted | accidental production use | program stop conditions | process evidence (no tags/deploys) | operator + upstream | present_in_v3 |
+| PROHIB-013 | CONST-015 | no tags | communication drift | official version claim | proposal identity | `git tag` empty | upstream maintainer | present_in_v3 |
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| TEMP-001 | Distinct valid and knowledge time | fields exist | no query contract | partial |
-| TEMP-002 | As-known and valid-during queries | absent | implement later | absent |
-| TEMP-003 | Do not synthesize precision | date extractor rejects invalid/future dates (ADR 0006) | interval/open dates undefined | partial |
+---
 
-### SOURCE — source governance
+## TEMP — temporal evidence
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| SOURCE-001 | Immutable version identity | ADR 0002 | none for identity | present_in_v3 |
-| SOURCE-002 | Mutation / takedown / authenticity monitoring | absent | research first | absent; OD-004 |
-| SOURCE-003 | Hostile-input defenses for acquisition | path/symlink checks in snapshot/CLI | no governed collector | partial |
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| TEMP-001 | CONST-004 | `valid_from`/`valid_to`/`created_at` fields | no documented two-time semantics | time collapse | temporal kernel | bitemporal contract tests (later) | none | partial |
+| TEMP-002 | CONST-004 | absent query API | as-known/valid-during not implemented | wrong historical answers | temporal kernel | January/February scenario | none | absent |
+| TEMP-003 | CONST-004 | date extractor rejects invalid/future dates (ADR 0006) | interval/open dates undefined | invented precision | temporal kernel | precision-rejection tests | none | partial |
 
-### RESOLVE — corroboration and identity
+---
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| RESOLVE-001 | Source-family and derivation | absent | research first | absent |
-| RESOLVE-002 | Independent corroboration ≠ syndication | absent | research first | absent |
-| RESOLVE-003 | Reversible identity hypotheses, no silent merge | absent in vNext | **top risk 1** | absent; OD-006 |
-| RESOLVE-004 | No blind transitivity | absent (desired) | protect against adding it | absent |
-| RESOLVE-005 | Same-event hypotheses vs acceptance | resolver is single-bundle, not multi-source | **top risk 1** | absent |
+## SOURCE — source governance
 
-### REVIEW
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| SOURCE-001 | CONST-002 | immutable document/version identity (ADR 0002) | identity ≠ stored bytes | unrestorable source | keep identity; add store later | existing document tests | none | present_in_v3 |
+| SOURCE-002 | CONST-002, CONST-014 | absent | no mutation/takedown/authenticity monitor | undetected substitution | source governance | later mutation tests | OD-004 | absent |
+| SOURCE-003 | CONST-002, CONST-018 | path/symlink checks in snapshot/CLI | no governed collector | hostile acquisition | collection policy + parser isolation | later parser/SSRF tests | OD-004 | partial |
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| REVIEW-001 | Authenticated principals | opaque `reviewer_id` only | **policy_blocked** | absent; OD-005 |
-| REVIEW-002 | Append-only decisions | ADR 0003–0004 | none for storage | present_in_v3 |
-| REVIEW-003 | Second review / adjudication | absent | later | absent; OD-005 |
-| REVIEW-004 | Reviewer workbench | absent | later UX wave | absent |
+---
 
-### DISCLOSE
+## RESOLVE — corroboration and identity
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| DISCLOSE-001 | Separate eligibility from disclosure | ADR 0007 | enforcement absent | partial |
-| DISCLOSE-002 | Default-deny PDP/PEP | absent | **top risk 3** | absent; OD-003 |
-| DISCLOSE-003 | Distinct internal / research / public views | absent | later | absent; OD-003 |
-| DISCLOSE-004 | Enforce again at serialize/export/log | Evidence Pack exclusions only | **top risk 3** | absent |
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| RESOLVE-001 | CONST-002, CONST-011 | absent | no source-family/derivation type | syndicated copies counted as independent | multi-source context | later derivation tests | none | absent |
+| RESOLVE-002 | CONST-010 | absent | no corroboration vs syndication distinction | inflated confirmation | multi-source context | later family-count tests | none | absent |
+| RESOLVE-003 | CONST-006 | absent in vNext | no reversible hypothesis | silent false merge (R-ID) | identity-hypothesis context | false-merge-first tests | OD-006 | absent |
+| RESOLVE-004 | CONST-007 | no vNext transitivity write | legacy clustering residual | blind A≈B≈C | same as RESOLVE-003 | transitivity adversarial tests | OD-006 | absent |
+| RESOLVE-005 | CONST-006 | resolver is single-bundle, not multi-source | no same-event hypothesis type | manufactured same-event | event-hypothesis context | later same-event tests | OD-006 | absent |
 
-### CORRECT
+---
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| CORRECT-001 | Dependency identity | review lineage only | no general dependency edge | partial |
-| CORRECT-002 | Complete invalidation | live eligibility only | **top risk 2** | partial |
-| CORRECT-003 | Rebuild + preserve history | supersession/retraction records exist | no rebuild queue or notices | partial |
+## REVIEW
 
-### SCI
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| REVIEW-001 | CONST-017 | opaque `reviewer_id` only | no authentication | unauditable review authority | IAM + review ledger | later authn tests | OD-005 | policy_blocked |
+| REVIEW-002 | CONST-003, CONST-017 | append-only `ReviewDecision` (ADR 0003–0004) | no authn behind the chain | forged reviewer ids | keep ledger; add authn later | existing review-chain tests | none for storage | present_in_v3 |
+| REVIEW-003 | CONST-017 | absent | no second review/adjudication | single-actor high-risk accept | review task machine | later SoD tests | OD-005 | absent |
+| REVIEW-004 | CONST-001, CONST-005 | absent | no workbench | reviewers lack source context | later UX wave | later a11y/comprehension tests | none | absent |
 
-| ID | Requirement | Evidence | Gap | Status |
-|---|---|---|---|---|
-| SCI-001 | Explicit unit/denominator/membership | ADR 0009 | single unit only | present_in_v3 |
-| SCI-002 | Preregistered study spec | absent | later | absent; OD-009 |
-| SCI-003 | Block prevalence/causation/platform-danger | claim text + limitations | other UIs | partial |
+---
 
-### AI, OPS, FED, UX, GOV
+## DISCLOSE
 
-| ID | Requirement | Status | Authority |
-|---|---|---|---|
-| AI-001 | Models cannot approve/publish/merge/disclose | absent record type; restraint stated | later |
-| AI-002 | Execution provenance | absent | later |
-| OPS-001 | PostgreSQL SoR analysis | proposal; later technical experiment | OD-008 |
-| OPS-002 | Object store + verified restore | absent | OD-008 |
-| OPS-003 | Outbox/queue | absent | later |
-| OPS-004 | Tenant isolation | absent | OD-007 |
-| OPS-005 | Backup/restore rehearsal | absent | OD-008 |
-| FED-001 | Signed packages | absent; late | later human gate |
-| UX-001 | Chart→member→claim→span navigation | absent | later |
-| UX-002 | WCAG 2.2 AA / trauma-aware | stated in charter; not evidenced here | later |
-| GOV-001 | Upstream sovereignty | present_in_v3 language | standing |
-| GOV-002 | Human gates / no official version | this program | standing |
-| GOV-003 | Machine-verifiable v4 traceability | this file (registry only) | Wave 0 |
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| DISCLOSE-001 | CONST-009 | ADR 0007 separates eligibility from disclosure | enforcement absent | eligibility treated as permission | keep the distinction | existing eligibility tests; later PDP tests | OD-003 | partial |
+| DISCLOSE-002 | CONST-009, CONST-018 | absent | no default-deny PDP/PEP | R-DIS | disclosure context | later deny-by-default tests | OD-003 | policy_blocked |
+| DISCLOSE-003 | CONST-009 | absent | no audience views | over-disclosure | disclosure context | three-view tests | OD-003 | policy_blocked |
+| DISCLOSE-004 | CONST-009, CONST-018 | Evidence Pack exclusions only | no enforce-at-serialize | alternate-path leak | every output path | later export/log/cache tests | OD-003 | absent |
+
+---
+
+## CORRECT
+
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| CORRECT-001 | CONST-012 | review lineage only | no general `DependencyEdge` | incomplete impact | temporal kernel | later dependency tests | none | partial |
+| CORRECT-002 | CONST-012 | live eligibility only | dependents can stay eligible | R-COR | correction engine | completeness tests | none | partial |
+| CORRECT-003 | CONST-003, CONST-012 | supersession/retraction records exist | no rebuild queue or notices | silent stale outputs | correction engine | later rebuild/notice tests | none | partial |
+
+---
+
+## SCI
+
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| SCI-001 | CONST-010 | ADR 0009 unit/membership | single unit only | unit confusion | scientific workbench | existing cohort tests | none for `legal_event` | present_in_v3 |
+| SCI-002 | CONST-013 | absent | no preregistered study spec | post-hoc methods | scientific workbench | later study-registry tests | OD-009 | absent |
+| SCI-003 | CONST-010 | claim text + limitations | other UIs | prevalence/causation claims | keep generated claims | existing claim tests; later UI audit | none | partial |
+
+---
+
+## AI, OPS, FED, UX, GOV
+
+| requirement_id | constitutional_invariant | current_evidence | gap | risk | proposed_boundary | acceptance_evidence | human_authority_required | status |
+|---|---|---|---|---|---|---|---|---|
+| AI-001 | CONST-008 | restraint stated; no record type | models could be wired later without provenance | self-approval | AI execution record | later AI-governance tests | none | absent |
+| AI-002 | CONST-008, CONST-017 | absent | no execution provenance | unreproducible model output | AI execution record | later provenance tests | none | absent |
+| OPS-001 | CONST-003 | SQLite only; Postgres is a proposal | no isolation analysis | concurrency loss | later technical experiment | later Postgres tests | OD-008 | absent |
+| OPS-002 | CONST-002 | no object store (see `DATA_AUTHORITY.md`) | bytes unrestorable | evidence loss | future object store | later restore tests | OD-008 | absent |
+| OPS-003 | CONST-016, CONST-017 | absent | no outbox/queue | dual-write / lost jobs | later hardening | later idempotency tests | OD-008 | absent |
+| OPS-004 | CONST-009 | absent | no tenant model | cross-org leak | later isolation | later isolation tests | OD-007 | policy_blocked |
+| OPS-005 | CONST-003 | absent | no backup/restore rehearsal | unrecoverable ledger | later hardening | later restore drill | OD-008 | absent |
+| FED-001 | CONST-015, CONST-009 | absent | no signed packages | signature mistaken for truth | late federation | later quarantine/revoke tests | later federation authority | absent |
+| UX-001 | CONST-001, CONST-010 | absent | no chart→span navigation | users cannot audit counts | later UX wave | later navigation tests | none | absent |
+| UX-002 | CONST-005 | charter states WCAG 2.2 AA | not evidenced | inaccessible or sensational UI | later UX wave | later a11y/comprehension study | none | absent |
+| GOV-001 | CONST-015 | ADR 0000; AGENTS.md; charter §2 | communication drift | fork treated as upstream | proposal language | existing docs | upstream maintainer | present_in_v3 |
+| GOV-002 | CONST-015 | this program; human gates | gates can be skipped in conversation | unofficial “v4 complete” | wave state machine | process evidence | operator + upstream | present_in_v3 |
+| GOV-003 | CONST-015 | this registry file only | **no machine validator** for v4 IDs (vNext checker covers `docs/vnext/traceability.v1.json` only) | drift / omitted IDs | later v4 traceability checker | failing test if an ID lacks fields or bucket | none for a checker; Wave 0 cannot close this | partial |
+
+---
+
+## Evidence-bucket reconciliation (every ID once)
+
+**closed (0):** none.
+
+**partially_met (40):** CONST-001, CONST-002, CONST-003, CONST-004, CONST-005, CONST-006, CONST-007, CONST-008, CONST-009, CONST-010, CONST-011, CONST-012, CONST-013, CONST-015, CONST-016, CONST-017, CONST-018, PROHIB-001, PROHIB-002, PROHIB-005, PROHIB-006, PROHIB-007, PROHIB-008, PROHIB-010, PROHIB-012, PROHIB-013, TEMP-001, TEMP-003, SOURCE-001, SOURCE-003, REVIEW-002, DISCLOSE-001, CORRECT-001, CORRECT-002, CORRECT-003, SCI-001, SCI-003, GOV-001, GOV-002, GOV-003.
+
+**unmet (29):** CONST-014, PROHIB-003, PROHIB-004, PROHIB-009, PROHIB-011, TEMP-002, SOURCE-002, RESOLVE-001, RESOLVE-002, RESOLVE-003, RESOLVE-004, RESOLVE-005, REVIEW-001, REVIEW-003, REVIEW-004, DISCLOSE-002, DISCLOSE-003, DISCLOSE-004, SCI-002, AI-001, AI-002, OPS-001, OPS-002, OPS-003, OPS-004, OPS-005, FED-001, UX-001, UX-002.
+
+Count check: 0 + 40 + 29 = 69 IDs (CONST 18 + PROHIB 13 + TEMP 3 + SOURCE 3 + RESOLVE 5 + REVIEW 4 + DISCLOSE 4 + CORRECT 3 + SCI 3 + AI 2 + OPS 5 + FED 1 + UX 2 + GOV 3).
 
 ## Capability classification (v3 → v4 working class)
 
@@ -149,5 +194,6 @@ See also `architecture/CURRENT_STATE.md`. Working class is an **inference** for 
 | Review-aware resolution + live eligibility | extend |
 | CAC / SHACL / Claim CI / CLI | reuse as projections |
 | SQLite adapters | extend for fixtures; replace-by-migration later if a new SoR is accepted |
+| Exact source-byte persistence | **absent**; do not treat `storage_key` as a store |
 | Legacy cases / scrapers / UI | out of scope for the kernel; contain |
 | Identity, federation, disclosure content, IAM | research first + human authority |

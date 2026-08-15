@@ -1,10 +1,13 @@
 # WAVE-00 evidence packet
 
+Revised after independent verification failed. Original narrative §§1–8 is preserved. Original YAML as of `bc5d02c3` is copied in §9. Do not treat this file as Gate 0 acceptance.
+
 ```yaml
 wave: "00"
 status: "self_verified"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
+prior_artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
 result_commit: "uncommitted"
 primary_proof_obligation: "demonstrate that the proposed program is based on the actual repository, actual v3 boundaries, and named human decisions rather than assumptions"
 requirements_closed: []
@@ -15,15 +18,26 @@ requirements_partially_met:
   - CONST-004
   - CONST-005
   - CONST-006
+  - CONST-007
   - CONST-008
   - CONST-009
   - CONST-010
   - CONST-011
   - CONST-012
   - CONST-013
+  - CONST-015
   - CONST-016
   - CONST-017
   - CONST-018
+  - PROHIB-001
+  - PROHIB-002
+  - PROHIB-005
+  - PROHIB-006
+  - PROHIB-007
+  - PROHIB-008
+  - PROHIB-010
+  - PROHIB-012
+  - PROHIB-013
   - TEMP-001
   - TEMP-003
   - SOURCE-001
@@ -37,7 +51,13 @@ requirements_partially_met:
   - SCI-003
   - GOV-001
   - GOV-002
+  - GOV-003
 requirements_unmet:
+  - CONST-014
+  - PROHIB-003
+  - PROHIB-004
+  - PROHIB-009
+  - PROHIB-011
   - TEMP-002
   - SOURCE-002
   - RESOLVE-001
@@ -62,7 +82,6 @@ requirements_unmet:
   - FED-001
   - UX-001
   - UX-002
-  - many PROHIB containment items that depend on policy
 adrs: []
 migrations: []
 schemas: []
@@ -108,9 +127,11 @@ residual_risks:
   - "R-WIN"
 rollback_tested: false
 independent_review_status: "not_started"
+prior_independent_review_status: "fail"
 human_decisions_required:
-  - "OD-001 upstream disposition (unknown)"
-  - "OD-002..OD-011 listed in DECISION_LOG.md"
+  - "OD-001 upstream disposition (unknown, blocked)"
+  - "OD-002..OD-010 blocked pending named authorities"
+  - "OD-011 optional, not blocking Wave 0 re-verification"
 ```
 
 ## 1. Proof obligation
@@ -208,3 +229,55 @@ No high-severity finding was silently repaired in product code.
 ## 8. Rollback
 
 Delete or abandon `proposal/v4-research-network`. `main` and `proposal/v3-foundation` are unmodified. No schema or data migration occurred. `rollback_tested: false` because there is no persistent product state to restore.
+
+## 9. Independent verification findings and disposition (appended; original §§1–8 not erased)
+
+**Prior independent review:** `fail` (high-severity documentation and governance findings).  
+**Protocol:** `docs/v4/GROK_BUILD_PROGRAM.md` §32.  
+**Product code:** not modified. **Wave 1:** not started.
+
+### 9.1 Packet header as of `bc5d02c38afc79538ce62c4d28de70a0caeeb044` (preserved)
+
+```yaml
+wave: "00"
+status: "self_verified"
+approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
+program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
+result_commit: "uncommitted"
+requirements_closed: []
+# original lists omitted CONST-007, CONST-014, CONST-015, GOV-003,
+# and all PROHIB IDs except a non-ID note "many PROHIB containment items"
+independent_review_status: "not_started"
+```
+
+Full original lists remain in git blob `bc5d02c3:docs/v4/evidence/WAVE-00-EVIDENCE.md`.
+
+### 9.2 Findings, confirmation, smallest correction
+
+| ID | Finding | Confirm / challenge | Violated requirement | Correction | Migration / privacy / rollback | Tests |
+|---|---|---|---|---|---|---|
+| F1 | `DATA_AUTHORITY.md` implied exact source bytes have an authoritative store (“restore from object bytes matching digest”) | **Confirmed.** ADR 0002 stores metadata only; `capture()` hashes in-memory bytes (`documents/models.py` 180–204). No object-store port. | CONST-002, SOURCE-001 (identity ≠ bytes), OPS-002 | Rewrite the bytes row: store = **none implemented**; `storage_key` is a name; restore is **not** possible | docs only; no schema change | documentation/final validation; no product test added (Wave 0 forbids product code) |
+| F2 | Requirements registry missing required fields; IDs split or omitted from evidence buckets | **Confirmed.** Domain tables lacked the nine fields; YAML omitted CONST-007/014/015, GOV-003, and PROHIB-001…013 as IDs; some rows had dual statuses. | GOV-003; §5.B; §18.4 | Full nine-field matrix; one status; 0/40/29 bucket split | docs only | registry count 69 = 0+40+29 |
+| F3 | GOV-003 treated as Wave 0 complete because a registry file exists | **Confirmed.** No machine validator exists (`check_traceability.py` covers vNext only). | GOV-003, §18.4 | Status `partial`; bucket `partially_met`; not closed | docs only | none (checker remains a later proposal) |
+| F4 | Risks and open decisions lacked accountable owner, decision authority, and blocking gate | **Confirmed.** Owners were “unassigned”; several gates were “—”. | GOV-002; §5.D–E | Role-based tracking owner + named-or-blocked decision authority + blocking gate on every OD and risk | docs only; does not invent policy authority | none |
+| F5 | Phase-gate fields incomplete; Wave 0 acceptance conflatable with Phase 0 | **Confirmed.** Waves 1–10 table omitted migration/rollback/tests/exit/review burden. Phase 0 exit (approved pilot, named owners) was not distinguished. | §5.F; §10 Phase 0 | Complete phase skeletons; explicit Wave 0 ≠ Phase 0 table | docs only | none |
+| F6 | Evidence packet did not record independent findings | **Confirmed** at `bc5d02c3` (`independent_review_status: not_started`). | §18.3; §32.8 | This section; prior header preserved; review marked `fail` then new cycle `not_started` | docs only | none |
+
+No finding was challenged. No product implementation was in scope, so §32 step 5 (failing product test first) does not apply; the regression control is the revised documents plus the 69-ID reconciliation.
+
+### 9.3 Revision validation (run on dirty docs, before this correction commit)
+
+Session logs: `wave0-revision`. Same classification as the prior final-state run.
+
+| Check | Exit | Classification |
+|---|---|---|
+| `check_repository.py` | 0 | pass (docs UTF-8/merge-marker clean) |
+| `check_traceability.py` | 0 | pass (vNext 7 milestones unchanged) |
+| ruff / mypy | 0 | pass |
+| pytest quality+unit+integration+contract | 1 | **environment-related**, same 3 Windows tests as pristine |
+| snapshot build ×2 + hash + verify | 0 | pass; tool digest still `086ba58ad10123f45e56b85ac5464cfce07de21cbd5d01921913ccc0ec33c4fd` |
+| smoke | 0 | pass (2) |
+| pip-audit / bandit `-lll` | 0 | pass |
+
+No product-code diff. No new test failure class.
+
