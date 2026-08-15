@@ -101,6 +101,20 @@ Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`.
 
 Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not complete. Wave 2 unstarted.
 
+## Fourth independent re-verification (appended)
+
+**Failed commit:** `f41568e294e9becf032af0904f1ee51483742b4a`  
+**Protocol:** `GROK_BUILD_PROGRAM.md` §§31–32. Wave 0 remains closed. Wave 2 remains unstarted.
+
+| ID | Finding | Disposition at failure |
+|---|---|---|
+| R4-1 | `decide_disclosure` manufactured policy reason, authority, audit identity, transformations, expiry, and revocation from a scalar result | **Confirmed; repair required** |
+| R4-2 | `request_digest` was shape-checked but not recomputed against the request and copied context | **Confirmed; repair required** |
+| R4-3 | `minimized` could contain no transformation; disclosure time windows could be inverted | **Confirmed; repair required** |
+| R4-4 | SoD accepted distinct principal ids without authority bindings or an external governance-decision identity | **Confirmed; repair required** |
+
+Wave 1 returned to `revision_required`. The r4 adversarial tests are committed before implementation. No Wave 2 work is authorized.
+
 ## Third independent re-verification (appended)
 
 **Failed commit:** `e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22`  
