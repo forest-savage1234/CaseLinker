@@ -7,9 +7,10 @@ This file is not required to contain the final branch HEAD after later commits. 
 
 ```yaml
 wave: "00"
-legal_state: "gate_ready"
+legal_state: "closed"
 gate_0: "not_complete"
-human_accepted: false
+human_accepted: true
+accepted_closeout_commit: "a370cfbc6ee419746cf925a682b85da1efd1193e"
 official_version_claim: false
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 historical_v3_implementation_checkpoint: "802fb7d244e3751b42dbb20cc8d258e1b71adbc7"
@@ -21,6 +22,8 @@ reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 independent_reviewer: "Codex"
 independent_review_status: "pass"
 result_commit: "uncommitted_at_write_time"
+next_wave: "01"
+next_wave_state: "proposed"
 branch: "proposal/v4-research-network"
 worktree: "C:\\Users\\fores\\Downloads\\CaseLinker-v4-research-network"
 protected_refs:
@@ -40,7 +43,8 @@ primary_proof_obligation: "proposed program is based on the actual repository, a
 - Discovery artifacts written (`bc5d02c3`).
 - Independent verification failed (documentation/governance). §32 revision applied at `dd2ad4c8`.
 - Further documentation-only revision: program-section crosswalk; aggregated IDs for observability, security/privacy operations, reviewer governance, evaluation; conceptual Gate 0 architecture flows; evidence buckets 0/42/31 (`8cf2d8d1`).
-- Independent Wave 0 verification by **Codex** of commit `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e`: **pass**. Wave state `gate_ready`. Not `human_accepted`.
+- Independent Wave 0 verification by **Codex** of commit `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e`: **pass**. Closeout at `a370cfbc`.
+- Operator **human_accepted** that evidence packet and closed Wave 0. This does **not** complete Phase 0, approve a pilot, authorize deployment, or confer an official version.
 
 ## Test evidence
 
@@ -54,7 +58,7 @@ See `docs/v4/evidence/WAVE-00-EVIDENCE.md`. Distinguish pristine-base, final-sta
 
 ## Next safe action
 
-Operator may set Wave 0 `human_accepted` after inspecting the Codex pass on `8cf2d8d1`. Do not start Wave 1 until that explicit acceptance. Phase 0 / Gate 0 remain incomplete.
+Wave 1 is **proposed only**. Await explicit operator approval of the Wave 1 plan before any Wave 1 artifacts or contracts. Do not begin Wave 2. Phase 0 / Gate 0 remain incomplete.
 
 ## What this file does not claim
 

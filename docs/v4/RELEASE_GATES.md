@@ -14,10 +14,10 @@ Wave state machine (repository fact of the program text): only the operator may 
 |---|---|---|
 | Scope | discovery artifacts, requirement registry, risk/decision logs, non-mutating checks | maintainer feedback, controlled shadow mode, error taxonomy, reviewer disagreement, domain/privacy/scientific consultation, v4 vision and threat model |
 | What “accept” would mean | independent reviewer + operator accept **these documents** as `human_accepted` for Wave 0 | approved baseline, approved pilot, measured v3 limitations, **named** decision owners, Gate 0 architecture disposition |
-| Current state | Wave 0 is `gate_ready` after Codex pass on `8cf2d8d1`; **not** `human_accepted` | **incomplete**. OD-001, OD-002, OD-003, OD-009 remain blocked. No approved pilot. |
-| Implementation | none | HUMAN GATE 0 still forbids product implementation until Phase 0 / Gate 0 is actually complete |
+| Current state | Wave 0 is `human_accepted` and `closed` (packet `a370cfbc`; Codex pass on `8cf2d8d1`) | **incomplete**. OD-001, OD-002, OD-003, OD-009 remain blocked. No approved pilot. |
+| Implementation | Wave 1 **planning** authorized; Wave 1 implementation awaits a separate plan approval | HUMAN GATE 0 / Phase 0 still incomplete; no deploy, no official version |
 
-Independent acceptance of Wave 0 documents, if it later occurs, authorizes **only** Wave 1 contract design if the operator also explicitly accepts Wave 0. It does **not** complete Phase 0 and does **not** authorize product implementation, live data, or an official version.
+Operator acceptance of Wave 0 authorizes **Wave 1 planning** (and Wave 1 contract work only after an explicit Wave 1 plan approval). It does **not** complete Phase 0 and does **not** authorize live data, deployment, or an official version.
 
 ---
 
@@ -34,7 +34,7 @@ Independent acceptance of Wave 0 documents, if it later occurs, authorizes **onl
 | Rollback | abandon `proposal/v4-research-network`; does not change v3 or main |
 | Tests | repository quality suite; no new product tests |
 | Measurable exit (self) | artifacts internally consistent; every requirement in one bucket; findings appended; `self_verified` |
-| Measurable exit (human) | named independent reviewer records pass; operator sets `human_accepted` — **not claimed** |
+| Measurable exit (human) | named independent reviewer records pass; operator sets `human_accepted` — **done** (Wave 0 only) |
 | Estimated review burden | one architecture/privacy/governance reading of `docs/v4/` |
 | Human gate | no implementation before Gate 0 / Phase 0 completion |
 | Can stop independently | yes; documents only |

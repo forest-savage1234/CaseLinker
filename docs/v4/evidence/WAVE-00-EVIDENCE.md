@@ -1,10 +1,10 @@
 # WAVE-00 evidence packet
 
-Revised after independent verification failed. Original narrative §§1–8 is preserved. Original YAML as of `bc5d02c3` is copied in §9. Later revisions are in §§10–11. Wave 0 is `gate_ready` after the Codex pass on `8cf2d8d1`. This is **not** Wave 0 `human_accepted` and **not** Phase 0 / Gate 0 completion.
+Revised after independent verification failed. Original narrative §§1–8 is preserved. Original YAML as of `bc5d02c3` is copied in §9. Later revisions are in §§10–11. Wave 0 is `human_accepted` and `closed` after operator acceptance of closeout `a370cfbc` (Codex pass on `8cf2d8d1`). This is **not** Phase 0 / Gate 0 completion, not a pilot approval, not a deployment authorization, and not an official version.
 
 ```yaml
 wave: "00"
-status: "gate_ready"
+status: "closed"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
 prior_artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
@@ -135,7 +135,9 @@ residual_risks:
 rollback_tested: false
 independent_review_status: "pass"
 prior_independent_review_status: "fail"
-human_accepted: false
+human_accepted: true
+legal_state: "closed"
+accepted_closeout_commit: "a370cfbc6ee419746cf925a682b85da1efd1193e"
 human_decisions_required:
   - "OD-001 upstream disposition (unknown, blocked)"
   - "OD-002..OD-009 blocked pending named authorities"
@@ -338,4 +340,20 @@ Session `wave0-docs2`: `check_repository` pass (8537 files, +1 Gate 0 proposal);
 Prior independent cycle remains recorded as **fail** in §9 (`bc5d02c3` findings F1–F6, corrected in `dd2ad4c8` and completed in `8cf2d8d1`). This section does not retract that history.
 
 A verifier may recommend `gate_ready`. Only the human operator may set `human_accepted`.
+
+## 12. Operator human acceptance (appended; §§1–11 not erased)
+
+| Field | Value |
+|---|---|
+| Authority | human operator |
+| Accepted packet / closeout commit | `a370cfbc6ee419746cf925a682b85da1efd1193e` |
+| Included independent review | Codex **pass** of `8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e` |
+| Wave 0 `human_accepted` | true |
+| Wave 0 legal state | `closed` |
+| Phase 0 complete | **no** |
+| Pilot approved | **no** |
+| Deployment authorized | **no** |
+| Official version | **no** |
+| Wave 1 | planning only until a separate explicit plan approval |
+| Wave 2 | not begun |
 
