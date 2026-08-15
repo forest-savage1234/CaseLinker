@@ -156,4 +156,15 @@ Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not com
 **Decision:** D-2026-08-15-019  
 **Artifacts:** `docs/v4/STRATEGY.md`; `docs/v4/assurance/WAVE-01-ASSURANCE.md`; `docs/v4/assurance/WAVE-01-REQUIREMENTS-MAP.md`; Proposed ADR W1-010
 
-The Wave 1 assurance contract is frozen to `GROK_BUILD_PROGRAM.md` §21 plus D-2026-08-15-013. Escalation under `STRATEGY.md` §6 is active after four review/repair cycles on the same contracts. r4 is already present on `ac52ab84`; no r5 implementation is authorized. Wave 1 remains `self_verified`. Clean-room review of `ac52ab84` is requested against the frozen boundary, not against the accumulated repair history as a new spec. Wave 2 remains unstarted.
+The Wave 1 assurance contract is frozen to `GROK_BUILD_PROGRAM.md` §21 plus D-2026-08-15-013. Escalation under `STRATEGY.md` §6 is active after four review/repair cycles on the same contracts. r4 is already present on `ac52ab84`; no r5 implementation is authorized.
+
+## Clean-room review (appended)
+
+**Implementation:** `ac52ab84dead1ef5aebd74e0291c01bca0b461d5`  
+**Record:** `docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md`  
+**Recommended disposition:** `gate_ready`  
+**Decision:** D-2026-08-15-020
+
+No traceable critical/high defect inside the frozen boundary. Residual items are medium/low or later-wave. r3/r4 extras are historical over-specification, not an r5 queue.
+
+Wave 1 is `gate_ready`. Not `human_accepted`. Not complete. Wave 2 unstarted.

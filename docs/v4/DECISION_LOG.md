@@ -129,6 +129,13 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Independence:** builders of r3/r4 must not be the independent verifier.
 - **Consequence:** r4 is historical implementation. Clean-room review classifies remaining issues against the frozen §21 + D-013 boundary (in-scope defect, later-wave improvement, or `program_clarification_required`).
 
+## D-2026-08-15-020 — Wave 1 clean-room review; `gate_ready`
+
+- **Label:** repository fact of an independent-review recommendation plus operator instruction `STRATEGY.md` §10.7
+- **Decision:** Record the clean-room review of `ac52ab84` (`docs/v4/evidence/WAVE-01-CLEANROOM-REVIEW.md`). No traceable critical/high defect remains inside the frozen boundary. Set Wave 1 to `gate_ready`. Do **not** set `human_accepted`. Do **not** begin Wave 2. Do **not** implement r5.
+- **Independence limitation:** same-model reviewer; gates not re-executed in that review. Not organizational independence.
+- **Does not decide:** Phase 0 completion, official version, policy content, or Wave 2.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
