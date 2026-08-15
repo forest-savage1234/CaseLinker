@@ -31,7 +31,7 @@ Disposition vocabulary:
 | W1-N12 | Postgres logical model | implemented (markdown) | `architecture/POSTGRES_LOGICAL_MODEL.md` | document review; no migration tests (non-goal) | **blocked** OD-008 for any live claim |
 | W1-N13 | Constraint placement | implemented (analysis) | same file, §4 | document review | — |
 | W1-N14 | Invalid examples / fail-closed | implemented | unknown fields rejected; `ContractError` | every `tests/unit/v4/test_*.py` negative case | — |
-| W1-N15 | Five distinctions | implemented | see assurance §7 | see assurance §7; Wave 1 evidence “Proof” table | Allegation≠guilt relies on unchanged v3 extractors |
+| W1-N15 | Five distinctions | **not implemented** (allegation≠guilt) | Four distinctions have v4 tests. Allegation≠guilt has **no** v4 schema, invariant, or test | Event/knowledge, similarity, eligibility, projection tests exist. Allegation≠guilt was only “unchanged v3 extractors; no guilt type added” | D-022: v3-negative-proof is insufficient. Executable v4 demonstration required |
 | W1-N16 | Tests before implementation | implemented (process) | git history: failing slice/repair tests precede fixes | `5eaa3d0d`…`aaac0146` | — |
 | W1-N17 | Schemas as executable surface | implemented | `schemas/v4/*.schema.json` + `validate_instance` | kernel tests | — |
 | W1-N18 | Proposed ADRs under `docs/v4/adr/` | implemented | W1-001…W1-008 | files exist; `docs/adr/` untouched | — |

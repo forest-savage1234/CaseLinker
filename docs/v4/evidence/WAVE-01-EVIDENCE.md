@@ -175,3 +175,14 @@ Wave 1 is `gate_ready`. Not `human_accepted`. Not complete. Wave 2 unstarted.
 **Operator:** Wave 1 is **not** human-accepted.
 
 The frozen §21 + D-013 assurance boundary and `STRATEGY.md` remain adopted. Disclosure and SoD are not reopened. Wave 2 remains unstarted. No r5. Wave 1 stays `gate_ready` only as a review disposition, not as acceptance.
+
+## `gate_ready` withdrawn (appended)
+
+**Decision:** D-2026-08-15-022  
+**New legal state:** `revision_required`
+
+| ID | Finding | Governing basis | Confirm |
+|---|---|---|---|
+| GR-1 | W1-N15 allegation≠guilt is not an executable v4 demonstration. The map marked it implemented. Clean-room M2 admitted no v4 test or contract. v3-negative-proof is insufficient. | W1-N15; CONST-005; assurance §2 required distinctions | **Confirmed.** Evidence packet “Proof” table cites only unchanged v3 extractors. |
+
+Reason 2 of the stated pair has not been received. No repair is authorized yet. Disclosure and SoD are not reopened. Wave 2 remains unstarted.

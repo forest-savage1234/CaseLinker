@@ -144,6 +144,16 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** later acceptance, Phase 0 completion, official version, or any product change
 - **Consequence:** no Wave 2 planning or implementation; no r5; no disclosure/SoD patch
 
+## D-2026-08-15-022 — Withdraw `gate_ready` (reason 1 of 2): W1-N15 not executable
+
+- **Label:** human decision required (decided)
+- **Decision:** Withdraw the present `gate_ready` conclusion. Wave 1 is `revision_required`. `human_accepted` remains false. Wave 2 remains `unstarted`.
+- **Traceable basis (reason 1):** W1-N15 requires an **executable v4** demonstration that allegation is not guilt (`WAVE-01-ASSURANCE.md` §2 required distinctions; `GROK_BUILD_PROGRAM.md` §21). The requirements map marked W1-N15 `implemented`. The clean-room review recorded that there is no v4 schema, invariant, or §7 test (M2). Reliance on unchanged v3 extractors / “Wave 1 adds no guilt type” is insufficient.
+- **Governing IDs:** W1-N15; CONST-005
+- **Not decided yet:** reason 2 of the stated pair (not received)
+- **Does not reopen:** disclosure or SoD contracts
+- **Does not authorize:** implementation of a repair before the accepted critical/high set is complete
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
