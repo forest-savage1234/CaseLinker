@@ -1,0 +1,27 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/dependency-edge-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal dependency edge v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["no_reflexive_dependency"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "dependency_edge", "type": "string"},
+    "dependency_id": {"type": "string", "pattern": "^dep_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "from_id": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "to_id": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "edge_kind": {
+      "type": "string",
+      "enum": ["derived_from", "projected_as", "included_in", "disclosed_as"]
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "dependency_id",
+    "from_id",
+    "to_id",
+    "edge_kind"
+  ]
+}

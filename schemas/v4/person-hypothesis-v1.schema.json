@@ -1,0 +1,74 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/person-hypothesis-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal person hypothesis v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": [
+    "similarity_is_not_identity",
+    "no_blind_transitivity",
+    "distinct_subjects"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "person_hypothesis", "type": "string"},
+    "hypothesis_id": {"type": "string", "pattern": "^phyp_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "left_subject_id": {"type": "string", "pattern": "^per_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "right_subject_id": {"type": "string", "pattern": "^per_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "state": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "needs_review",
+        "possibly_same",
+        "confirmed_same",
+        "confirmed_different",
+        "unresolved",
+        "reopened"
+      ]
+    },
+    "prior_state": {"type": "string"},
+    "positive_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "polarity"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "polarity": {"type": "string", "enum": ["supports", "contradicts"]}
+        }
+      }
+    },
+    "negative_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "polarity"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "polarity": {"type": "string", "enum": ["supports", "contradicts"]}
+        }
+      }
+    },
+    "creates_canonical_identity": {"type": "boolean"},
+    "inference_method": {
+      "type": "string",
+      "enum": ["reviewer_comparison", "transitive_closure"]
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "hypothesis_id",
+    "left_subject_id",
+    "right_subject_id",
+    "state",
+    "positive_evidence",
+    "negative_evidence",
+    "creates_canonical_identity",
+    "inference_method"
+  ]
+}

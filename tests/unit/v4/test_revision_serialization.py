@@ -13,7 +13,9 @@ DOC = {
 
 def test_canonical_dumps_is_byte_stable_and_key_sorted() -> None:
     first = canonical_dumps(DOC)
-    second = canonical_dumps({"payload": {"a": 1, "b": 2}, "contract_kind": "envelope", "schema_version": "1.0"})
+    second = canonical_dumps(
+        {"payload": {"a": 1, "b": 2}, "contract_kind": "envelope", "schema_version": "1.0"}
+    )
     assert first == second
     assert first.startswith(b"{")
     assert b'"a":1' in first

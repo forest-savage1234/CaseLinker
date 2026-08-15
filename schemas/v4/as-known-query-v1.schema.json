@@ -1,0 +1,15 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/as-known-query-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal as-known query v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "as_known_query", "type": "string"},
+    "as_of_knowledge_time": {"type": "string", "format": "utc-date-time"},
+    "valid_on": {"type": "string", "format": "calendar-date"},
+    "exclude_knowledge_after": {"type": "string", "format": "utc-date-time"}
+  },
+  "required": ["schema_version", "contract_kind", "as_of_knowledge_time", "valid_on"]
+}

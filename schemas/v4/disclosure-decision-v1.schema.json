@@ -10,7 +10,11 @@
     "contract_kind": {"const": "disclosure_decision", "type": "string"},
     "request_id": {"type": "string", "pattern": "^dreq_[a-z0-9][a-z0-9._-]{2,127}$"},
     "decision_id": {"type": "string", "pattern": "^ddec_[a-z0-9][a-z0-9._-]{2,127}$"},
-    "audience": {"type": "string", "enum": ["internal_review", "approved_research", "public_aggregate"]},
+    "audience": {
+      "type": "string",
+      "enum": ["internal_review", "approved_research", "public_aggregate"]
+    },
+    "purpose": {"type": "string", "minLength": 1},
     "outcome": {"type": "string", "enum": ["denied", "authorized", "minimized"]},
     "policy_version": {"type": "string"},
     "research_eligible": {"type": "boolean"},

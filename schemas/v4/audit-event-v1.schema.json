@@ -1,0 +1,35 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/audit-event-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal audit event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "audit_event", "type": "string"},
+    "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "actor_id": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "authority": {"type": "string", "minLength": 1},
+    "reason_code": {"type": "string", "minLength": 1},
+    "occurred_at": {"type": "string", "format": "utc-date-time"},
+    "prior_state": {"type": "string", "minLength": 1},
+    "new_state": {"type": "string", "minLength": 1},
+    "governing_input_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"}
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "audit_event_id",
+    "actor_id",
+    "authority",
+    "reason_code",
+    "occurred_at",
+    "prior_state",
+    "new_state",
+    "governing_input_ids"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/correction-identity-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal correction identity v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["no_self_correction"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "correction_identity", "type": "string"},
+    "correction_id": {"type": "string", "pattern": "^corr_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "target_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "kind": {"type": "string", "enum": ["correction", "retraction", "supersession"]},
+    "successor_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "correction_id",
+    "target_id",
+    "kind",
+    "successor_id"
+  ]
+}

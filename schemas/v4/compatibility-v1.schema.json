@@ -1,0 +1,22 @@
+{
+  "$id": "https://caselinker.example/proposal/v4/compatibility-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 proposal compatibility record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "x-caselinker-invariants": ["compatibility_versions"],
+  "properties": {
+    "schema_version": {"const": "1.0", "type": "string"},
+    "contract_kind": {"const": "compatibility", "type": "string"},
+    "writer_schema_version": {"type": "string", "minLength": 1},
+    "reader_schema_version": {"type": "string", "minLength": 1},
+    "unknown_fields_policy": {"type": "string", "enum": ["reject", "ignore"]}
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "writer_schema_version",
+    "reader_schema_version",
+    "unknown_fields_policy"
+  ]
+}

@@ -5,20 +5,31 @@
   "type": "object",
   "additionalProperties": false,
   "x-caselinker-invariants": ["legal_transition"],
-  "x-caselinker-allowed-transitions": [
-    ["extracted", "resolved"],
-    ["extracted", "contested"],
-    ["resolved", "retracted"],
-    ["resolved", "superseded"]
-  ],
   "properties": {
     "schema_version": {"const": "1.0", "type": "string"},
     "contract_kind": {"const": "state_transition", "type": "string"},
-    "subject_id": {"type": "string", "pattern": "^asrt_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "machine": {
+      "type": "string",
+      "enum": [
+        "source_version",
+        "candidate_claim",
+        "accepted_claim",
+        "identity_hypothesis",
+        "review_task",
+        "research_artifact",
+        "disclosure_request",
+        "publication",
+        "federation_package",
+        "legacy_assertion"
+      ]
+    },
+    "subject_id": {"type": "string", "pattern": "^[a-z]+_[a-z0-9][a-z0-9._-]{2,127}$"},
     "from_state": {"type": "string", "minLength": 1},
     "to_state": {"type": "string", "minLength": 1},
     "actor_kind": {"type": "string", "enum": ["reviewer", "system", "policy"]},
-    "reason_code": {"type": "string", "minLength": 1}
+    "reason_code": {"type": "string", "minLength": 1},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"}
   },
   "required": [
     "schema_version",
