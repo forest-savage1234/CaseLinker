@@ -67,6 +67,13 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Authority:** operator revision instruction after independent verification failed
 - **Consequence:** replace false byte-store implication; complete the 69-ID registry with one bucket each; mark GOV-003 `partial`; assign owner / decision authority / blocking gate or `blocked`; complete phase-gate fields; distinguish Wave 0 artifact acceptance from Phase 0; append findings to the evidence packet without erasure
 
+## D-2026-08-15-010 — Wave 0 documentation completion
+
+- **Label:** human decision required (decided)
+- **Decision:** Documentation-only revision: add a program-section crosswalk (IDs may aggregate); add REVIEW-005, OPS-006, OPS-007, EVAL-001; write conceptual Gate 0 architecture flows; do not invent policy or thresholds.
+- **Authority:** operator instruction after further Wave 0 review
+- **Consequence:** `REQUIREMENTS_TRACEABILITY.md` crosswalk + 73 IDs; `architecture/GATE0_PROPOSAL.md`; evidence buckets reconciled to 0/42/31
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

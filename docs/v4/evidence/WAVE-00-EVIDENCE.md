@@ -8,6 +8,7 @@ status: "self_verified"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
 prior_artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
+prior_revision_commit: "dd2ad4c81af3680d243a10ca55b4e842246302f0"
 result_commit: "uncommitted"
 primary_proof_obligation: "demonstrate that the proposed program is based on the actual repository, actual v3 boundaries, and named human decisions rather than assumptions"
 requirements_closed: []
@@ -49,6 +50,8 @@ requirements_partially_met:
   - CORRECT-003
   - SCI-001
   - SCI-003
+  - OPS-007
+  - EVAL-001
   - GOV-001
   - GOV-002
   - GOV-003
@@ -68,6 +71,7 @@ requirements_unmet:
   - REVIEW-001
   - REVIEW-003
   - REVIEW-004
+  - REVIEW-005
   - DISCLOSE-002
   - DISCLOSE-003
   - DISCLOSE-004
@@ -79,6 +83,7 @@ requirements_unmet:
   - OPS-003
   - OPS-004
   - OPS-005
+  - OPS-006
   - FED-001
   - UX-001
   - UX-002
@@ -280,4 +285,36 @@ Session logs: `wave0-revision`. Same classification as the prior final-state run
 | pip-audit / bandit `-lll` | 0 | pass |
 
 No product-code diff. No new test failure class.
+
+## 10. Documentation completion (appended; §§1–9 not erased)
+
+**Trigger:** operator instruction to add a program-section crosswalk (IDs may aggregate) and complete the conceptual Gate 0 architecture proposal.  
+**Prior HEAD:** `dd2ad4c81af3680d243a10ca55b4e842246302f0`.  
+**Product code:** not modified. **Wave 1:** not started. **Policy/thresholds/vendors:** not invented.
+
+### 10.1 What changed
+
+- `REQUIREMENTS_TRACEABILITY.md`: program-section crosswalk; new aggregated IDs REVIEW-005, OPS-006, OPS-007, EVAL-001; buckets **0 / 42 / 31** (73 IDs).
+- `architecture/GATE0_PROPOSAL.md`: conceptual event/transaction, disclosure, correction, tenancy, observability/audit, failure/recovery, and synthetic-slice vs R-ID/R-COR/R-DIS.
+- `TARGET_CONTEXTS.md`: object-store row corrected to “no byte store”; pointer to the Gate 0 proposal.
+- `DECISION_LOG.md`: D-2026-08-15-010.
+
+### 10.2 Particular areas now explicitly accounted for
+
+| Area | Representation | Bucket |
+|---|---|---|
+| Observability (§8.3) | OPS-006 | unmet |
+| Security/privacy operations (§8.2) | OPS-007 (+ OPS-004, REVIEW-001, DISCLOSE-002, PROHIB-011) | OPS-007 partially_met |
+| Reviewer governance (§7.7) | REVIEW-001…005 | mixed; 005 unmet |
+| Governed-AI controls (§7.11) | AI-001, AI-002, CONST-008, PROHIB-007, PROHIB-010 | unmet / partial as already registered |
+| Federation controls (§7.12) | FED-001 | unmet |
+| Evaluation program (§9) | EVAL-001 | partially_met |
+
+### 10.3 Architecture proposal status
+
+§5.C conceptual items are in `GATE0_PROPOSAL.md`. They are **proposal** unless labeled otherwise. OD-003/005/006/007/008 remain **blocked**. The §12 slice remains a synthetic experimental hypothesis.
+
+### 10.4 Validation of this revision
+
+Session `wave0-docs2`: `check_repository` pass (8537 files, +1 Gate 0 proposal); `check_traceability` pass; smoke 2 passed; pytest 374 passed, **same 3 Windows environment failures** as pristine. No product-code diff.
 

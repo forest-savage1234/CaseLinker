@@ -17,7 +17,7 @@ Nothing in this file selects a vendor, policy text, or production topology. Cont
 | Proposed context | v3 evidence | Working class | Label |
 |---|---|---|---|
 | Source governance and acquisition | document identity + version metadata only (`documents/`); scrapers exist outside vNext | reuse document kernel; research first for collection policy | repository fact + proposal |
-| Immutable source object store | content key `sha256/<prefix>/<digest>` in `0001_source_documents.sql` lines 40–41; bytes not stored in SQL | extend | repository fact + proposal |
+| Immutable source object store | `storage_key` naming convention only; **no byte store** (`DATA_AUTHORITY.md`) | research first / later OPS-002 | repository fact of absence; proposal |
 | Document and version registry | `SourceDocument` / `SourceDocumentVersion` | reuse | repository fact |
 | Candidate claim extraction | platform mentions + reported legal events | reuse for fixtures; research first to broaden | repository fact |
 | Authenticated review ledger | append-only `ReviewDecision`; no authn | extend | repository fact + proposal |
@@ -31,6 +31,8 @@ Nothing in this file selects a vendor, policy text, or production topology. Cont
 
 Cross-cutting (all **proposal** or **human decision required**): IAM, purpose-based authorization, tenant isolation, tamper-evident audit, correction propagation, ontology/schema governance, AI execution governance, observability, key management, backup/retention.
 
+Conceptual flows (event/transaction, disclosure, correction, tenancy, observability/audit, failure, slice-vs-risks) are in `GATE0_PROPOSAL.md`. They are not executable contracts.
+
 ## 3. Ownership sketch (proposal only)
 
 - Domain invariants stay in typed ports, not in FastAPI, RDF, or UI. **repository fact** that this is already the v3 rule (`ENGINEERING_CHARTER.md` §6).
@@ -41,7 +43,7 @@ Cross-cutting (all **proposal** or **human decision required**): IAM, purpose-ba
 
 **proposal / human decision required:** `docs/v4/GROK_BUILD_PROGRAM.md` §12 lists a twelve-step two-source/two-reviewer path.
 
-**human decision required (already decided for Wave 0):** that path is a **synthetic experimental hypothesis**. It is not an authorized reviewer policy, production workflow, or corpus decision. Wave 0 does not adopt it.
+**human decision required (already decided for Wave 0):** that path is a **synthetic experimental hypothesis**. It is not an authorized reviewer policy, production workflow, or corpus decision. Wave 0 does not adopt it. How it would test R-ID, R-COR, and R-DIS is described in `GATE0_PROPOSAL.md` §7.
 
 ## 5. Stop-independently rule
 

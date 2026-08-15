@@ -119,6 +119,7 @@ Required fields on every row: `requirement_id`, `constitutional_invariant`, `cur
 | REVIEW-002 | CONST-003, CONST-017 | append-only `ReviewDecision` (ADR 0003–0004) | no authn behind the chain | forged reviewer ids | keep ledger; add authn later | existing review-chain tests | none for storage | present_in_v3 |
 | REVIEW-003 | CONST-017 | absent | no second review/adjudication | single-actor high-risk accept | review task machine | later SoD tests | OD-005 | absent |
 | REVIEW-004 | CONST-001, CONST-005 | absent | no workbench | reviewers lack source context | later UX wave | later a11y/comprehension tests | none | absent |
+| REVIEW-005 | CONST-017 | `ReviewerRole` enum only (`assertions/models.py` 79–82) | no assignment, COI, calibration, sampling, or fatigue controls | coerced agreement; unauditable quality | reviewer-governance context | later calibration/COI tests | OD-005 | absent |
 
 ---
 
@@ -164,7 +165,10 @@ Required fields on every row: `requirement_id`, `constitutional_invariant`, `cur
 | OPS-003 | CONST-016, CONST-017 | absent | no outbox/queue | dual-write / lost jobs | later hardening | later idempotency tests | OD-008 | absent |
 | OPS-004 | CONST-009 | absent | no tenant model | cross-org leak | later isolation | later isolation tests | OD-007 | policy_blocked |
 | OPS-005 | CONST-003 | absent | no backup/restore rehearsal | unrecoverable ledger | later hardening | later restore drill | OD-008 | absent |
-| FED-001 | CONST-015, CONST-009 | absent | no signed packages | signature mistaken for truth | late federation | later quarantine/revoke tests | later federation authority | absent |
+| OPS-006 | CONST-017, CONST-009 | absent | no SLI/SLO, privacy-safe telemetry, or owned alerts | silent backlog, stale dependents, or leaky logs | later observability design | later metric/runbook review | OD-008 | absent |
+| OPS-007 | CONST-009, CONST-018 | `SECURITY.md`; CI pip-audit/bandit/CodeQL/dependency-review; locked `uv.lock` | no IdP, MFA, encryption-ops, retention, incident response, or tenant-wide isolation | unauthorized access; undeclared “compliance” | later security/privacy operations | later isolation/secret/restore tests | OD-003, OD-005, OD-008 | partial |
+| EVAL-001 | CONST-010, CONST-006, CONST-012 | v3 unit/integration/adversarial fixtures for extractors, resolution, SHACL, Claim CI | no frozen evaluation matrix for software, scientific, safety, or human-factors protocols | hidden-answer tuning; unmeasured high-harm errors | later evaluation program | independently reviewed protocols; no invented thresholds | OD-009 | partial |
+| FED-001 | CONST-015, CONST-009 | absent | no signed packages, key rotation, revocation, or quarantine | signature mistaken for truth or disclosure | late federation | later quarantine/revoke tests | later federation authority | absent |
 | UX-001 | CONST-001, CONST-010 | absent | no chart→span navigation | users cannot audit counts | later UX wave | later navigation tests | none | absent |
 | UX-002 | CONST-005 | charter states WCAG 2.2 AA | not evidenced | inaccessible or sensational UI | later UX wave | later a11y/comprehension study | none | absent |
 | GOV-001 | CONST-015 | ADR 0000; AGENTS.md; charter §2 | communication drift | fork treated as upstream | proposal language | existing docs | upstream maintainer | present_in_v3 |
@@ -173,15 +177,62 @@ Required fields on every row: `requirement_id`, `constitutional_invariant`, `cur
 
 ---
 
+## Program-section crosswalk
+
+Stable IDs **aggregate** closely related sentences. This table is the audit that every **normative** program section is represented. Process-only sections (§4, §14, §18–36 prompts) map to GOV-002 unless they add a product control.
+
+| Program section | Normative topic | Represented by | Coverage note |
+|---|---|---|---|
+| §0 Authority hierarchy | precedence; stop on conflict | GOV-001, GOV-002 | process |
+| §1 Mission / major-version threshold | eight breaking foundations; no unofficial v4 | GOV-002, GOV-003 | foundations are unpacked in §6–§9 IDs |
+| §2 Constitution 1–18 | invariants | CONST-001…018 | one ID per invariant |
+| §3 Prohibitions | prohibited capabilities | PROHIB-001…013 | one ID per listed prohibition |
+| §5 Gate 0 deliverable | discovery artifacts, no code | GOV-002, GOV-003 | this wave |
+| §6 / §6.1 Authority model | SoR, projections, outbox, SQLite limits | DATA_AUTHORITY.md; OPS-001, OPS-002, OPS-003, CONST-016 | conceptual; no vendor |
+| §6.2 Core entity model | named entities | family IDs below; Wave 1 contracts | not one ID per entity name |
+| §6.3 Bitemporal semantics | two times; as-known | TEMP-001…003, CONST-004 | |
+| §6.4 State machines | legal transitions | `STATE_MACHINES.md`; CONST-017 | |
+| §7.1 Living case timelines | case as governed view | TEMP-*; CONST-005; UX-001 | |
+| §7.2 Source authenticity / mutation | hostile input; allowlist | SOURCE-001…003, PROHIB-008, CONST-002 | |
+| §7.3 Multi-source resolution | family, derivation, contradiction | RESOLVE-001, RESOLVE-002 | |
+| §7.4 Conservative identity / event resolution | reversible hypotheses | RESOLVE-003…005, CONST-006, CONST-007 | |
+| §7.5 Evidence / dependency graph | typed provenance | CORRECT-001, CONST-012, CONST-016 | |
+| §7.6 Correction propagation | stale / rebuild / notices | CORRECT-001…003 | |
+| **§7.7 Human review workspace** | **reviewer governance** | **REVIEW-001…005** | **005 aggregates assignment, COI, calibration, sampling, fatigue** |
+| §7.8 Disclosure-policy engine | default deny; three views | DISCLOSE-001…004, CONST-009 | policy **content** blocked on OD-003 |
+| §7.9 Scientific workbench | study spec, denominators | SCI-001…003 | |
+| §7.10 Evidence-first UX | chart→span; a11y | UX-001, UX-002 | |
+| **§7.11 Governed AI assistance** | **untrusted proposer; execution record** | **AI-001, AI-002, CONST-008, PROHIB-007, PROHIB-010** | **aggregates tools, isolation, no self-review** |
+| **§7.12 Federation** | **signed packs; local policy remains** | **FED-001, CONST-015, CONST-009** | **aggregates keys, revoke, quarantine** |
+| §8.1 Transaction / persistence | Postgres design, migrations, queue | OPS-001…003, OPS-005 | production claim blocked on OD-008 |
+| **§8.2 Security / privacy operations** | **IAM, isolation, crypto-ops, IR, retention** | **OPS-007, OPS-004, REVIEW-001, DISCLOSE-002, PROHIB-011** | **content/IdP blocked on OD-003/005/008** |
+| **§8.3 Observability** | **privacy-safe SLIs, owners, runbooks** | **OPS-006** | **no thresholds invented** |
+| **§9 Evaluation program** | **software, scientific, safety, human-factors** | **EVAL-001** plus SCI-*, RESOLVE-003, CORRECT-002, UX-002 | **no numeric quality thresholds** |
+| §10–11 Phases and release gates | staged human gates | `RELEASE_GATES.md`; GOV-002 | Wave 0 ≠ Phase 0 |
+| §12 Vertical slice | synthetic hypothesis | `GATE0_PROPOSAL.md` §7; D-2026-08-15-007 | not adopted policy |
+| §13 Delivery standards | ports, locks, fail-closed fields | GOV-002; existing v3 conventions | |
+| §15 Stop conditions | stop rather than weaken invariants | GOV-002, CONST-018 | |
+
+Particular areas called out for this revision:
+
+| Area | IDs | Status |
+|---|---|---|
+| Observability | OPS-006 | `absent` / unmet |
+| Security/privacy operations | OPS-007 (aggregate of §8.2) | `partial` / partially_met |
+| Reviewer governance | REVIEW-001…005 | mixed; 005 `absent` / unmet |
+| Governed-AI controls | AI-001, AI-002 | `absent` / unmet |
+| Federation controls | FED-001 | `absent` / unmet |
+| Evaluation program | EVAL-001 | `partial` / partially_met |
+
 ## Evidence-bucket reconciliation (every ID once)
 
 **closed (0):** none.
 
-**partially_met (40):** CONST-001, CONST-002, CONST-003, CONST-004, CONST-005, CONST-006, CONST-007, CONST-008, CONST-009, CONST-010, CONST-011, CONST-012, CONST-013, CONST-015, CONST-016, CONST-017, CONST-018, PROHIB-001, PROHIB-002, PROHIB-005, PROHIB-006, PROHIB-007, PROHIB-008, PROHIB-010, PROHIB-012, PROHIB-013, TEMP-001, TEMP-003, SOURCE-001, SOURCE-003, REVIEW-002, DISCLOSE-001, CORRECT-001, CORRECT-002, CORRECT-003, SCI-001, SCI-003, GOV-001, GOV-002, GOV-003.
+**partially_met (42):** CONST-001, CONST-002, CONST-003, CONST-004, CONST-005, CONST-006, CONST-007, CONST-008, CONST-009, CONST-010, CONST-011, CONST-012, CONST-013, CONST-015, CONST-016, CONST-017, CONST-018, PROHIB-001, PROHIB-002, PROHIB-005, PROHIB-006, PROHIB-007, PROHIB-008, PROHIB-010, PROHIB-012, PROHIB-013, TEMP-001, TEMP-003, SOURCE-001, SOURCE-003, REVIEW-002, DISCLOSE-001, CORRECT-001, CORRECT-002, CORRECT-003, SCI-001, SCI-003, OPS-007, EVAL-001, GOV-001, GOV-002, GOV-003.
 
-**unmet (29):** CONST-014, PROHIB-003, PROHIB-004, PROHIB-009, PROHIB-011, TEMP-002, SOURCE-002, RESOLVE-001, RESOLVE-002, RESOLVE-003, RESOLVE-004, RESOLVE-005, REVIEW-001, REVIEW-003, REVIEW-004, DISCLOSE-002, DISCLOSE-003, DISCLOSE-004, SCI-002, AI-001, AI-002, OPS-001, OPS-002, OPS-003, OPS-004, OPS-005, FED-001, UX-001, UX-002.
+**unmet (31):** CONST-014, PROHIB-003, PROHIB-004, PROHIB-009, PROHIB-011, TEMP-002, SOURCE-002, RESOLVE-001, RESOLVE-002, RESOLVE-003, RESOLVE-004, RESOLVE-005, REVIEW-001, REVIEW-003, REVIEW-004, REVIEW-005, DISCLOSE-002, DISCLOSE-003, DISCLOSE-004, SCI-002, AI-001, AI-002, OPS-001, OPS-002, OPS-003, OPS-004, OPS-005, OPS-006, FED-001, UX-001, UX-002.
 
-Count check: 0 + 40 + 29 = 69 IDs (CONST 18 + PROHIB 13 + TEMP 3 + SOURCE 3 + RESOLVE 5 + REVIEW 4 + DISCLOSE 4 + CORRECT 3 + SCI 3 + AI 2 + OPS 5 + FED 1 + UX 2 + GOV 3).
+Count check: 0 + 42 + 31 = 73 IDs (CONST 18 + PROHIB 13 + TEMP 3 + SOURCE 3 + RESOLVE 5 + REVIEW 5 + DISCLOSE 4 + CORRECT 3 + SCI 3 + AI 2 + OPS 7 + EVAL 1 + FED 1 + UX 2 + GOV 3).
 
 ## Capability classification (v3 → v4 working class)
 

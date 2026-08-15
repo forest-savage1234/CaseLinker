@@ -16,7 +16,7 @@ historical_v3_implementation_checkpoint: "802fb7d244e3751b42dbb20cc8d258e1b71adb
 recorded_upstream_product_baseline: "9da0a4ff8b45df03fed073a9af5c00d22aab0d9d"
 program_commit: "1d36a51d6ea7d69910463cfc9ab6860cf8c21078"
 artifact_commit: "bc5d02c38afc79538ce62c4d28de70a0caeeb044"
-revision_commit: "uncommitted_at_write_time"
+revision_commit: "dd2ad4c81af3680d243a10ca55b4e842246302f0"
 result_commit: "uncommitted_at_write_time"
 branch: "proposal/v4-research-network"
 worktree: "C:\\Users\\fores\\Downloads\\CaseLinker-v4-research-network"
@@ -35,7 +35,8 @@ primary_proof_obligation: "proposed program is based on the actual repository, a
 - Pristine-base quality suite run **before** any tracked v4 file existed in the worktree. Logs live outside the repo (session `wave0-baseline`).
 - Governing program copied from the home file, hash-verified, v3 untracked copy left in place, committed unchanged as `1d36a51d`.
 - Discovery artifacts written (`bc5d02c3`).
-- Independent verification failed (documentation/governance). §32 revision applied: byte-store implication corrected; 69-ID registry reconciled; GOV-003 marked `partial`; owners/authorities/gates assigned or blocked; Wave 0 distinguished from Phase 0; findings appended to the evidence packet.
+- Independent verification failed (documentation/governance). §32 revision applied at `dd2ad4c8`.
+- Further documentation-only revision: program-section crosswalk; aggregated IDs for observability, security/privacy operations, reviewer governance, evaluation; conceptual Gate 0 architecture flows; evidence buckets 0/42/31.
 
 ## Test evidence
 
