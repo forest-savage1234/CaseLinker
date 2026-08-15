@@ -15,6 +15,14 @@ REQUEST = {
     "purpose": "aggregate_research",
     "requested_fields": ["legal_event_type"],
     "channel": "export",
+    "data_subject_role": "unspecified_fixture",
+    "vulnerability_classification": "unspecified_fixture",
+    "procedural_status": "unspecified_fixture",
+    "correction_state": "none",
+    "source_restrictions": ["unspecified_fixture"],
+    "collection_policy": "unspecified_fixture",
+    "granularity": "field",
+    "time_window": {"start": "2026-01-01", "end": "2026-01-31"},
 }
 
 

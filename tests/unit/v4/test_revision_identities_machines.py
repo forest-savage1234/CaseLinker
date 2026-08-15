@@ -34,7 +34,8 @@ VALID_SOURCE_TRANSITION = {
     "idempotency_key": "idem_source_1",
     "audit_event_id": "aud_example01",
     "guard_code": "hash_present",
-    "two_person_control": False,
+    "separation_of_duties_required": False,
+    "first_approver_id": "prin_example01",
     "side_effects": [],
 }
 

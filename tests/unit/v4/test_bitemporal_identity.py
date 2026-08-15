@@ -25,7 +25,8 @@ VALID_TRANSITION = {
     "idempotency_key": "idem_legacy_1",
     "audit_event_id": "aud_example01",
     "guard_code": "bundle_complete",
-    "two_person_control": False,
+    "separation_of_duties_required": False,
+    "first_approver_id": "prin_example01",
     "side_effects": [],
 }
 

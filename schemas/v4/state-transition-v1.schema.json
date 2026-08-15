@@ -4,7 +4,7 @@
   "title": "v4 proposal state transition v1",
   "type": "object",
   "additionalProperties": false,
-  "x-caselinker-invariants": ["legal_transition"],
+  "x-caselinker-invariants": ["legal_transition", "distinct_approvers_when_required"],
   "properties": {
     "schema_version": {"const": "1.0", "type": "string"},
     "contract_kind": {"const": "state_transition", "type": "string"},
@@ -31,7 +31,11 @@
     "idempotency_key": {"type": "string", "minLength": 1},
     "audit_event_id": {"type": "string", "pattern": "^aud_[a-z0-9][a-z0-9._-]{2,127}$"},
     "guard_code": {"type": "string", "minLength": 1},
-    "two_person_control": {"type": "boolean"},
+    "separation_of_duties_required": {"type": "boolean"},
+    "first_approver_id": {"type": "string", "pattern": "^prin_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "second_approver_id": {"type": "string", "pattern": "^prin_[a-z0-9][a-z0-9._-]{2,127}$"},
+    "first_approver_authority": {"type": "string", "minLength": 1},
+    "second_approver_authority": {"type": "string", "minLength": 1},
     "side_effects": {"type": "array", "items": {"type": "string", "minLength": 1}}
   },
   "required": [
@@ -46,7 +50,8 @@
     "idempotency_key",
     "audit_event_id",
     "guard_code",
-    "two_person_control",
+    "separation_of_duties_required",
+    "first_approver_id",
     "side_effects"
   ]
 }

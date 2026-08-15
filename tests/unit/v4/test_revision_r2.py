@@ -82,7 +82,7 @@ def test_state_transition_requires_idempotency_and_audit() -> None:
         validate_instance("state-transition-v1", incomplete)
 
 
-def test_high_risk_transition_requires_two_person_control() -> None:
+def test_publication_does_not_hardcode_two_person_control() -> None:
     instance = {
         "schema_version": "1.0",
         "contract_kind": "state_transition",
@@ -95,11 +95,11 @@ def test_high_risk_transition_requires_two_person_control() -> None:
         "idempotency_key": "idem_pub_1",
         "audit_event_id": "aud_example01",
         "guard_code": "publication_ready",
-        "two_person_control": False,
+        "separation_of_duties_required": False,
+        "first_approver_id": "prin_example01",
         "side_effects": ["notify_subscribers"],
     }
-    with pytest.raises(ContractError, match="two-person"):
-        validate_instance("state-transition-v1", instance)
+    validate_instance("state-transition-v1", instance)
 
 
 # --- 4. complete AI provenance ---

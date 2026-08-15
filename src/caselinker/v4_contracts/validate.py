@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections.abc import Mapping, Sequence
@@ -114,8 +115,8 @@ def canonical_dumps(instance: object) -> bytes:
             separators=(",", ":"),
             allow_nan=False,
         ).encode("utf-8")
-    except ValueError as error:
-        raise ContractError("non-JSON numeric value") from error
+    except (ValueError, TypeError) as error:
+        raise ContractError("non-JSON value") from error
 
 
 def decide_disclosure(
@@ -126,40 +127,68 @@ def decide_disclosure(
     policy_result: str | None = None,
 ) -> dict[str, object]:
     """Return a policy-neutral decision bound to *request*. Missing policy denies."""
-    validate_instance("disclosure-request-v1", dict(request))
-    request_id = request["request_id"]
-    audience = request["audience"]
-    purpose = request["purpose"]
+    request_dict = dict(request)
+    validate_instance("disclosure-request-v1", request_dict)
+    request_id = request_dict["request_id"]
     if not isinstance(request_id, str):
         raise ContractError("disclosure request context is malformed")
-    if not isinstance(audience, str) or not isinstance(purpose, str):
-        raise ContractError("disclosure request context is malformed")
+    if (
+        policy_version is not None
+        and policy_version != ""
+        and OPAQUE_ID.fullmatch(policy_version) is None
+    ):
+        raise ContractError("policy.version is not a valid opaque identifier")
     missing_policy = policy_version is None or policy_version == ""
     allowed_results = {"authorized", "denied", "minimized", "pending"}
-    unauthorized = missing_policy or policy_result is None
-    if unauthorized or policy_result not in allowed_results:
+    if missing_policy or policy_result is None or policy_result not in allowed_results:
         outcome = "denied"
         recorded_result = "denied"
+        reason = "missing_policy" if missing_policy else "policy_result_absent"
     else:
         outcome = policy_result
         recorded_result = policy_result
+        reason = f"policy_{policy_result}"
+    context_fields = (
+        "principal_id",
+        "organization_id",
+        "audience",
+        "purpose",
+        "requested_fields",
+        "channel",
+        "jurisdiction",
+        "data_subject_role",
+        "vulnerability_classification",
+        "procedural_status",
+        "correction_state",
+        "source_restrictions",
+        "collection_policy",
+        "granularity",
+        "time_window",
+    )
     decision: dict[str, object] = {
         "schema_version": "1.0",
         "contract_kind": "disclosure_decision",
         "request_id": request_id,
         "decision_id": "ddec_" + request_id.removeprefix("dreq_"),
-        "principal_id": request.get("principal_id"),
-        "organization_id": request.get("organization_id"),
-        "audience": audience,
-        "purpose": purpose,
-        "requested_fields": request.get("requested_fields"),
-        "channel": request.get("channel"),
-        "jurisdiction": request.get("jurisdiction"),
+        **{field: request_dict[field] for field in context_fields},
         "outcome": outcome,
         "policy_version": "" if missing_policy else policy_version,
         "policy_result": recorded_result,
         "research_eligible": research_eligible,
         "treat_eligible_as_disclosed": False,
+        "transformations": {
+            "minimization": outcome == "minimized",
+            "pseudonymization": False,
+            "aggregation": False,
+            "redaction": False,
+            "watermarking": False,
+        },
+        "expiry": None,
+        "revocation_state": "not_applicable",
+        "decision_reason": reason,
+        "authority": "declared_binding",
+        "audit_event_id": "aud_" + request_id.removeprefix("dreq_"),
+        "request_digest": hashlib.sha256(canonical_dumps(request_dict)).hexdigest(),
     }
     validate_instance("disclosure-decision-v1", decision)
     return decision
@@ -365,10 +394,26 @@ def _run_invariant(name: str, instance: Mapping[str, object], schema: Mapping[st
     ):
         raise ContractError("eligibility is not disclosure permission")
     if name == "deny_without_policy":
-        missing_policy = not instance.get("policy_version")
+        version = instance.get("policy_version")
+        missing_policy = not isinstance(version, str) or version == ""
+        if isinstance(version, str) and version != "" and OPAQUE_ID.fullmatch(version) is None:
+            raise ContractError("policy.version is not a valid opaque identifier")
         explicit = instance.get("policy_result")
-        if instance.get("outcome") == "authorized" and (missing_policy or explicit != "authorized"):
-            raise ContractError("missing policy version denies disclosure")
+        outcome = instance.get("outcome")
+        if missing_policy and (outcome != "denied" or explicit != "denied"):
+            raise ContractError(
+                "missing policy version denies disclosure; only denied is permitted"
+            )
+        if explicit != outcome:
+            raise ContractError("outcome must match policy_result")
+    if (
+        name == "distinct_approvers_when_required"
+        and instance.get("separation_of_duties_required") is True
+    ):
+        first = instance.get("first_approver_id")
+        second = instance.get("second_approver_id")
+        if not isinstance(first, str) or not isinstance(second, str) or first == second:
+            raise ContractError("distinct approvers required")
     if name == "projection_not_authoritative" and instance.get("authoritative") is True:
         raise ContractError("a projection is not a source of truth")
     if name == "ai_cannot_publish" and instance.get("disposition") == "published":
@@ -418,13 +463,6 @@ def _check_transition(instance: Mapping[str, object], schema: Mapping[str, objec
     machine = instance.get("machine")
     if not isinstance(machine, str) or not machine:
         raise ContractError("machine is required")
-    high_risk = (machine, instance.get("to_state")) in {
-        ("publication", "published"),
-        ("identity_hypothesis", "confirmed_same"),
-        ("disclosure_request", "authorized"),
-    }
-    if high_risk and instance.get("two_person_control") is not True:
-        raise ContractError("two-person control required")
     allowed: Sequence[object]
     machines = schema.get("x-caselinker-machines")
     if isinstance(machines, dict) and machine in machines:

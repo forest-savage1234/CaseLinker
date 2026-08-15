@@ -34,7 +34,7 @@ INCOMPLETE_DECISION = {
 
 
 def test_whitespace_policy_version_is_invalid() -> None:
-    with pytest.raises(ContractError, match="policy.version"):
+    with pytest.raises(ContractError, match=r"policy\.version"):
         decide_disclosure(
             REQUEST,
             policy_version="  pol_fixture_unspecified  ",
@@ -44,7 +44,7 @@ def test_whitespace_policy_version_is_invalid() -> None:
 
 
 def test_non_opaque_policy_version_is_invalid() -> None:
-    with pytest.raises(ContractError, match="policy.version"):
+    with pytest.raises(ContractError, match=r"policy\.version"):
         decide_disclosure(
             REQUEST,
             policy_version="not a policy id",
@@ -82,9 +82,10 @@ def test_decision_requires_section_78_bindings() -> None:
 def test_decision_request_digest_matches_request() -> None:
     decision = decide_disclosure(REQUEST, policy_version=None, research_eligible=False)
     assert "request_digest" in decision
-    assert decision["request_digest"] == __import__("hashlib").sha256(
-        canonical_dumps(REQUEST)
-    ).hexdigest()
+    assert (
+        decision["request_digest"]
+        == __import__("hashlib").sha256(canonical_dumps(REQUEST)).hexdigest()
+    )
 
 
 def test_publication_without_external_sod_is_accepted() -> None:

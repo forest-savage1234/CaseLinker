@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import hashlib
+
 import pytest
 
-from caselinker.v4_contracts import ContractError, validate_instance
+from caselinker.v4_contracts import ContractError, canonical_dumps, validate_instance
+from tests.unit.v4.test_revision_disclosure import REQUEST
 
 VALID_DECISION = {
     "schema_version": "1.0",
@@ -16,11 +19,32 @@ VALID_DECISION = {
     "requested_fields": ["legal_event_type"],
     "channel": "export",
     "jurisdiction": "unspecified_fixture",
+    "data_subject_role": "unspecified_fixture",
+    "vulnerability_classification": "unspecified_fixture",
+    "procedural_status": "unspecified_fixture",
+    "correction_state": "none",
+    "source_restrictions": ["unspecified_fixture"],
+    "collection_policy": "unspecified_fixture",
+    "granularity": "field",
+    "time_window": {"start": "2026-01-01", "end": "2026-01-31"},
     "outcome": "denied",
     "policy_version": "pol_fixture_unspecified",
     "policy_result": "denied",
     "research_eligible": True,
     "treat_eligible_as_disclosed": False,
+    "transformations": {
+        "minimization": False,
+        "pseudonymization": False,
+        "aggregation": False,
+        "redaction": False,
+        "watermarking": False,
+    },
+    "expiry": None,
+    "revocation_state": "not_applicable",
+    "decision_reason": "policy_denied",
+    "authority": "declared_binding",
+    "audit_event_id": "aud_example01",
+    "request_digest": hashlib.sha256(canonical_dumps(REQUEST)).hexdigest(),
 }
 
 VALID_PRINCIPAL = {
@@ -56,11 +80,32 @@ def test_missing_policy_version_denies() -> None:
         "requested_fields": ["legal_event_type"],
         "channel": "export",
         "jurisdiction": "unspecified_fixture",
+        "data_subject_role": "unspecified_fixture",
+        "vulnerability_classification": "unspecified_fixture",
+        "procedural_status": "unspecified_fixture",
+        "correction_state": "none",
+        "source_restrictions": ["unspecified_fixture"],
+        "collection_policy": "unspecified_fixture",
+        "granularity": "field",
+        "time_window": {"start": "2026-01-01", "end": "2026-01-31"},
         "outcome": "authorized",
         "policy_version": "",
         "policy_result": "authorized",
         "research_eligible": True,
         "treat_eligible_as_disclosed": False,
+        "transformations": {
+            "minimization": False,
+            "pseudonymization": False,
+            "aggregation": False,
+            "redaction": False,
+            "watermarking": False,
+        },
+        "expiry": None,
+        "revocation_state": "not_applicable",
+        "decision_reason": "policy_authorized",
+        "authority": "declared_binding",
+        "audit_event_id": "aud_example01",
+        "request_digest": hashlib.sha256(canonical_dumps(REQUEST)).hexdigest(),
     }
     with pytest.raises(ContractError, match="missing policy version denies"):
         validate_instance("disclosure-decision-v1", bad)
