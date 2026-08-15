@@ -100,6 +100,11 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Label:** repository fact
 - **Decision:** Independent verification of `b73cccc6f96b2b5d343df8b3cbbdb484ffc1ad45` failed. Wave 1 is `revision_required`. Wave 0 stays closed. Wave 2 stays unstarted. Apply §32 without broadening scope.
 
+## D-2026-08-15-015 — Wave 1 second verification failure
+
+- **Label:** repository fact
+- **Decision:** Independent re-verification of `3f57afe1a11b97e608bae4b184396240262a65c4` failed. Wave 1 is `revision_required`. Not `gate_ready`. Wave 0 stays closed. Wave 2 stays unstarted.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

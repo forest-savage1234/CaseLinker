@@ -116,6 +116,7 @@ def decide_disclosure(
     *,
     policy_version: str | None,
     research_eligible: bool,
+    policy_result: str | None = None,
 ) -> dict[str, object]:
     """Return a policy-neutral decision bound to *request*. Missing policy denies."""
     validate_instance("disclosure-request-v1", dict(request))
