@@ -11,9 +11,11 @@ wave_00:
   independent_review_status: "pass"
   reviewed_commit: "8cf2d8d1513a83023b2921b99b15ec84c2b4ab7e"
 wave_01:
-  legal_state: "revision_required"
+  legal_state: "self_verified"
   failed_verification_commit: "f41568e294e9becf032af0904f1ee51483742b4a"
   prior_failed_verification_commit: "e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22"
+  r4_tests_first_commit: "08390048"
+  r4_repair_commit: "7521bfb8"
   human_accepted: false
   official_version_claim: false
 wave_02:
@@ -30,8 +32,8 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 ## Wave 1
 
-Independent re-verification of `f41568e2` failed. Wave 1 is `revision_required`, not `gate_ready`, not `human_accepted`. Wave 0 remains closed. Wave 2 remains unstarted.
+Independent re-verification of `f41568e2` failed. The r4 tests-first repair is self-verified at `7521bfb8`. Wave 1 is not `gate_ready` or `human_accepted`. Wave 0 remains closed. Wave 2 remains unstarted.
 
 ## Next safe action
 
-Run the red r4 adversarial tests, then apply the smallest contract-only repair. Do not mark `gate_ready`. Do not begin Wave 2.
+Independent re-verification of the r4 closeout. Do not mark `gate_ready`. Do not begin Wave 2.

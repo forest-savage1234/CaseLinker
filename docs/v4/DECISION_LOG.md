@@ -115,6 +115,11 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Label:** repository fact
 - **Decision:** Independent re-verification of `f41568e294e9becf032af0904f1ee51483742b4a` failed. Wave 1 is `revision_required`. Not `gate_ready`. Wave 2 stays unstarted.
 
+## D-2026-08-15-018 — Wave 1 r4 repair self-verified
+
+- **Label:** repository fact
+- **Decision:** Tests-first commit `08390048` and contract repair `7521bfb8` close the four accepted r4 findings under self-verification. Wave 1 returns to `self_verified`, not `gate_ready` or `human_accepted`. Wave 2 stays unstarted pending independent re-verification.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

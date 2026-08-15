@@ -115,6 +115,22 @@ Wave 1 is again `self_verified`. Not `gate_ready`, not `human_accepted`, not com
 
 Wave 1 returned to `revision_required`. The r4 adversarial tests are committed before implementation. No Wave 2 work is authorized.
 
+### R4 repair and self-verification (appended)
+
+**Tests-first commit:** `08390048`  
+**Contract repair:** `7521bfb8`
+
+| Finding | Executable correction |
+|---|---|
+| R4-1 | Closed `disclosure-policy-decision-v1` envelope; authorized metadata is copied verbatim; only missing-policy denial is synthesized |
+| R4-2 | `validate_disclosure_binding` recomputes the digest and compares request id plus every copied §7.8 context field |
+| R4-3 | `minimized` requires a transformation; disclosure time windows reject inversion |
+| R4-4 | SoD records an external governance-decision id and requires distinct principal plus authority-binding ids when enabled |
+
+Validation on `7521bfb8`: focused `tests/unit/v4` **102 passed**. Full approved pytest suite **476 passed**, with the same three Windows environment failures as the pristine base. Coverage **93.81%** (≥ 90%). Repository, traceability, ruff, format, mypy, smoke, pip-audit, and Bandit passed. Pip-audit reported no known vulnerabilities.
+
+Wave 1 is `self_verified`, not `gate_ready`, not `human_accepted`, and not complete. Wave 0 remains closed. Wave 2 remains unstarted. Independent re-verification is required.
+
 ## Third independent re-verification (appended)
 
 **Failed commit:** `e968bdfbe7602c2f1ba0dd3d010f3922e3c78c22`  
