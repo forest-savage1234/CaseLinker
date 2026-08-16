@@ -36,7 +36,8 @@ wave_02:
   legal_state: "unstarted"
   planning_status: "proposed"
   planning_decision: "D-2026-08-15-027"
-  planning_revision: "D-2026-08-15-028"
+  planning_revision: "D-2026-08-15-031"
+  planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   planning_review_status: "planning_review_pass"
   planning_review_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW.md"
   planning_review_decision: "D-2026-08-15-029"
@@ -49,6 +50,7 @@ wave_02:
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
   proposed_primary_proof_obligation: "obtain evidence about the hardest assumptions before committing the architecture to them"
   experiments_executed: false
+  human_approved: false
   official_version_claim: false
 gate_0: "not_complete"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
@@ -68,8 +70,8 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Unstarted. A planning packet is **proposed** (D-027) and was revised (D-028). The first planning review (`WAVE-02-PLAN-REVIEW.md`, D-029) remains on record as history and is **not** a valid independent review (admitted author lineage). Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid` because this conversation authored the packet; the packet was not evaluated. No valid independent planning review exists. No experiment has been executed. The packet is not frozen or human-approved.
+Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and was revised again for experiment falsifiability and oracles (D-031). The planning revision under review is `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. The first planning review (`WAVE-02-PLAN-REVIEW.md`, D-029) remains on record as history and is **not** a valid independent review (admitted author lineage). Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid` because that conversation authored the packet; the packet was not evaluated. No valid independent planning review exists. No experiment has been executed. The packet is not frozen or human-approved. D-031 records a proposed planning revision only; it does not approve, freeze, or start Wave 2.
 
 ## Next safe action
 
-Commission a **fresh conversation** with no Wave 2 authoring context to review the proposed packet. Do not treat D-029 as independent acceptance. Do not execute Wave 2. Phase 0 / Gate 0 remain incomplete.
+Commission independent re-verification of planning revision `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` (D-031). Do not treat D-029 as independent acceptance. Do not execute Wave 2. No approval, freeze, or execution authority exists. Phase 0 / Gate 0 remain incomplete.
