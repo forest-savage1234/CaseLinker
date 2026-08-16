@@ -34,6 +34,14 @@ wave_01:
   official_version_claim: false
 wave_02:
   legal_state: "unstarted"
+  planning_status: "proposed"
+  planning_decision: "D-2026-08-15-027"
+  proposed_assurance_contract: "docs/v4/assurance/WAVE-02-ASSURANCE.md"
+  proposed_requirements_map: "docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md"
+  proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
+  proposed_primary_proof_obligation: "obtain evidence about the hardest assumptions before committing the architecture to them"
+  experiments_executed: false
+  official_version_claim: false
 gate_0: "not_complete"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
 branch: "proposal/v4-research-network"
@@ -50,6 +58,10 @@ Closed. Operator accepted `a370cfbc` including Codex pass of `8cf2d8d1`. Not Pha
 
 Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1d3f` (D-026), including the valid W1-N15 review. The prior clean-room review remains `review_invalid`. Disclosure and SoD were not reopened. This does **not** complete Phase 0 or Gate 0, establish an official version, authorize deployment or upstream adoption, resolve any blocked OD-* decision, or authorize Wave 2 implementation. Wave 2 remains unstarted.
 
+## Wave 2
+
+Unstarted. A planning packet is **proposed** (D-027) and awaits human review. No experiment has been executed. No worktree, namespace, migration, service, schema, or test was created for Wave 2. This does **not** approve Wave 2, select infrastructure, invent policy content, complete Phase 0 or Gate 0, or authorize Wave 3.
+
 ## Next safe action
 
-Wave 1 is closed. Wave 2 remains `unstarted`. Wave 2 planning may be presented separately; Wave 2 implementation is not authorized. Phase 0 / Gate 0 remain incomplete. Do not reopen disclosure or SoD.
+Human gate owner reviews the proposed Wave 2 assurance and experiment plan. Do not execute Wave 2 until that plan is independently reviewed and explicitly approved. Phase 0 / Gate 0 remain incomplete. Do not reopen Wave 1 disclosure or SoD contracts.

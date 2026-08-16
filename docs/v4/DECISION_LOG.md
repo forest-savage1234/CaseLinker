@@ -186,6 +186,15 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Phase 0 or Gate 0 completion; official version; deployment or upstream adoption; any blocked OD-* decision; Wave 2 implementation.
 - **Consequence:** Wave 1 is closed. Wave 2 planning is permitted but remains `unstarted`. Wave 2 implementation is not authorized.
 
+## D-2026-08-15-027 — Wave 2 planning proposed (not approved, not started)
+
+- **Label:** repository fact of an operator-authorized planning packet
+- **Decision:** Record a **proposed** Wave 2 assurance and experiment plan for human review. Wave 2 `legal_state` remains `unstarted`. Do **not** execute experiments. Do **not** create worktrees, namespaces, migrations, services, or tests. Do **not** mark Wave 2 `human_approved`, `self_verified`, or `gate_ready`.
+- **Artifacts:** `docs/v4/assurance/WAVE-02-ASSURANCE.md`; `docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md`; `docs/v4/experiments/WAVE-02-PLAN.md`
+- **Proposed experiments:** W2-E1 PostgreSQL invariants; W2-E2 dependency invalidation; W2-E3 disclosure leakage; W2-E4 source-family; W2-E5 identity hypotheses
+- **Does not decide:** Wave 2 execution; vendor or infrastructure selection; policy content; any blocked OD-*; Phase 0 / Gate 0; official version; Wave 3
+- **Consequence:** Human gate owner reviews the proposed boundary. Wave 2 implementation awaits a separate explicit plan approval.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
