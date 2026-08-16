@@ -1,0 +1,209 @@
+{
+  "schema_version": "w2e3-fixture-v1",
+  "experiment_id": "W2-E3",
+  "as_of": "2026-08-15T12:00:00Z",
+  "subject": {
+    "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+    "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+    "research_status": "W2E3_DENIED_RESEARCH_CANARY",
+    "public_aggregate_count": 1
+  },
+  "eligibility_flags": {
+    "eligible_for_internal": true,
+    "eligible_for_research": true
+  },
+  "attack_profile": {
+    "P4": "seed_cache_from_full_record",
+    "P5": "build_search_from_internal_view",
+    "P6": "log_full_record",
+    "P7": "include_record_repr_in_error",
+    "P8": "skip_enforcement_requested"
+  },
+  "decisions": {
+    "D-internal": {
+      "decision_id": "D-internal",
+      "audience": "internal",
+      "purpose": "synthetic_internal_research",
+      "allowed_fields": [
+        "internal_note",
+        "display_name",
+        "research_status",
+        "public_aggregate_count"
+      ],
+      "effect": "allow",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "active"
+    },
+    "D-research": {
+      "decision_id": "D-research",
+      "audience": "research",
+      "purpose": "synthetic_cohort_research",
+      "allowed_fields": [
+        "research_status",
+        "public_aggregate_count"
+      ],
+      "effect": "allow",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "active"
+    },
+    "D-public": {
+      "decision_id": "D-public",
+      "audience": "public",
+      "purpose": "synthetic_public_aggregate",
+      "allowed_fields": [
+        "public_aggregate_count"
+      ],
+      "effect": "allow",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "active"
+    },
+    "D-expired": {
+      "decision_id": "D-expired",
+      "audience": "research",
+      "purpose": "synthetic_expired",
+      "allowed_fields": [
+        "research_status",
+        "public_aggregate_count"
+      ],
+      "effect": "allow",
+      "expiry": "2026-08-14T12:00:00Z",
+      "revocation_state": "active"
+    },
+    "D-revoked": {
+      "decision_id": "D-revoked",
+      "audience": "internal",
+      "purpose": "synthetic_revoked",
+      "allowed_fields": [
+        "internal_note",
+        "display_name",
+        "research_status",
+        "public_aggregate_count"
+      ],
+      "effect": "allow",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "revoked"
+    },
+    "D-invalid": {
+      "decision_id": "D-invalid",
+      "audience": "public",
+      "purpose": "synthetic_invalid",
+      "allowed_fields": "public_aggregate_count",
+      "effect": "allow",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "active"
+    },
+    "D-deny": {
+      "decision_id": "D-deny",
+      "audience": "internal",
+      "purpose": "synthetic_explicit_deny",
+      "allowed_fields": [
+        "internal_note",
+        "display_name",
+        "research_status",
+        "public_aggregate_count"
+      ],
+      "effect": "deny",
+      "expiry": "2026-08-16T12:00:00Z",
+      "revocation_state": "active"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "D-missing",
+      "group": "baseline",
+      "decision_id": null
+    },
+    {
+      "run_id": "D-internal",
+      "group": "baseline",
+      "decision_id": "D-internal"
+    },
+    {
+      "run_id": "D-research",
+      "group": "baseline",
+      "decision_id": "D-research"
+    },
+    {
+      "run_id": "D-public",
+      "group": "baseline",
+      "decision_id": "D-public"
+    },
+    {
+      "run_id": "D-expired",
+      "group": "baseline",
+      "decision_id": "D-expired"
+    },
+    {
+      "run_id": "D-revoked",
+      "group": "baseline",
+      "decision_id": "D-revoked"
+    },
+    {
+      "run_id": "D-invalid",
+      "group": "baseline",
+      "decision_id": "D-invalid"
+    },
+    {
+      "run_id": "D-deny",
+      "group": "baseline",
+      "decision_id": "D-deny"
+    },
+    {
+      "run_id": "M1",
+      "group": "metamorphic",
+      "decision_id": "D-internal",
+      "decision_changes": {
+        "decision_id": "M1-remove-display-name",
+        "allowed_fields": [
+          "internal_note",
+          "research_status",
+          "public_aggregate_count"
+        ]
+      }
+    },
+    {
+      "run_id": "M2",
+      "group": "metamorphic",
+      "decision_id": "D-public"
+    },
+    {
+      "run_id": "M3-before",
+      "group": "metamorphic",
+      "decision_id": "D-internal"
+    },
+    {
+      "run_id": "M3-after",
+      "group": "metamorphic",
+      "decision_id": "D-revoked"
+    },
+    {
+      "run_id": "M4",
+      "group": "metamorphic",
+      "decision_id": "D-internal",
+      "subject_changes": {
+        "internal_decoy": "W2E3_DECOY_CANARY"
+      }
+    },
+    {
+      "run_id": "M5",
+      "group": "metamorphic",
+      "decision_id": "D-internal",
+      "subject_changes": {
+        "display_name": "  W2E3_DENIED_DISPLAY_CANARY  "
+      },
+      "subject_order": [
+        "public_aggregate_count",
+        "research_status",
+        "display_name",
+        "internal_note"
+      ]
+    }
+  ],
+  "metamorphic_relations": {
+    "M1": "remove one allowed field",
+    "M2": "change D-internal audience to D-public while holding subject constant",
+    "M3": "render D-internal, then render the same subject with revoked decision",
+    "M4": "add a new internal decoy without authorizing it",
+    "M5": "change irrelevant value whitespace and key order without changing authorization"
+  }
+}

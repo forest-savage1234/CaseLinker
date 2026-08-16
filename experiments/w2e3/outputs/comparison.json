@@ -1,0 +1,422 @@
+{
+  "artifact_hashes_at_score": {
+    "fixture": "c8d1a6e72ca983594ffb3b77268ed144b28f05e3244e52cb8cc759dc22bb64c2",
+    "harness": "295ac2a848a428954cc17bf7259de10838ef3cb861edfa7588878c03f2afc8c5",
+    "oracle": "4789ed2b1305d74707275911830398ee958e6a7b778df2d4b44f63be1aa7a3ff",
+    "p9_observation": "e8ab6defa5027fe0c774350a1ed1594063bd8679b584c7a665323b9c36943723",
+    "sut_adapters": "2c68aac6894b8dbc03dec20fae1e9dd0cd8873b727c752cab80847269ddc231e",
+    "sut_driver": "c45a7a15002d4e4fba1a07c7d77affd6bee993db653a86d1b542181f56158a37",
+    "sut_evaluator": "d7fea896e0749c411999eb4c089b5e0d0e729d8b93b1c2f8571cf78c53694276",
+    "sut_output": "6d3cf42b2f7a0ba7fb7710f8bdf7e071760627bff2ada2fa7f0ee7652222aa5c"
+  },
+  "decision_mapping": {
+    "invalid_or_incomplete": false,
+    "precedence": "invalid -> repeat; otherwise stop > revise architecture > proceed",
+    "proceed_conditions_met": true,
+    "revise_reasons": [],
+    "stop_reasons": []
+  },
+  "decision_rule": "P1-P8 pass and P9 not confirmed leak -> proceed with carry-forward",
+  "deny_on_missing_count": 6,
+  "eligibility_disclosure_confusion_count": 0,
+  "field_presence_matrix": {
+    "D-deny": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "D-expired": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "D-internal": {
+      "P1": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    "D-invalid": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "D-missing": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "D-public": {
+      "P1": [
+        "public_aggregate_count"
+      ],
+      "P2": [
+        "public_aggregate_count"
+      ],
+      "P3": [
+        "public_aggregate_count"
+      ],
+      "P4": [
+        "public_aggregate_count"
+      ],
+      "P5": [
+        "public_aggregate_count"
+      ],
+      "P6": [
+        "public_aggregate_count"
+      ],
+      "P7": [
+        "public_aggregate_count"
+      ],
+      "P8": [
+        "public_aggregate_count"
+      ]
+    },
+    "D-research": {
+      "P1": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    "D-revoked": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "M1": {
+      "P1": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    "M2": {
+      "P1": [
+        "public_aggregate_count"
+      ],
+      "P2": [
+        "public_aggregate_count"
+      ],
+      "P3": [
+        "public_aggregate_count"
+      ],
+      "P4": [
+        "public_aggregate_count"
+      ],
+      "P5": [
+        "public_aggregate_count"
+      ],
+      "P6": [
+        "public_aggregate_count"
+      ],
+      "P7": [
+        "public_aggregate_count"
+      ],
+      "P8": [
+        "public_aggregate_count"
+      ]
+    },
+    "M3-after": {
+      "P1": [],
+      "P2": [],
+      "P3": [],
+      "P4": [],
+      "P5": [],
+      "P6": [],
+      "P7": [],
+      "P8": []
+    },
+    "M3-before": {
+      "P1": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    "M4": {
+      "P1": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    "M5": {
+      "P1": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P2": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P3": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P4": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P5": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P6": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P7": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "P8": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    }
+  },
+  "findings": [],
+  "internal_leak_count": 0,
+  "mechanism_pass": true,
+  "metamorphic_pass": true,
+  "p9_classification": "path_lacks_enforcement",
+  "recommendation": "proceed",
+  "shared_evaluator_call_count": 112,
+  "three_views_distinct": true,
+  "valid_run": true,
+  "validity_errors": []
+}

@@ -1,0 +1,114 @@
+{
+  "events": [
+    {
+      "details": {
+        "hashes": {
+          "fixture": "c8d1a6e72ca983594ffb3b77268ed144b28f05e3244e52cb8cc759dc22bb64c2",
+          "harness": "295ac2a848a428954cc17bf7259de10838ef3cb861edfa7588878c03f2afc8c5",
+          "oracle": "4789ed2b1305d74707275911830398ee958e6a7b778df2d4b44f63be1aa7a3ff",
+          "sut_adapters": "2c68aac6894b8dbc03dec20fae1e9dd0cd8873b727c752cab80847269ddc231e",
+          "sut_driver": "c45a7a15002d4e4fba1a07c7d77affd6bee993db653a86d1b542181f56158a37",
+          "sut_evaluator": "d7fea896e0749c411999eb4c089b5e0d0e729d8b93b1c2f8571cf78c53694276"
+        },
+        "oracle_bytes_hashed": true,
+        "oracle_content_deserialized": false
+      },
+      "event": "freeze_completed",
+      "monotonic_ns": 162876109000000,
+      "seq": 1,
+      "timestamp_utc": "2026-08-16T05:51:30.065348Z"
+    },
+    {
+      "details": {
+        "argv": [
+          "<python>",
+          "-B",
+          "<isolated>/sut/driver.py",
+          "--fixture",
+          "<isolated>/input_fixture.json",
+          "--output",
+          "<isolated>/sut_output.json"
+        ],
+        "cwd": "<isolated>",
+        "oracle_available_to_sut": false,
+        "staged_files": [
+          "input_fixture.json",
+          "sut/adapters.py",
+          "sut/driver.py",
+          "sut/evaluator.py"
+        ]
+      },
+      "event": "sut_started",
+      "monotonic_ns": 162876140000000,
+      "seq": 2,
+      "timestamp_utc": "2026-08-16T05:51:30.092662Z"
+    },
+    {
+      "details": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "event": "sut_completed",
+      "monotonic_ns": 162876875000000,
+      "seq": 3,
+      "timestamp_utc": "2026-08-16T05:51:30.832865Z"
+    },
+    {
+      "details": {
+        "oracle_content_deserialized": false,
+        "output_sha256": "6d3cf42b2f7a0ba7fb7710f8bdf7e071760627bff2ada2fa7f0ee7652222aa5c"
+      },
+      "event": "sut_output_captured",
+      "monotonic_ns": 162876906000000,
+      "seq": 4,
+      "timestamp_utc": "2026-08-16T05:51:30.860233Z"
+    },
+    {
+      "details": {
+        "after_sut_output_capture": true,
+        "oracle_sha256": "4789ed2b1305d74707275911830398ee958e6a7b778df2d4b44f63be1aa7a3ff"
+      },
+      "event": "oracle_loaded",
+      "monotonic_ns": 162876921000000,
+      "seq": 5,
+      "timestamp_utc": "2026-08-16T05:51:30.865950Z"
+    },
+    {
+      "details": {
+        "validity_error_count": 0
+      },
+      "event": "oracle_validated",
+      "monotonic_ns": 162876921000001,
+      "seq": 6,
+      "timestamp_utc": "2026-08-16T05:51:30.865950Z"
+    },
+    {
+      "details": {
+        "classification": "path_lacks_enforcement",
+        "confirmed_leak": false
+      },
+      "event": "p9_observed",
+      "monotonic_ns": 162884718000000,
+      "seq": 7,
+      "timestamp_utc": "2026-08-16T05:51:38.668067Z"
+    },
+    {
+      "details": {
+        "recommendation": "proceed",
+        "valid_run": true
+      },
+      "event": "comparison_written",
+      "monotonic_ns": 162884765000000,
+      "seq": 8,
+      "timestamp_utc": "2026-08-16T05:51:38.714615Z"
+    },
+    {
+      "details": {},
+      "event": "evidence_finalized",
+      "monotonic_ns": 162884765000001,
+      "seq": 9,
+      "timestamp_utc": "2026-08-16T05:51:38.716384Z"
+    }
+  ]
+}
