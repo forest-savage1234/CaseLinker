@@ -269,6 +269,19 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not authorize:** W2-E3, W2-E4, W2-E1, Wave 2 acceptance, Wave 3, production code promotion, canonical merge/split, any blocked OD-* decision, cleanup, deployment, or an official-version claim.
 - **Consequence:** W2-E5 is complete with r3 as its sole eligible result. W2-E2 becomes the only unlocked experiment. Every later experiment remains locked pending its own valid result, read-only checkpoint, and explicit human continuation decision.
 
+## D-2026-08-15-035 — Continue after valid W2-E2 r2; authorize W2-E3 only
+
+- **Label:** human decision required (decided), with administrative checkpoint reconciliation
+- **Human instruction (verbatim):** “Continue from here”
+- **Conservative scope applied:** The instruction follows the read-only W2-E2 r2 checkpoint whose disposition was `continue_to_next_experiment`. This record applies the instruction only to the next governed step, W2-E3. It is not blanket pre-authorization of outcome-dependent W2-E4, W2-E1, or any later gate.
+- **Eligible W2-E2 evidence:** `d026ca02d38009181bea1aa5f5821f48a4319057`, parent `faaa4ac021cb9c3ddb5282540cf2a5491c89cd16`; valid run; recommendation `proceed`; frozen fixture, independent oracle, SUT, driver, harness, output, chronology, and comparison hashes matched; oracle content was deserialized only after SUT completion and output capture; nine hand-enumerated fixtures kept closure, registration coverage, and incomplete-state fail-closed behavior distinct; comparison findings were zero.
+- **Preserved invalid/incomplete attempt:** `64ac72883711ef83eb02d5a5b8772e81f7ec226c`; its post-run `git diff --check` failed on already-hashed authored files. It remains ineligible and was not rewritten.
+- **Checkpoint status and limitation:** The checkpoint conversation did not author, edit, execute, or repair W2-E2 r1 or r2 and performed read-only verification only. It advised `continue_to_next_experiment` with no critical/high finding. It did not rerun the experiment and is not a `WAVE-02-ASSURANCE.md` section 7 gate-ready review; same-model separation is not organizational independence. This limitation is preserved rather than upgraded by this administrative decision.
+- **Architecture implication accepted for sequencing only:** The disposable experiment supports bounded dependency impact over an explicitly registered fixture universe, while detecting incomplete registration and refusing a complete-impact claim. It does not prove unknowable external dependents, select a production graph/store, or silently resolve an OD-* decision.
+- **Authorization:** W2-E3 only, from the still-frozen packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`, and only after this administrative commit is published and its lineage, clean isolated tree, and packet identity are verified.
+- **Does not authorize:** W2-E4, W2-E1, Wave 2 acceptance, Wave 3, production code promotion, cleanup of preserved evidence, deployment, any blocked OD-* decision, or an official-version claim.
+- **Consequence:** W2-E2 is complete with r2 as its sole eligible result. W2-E3 becomes the only unlocked experiment after publication of this record. Every later experiment remains locked pending its own valid result, read-only checkpoint, and explicit human continuation decision.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

@@ -40,9 +40,10 @@ wave_02:
   planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   frozen_planning_packet: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   approval_decision: "D-2026-08-15-033"
-  execution_checkpoint_decision: "D-2026-08-15-034"
+  execution_checkpoint_decision: "D-2026-08-15-035"
   completed_experiments:
     - "W2-E5"
+    - "W2-E2"
   experiment_results:
     W2-E5:
       status: "valid"
@@ -55,7 +56,20 @@ wave_02:
           reason: "oracle deserialized and validated before SUT execution"
       checkpoint_advice: "continue_to_next_experiment"
       checkpoint_decision: "D-2026-08-15-034"
-  next_authorized_experiment: "W2-E2"
+    W2-E2:
+      status: "valid"
+      recommendation: "proceed"
+      eligible_evidence_commit: "d026ca02d38009181bea1aa5f5821f48a4319057"
+      invalid_incomplete_attempts:
+        - commit: "64ac72883711ef83eb02d5a5b8772e81f7ec226c"
+          reason: "post-run git diff --check failed on already-hashed authored files"
+      checkpoint_advice: "continue_to_next_experiment"
+      checkpoint_decision: "D-2026-08-15-035"
+      checkpoint_gate_ready: false
+      checkpoint_limitations:
+        - "same-model conversation is not organizational independence under WAVE-02-ASSURANCE section 7"
+        - "checkpoint did not rerun the experiment and is not a section 7 gate-ready review"
+  next_authorized_experiment: "W2-E3"
   planning_review_01_recorded_disposition: "planning_review_pass"
   planning_review_01_validity: "review_invalid"
   planning_review_01_invalidated_by: "D-2026-08-15-030"
@@ -99,8 +113,10 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 Human-approved and frozen (D-033). The frozen planning packet is exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Approval relies on the valid independent review at `4c52b41aa03725cde9c1d2b4224a12259397152b` (`WAVE-02-PLAN-REVIEW-03.md`, D-032) and the administrative reconciliation at `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`. Review 01 (D-029) remains `review_invalid`. Review 02 (D-030) remains `review_invalid`.
 
-W2-E5 is complete under D-034. Attempts `98a171dc` and `ce28e88c` remain invalid/incomplete and ineligible. W2-E5 r3 commit `105ac4237b767db51c95161e202dacfff0590a92` is the sole eligible result: valid run, recommendation `proceed`, with oracle content loaded only after SUT completion and output capture. This result is not Wave 2 acceptance and does not decide OD-006 or select a canonical identity model. Later-wave work is not authorized. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E2.
+W2-E5 is complete under D-034. Attempts `98a171dc` and `ce28e88c` remain invalid/incomplete and ineligible. W2-E5 r3 commit `105ac4237b767db51c95161e202dacfff0590a92` is the sole eligible result: valid run, recommendation `proceed`, with oracle content loaded only after SUT completion and output capture. This result is not Wave 2 acceptance and does not decide OD-006 or select a canonical identity model.
+
+W2-E2 is complete under D-035. Attempt `64ac7288` remains invalid/incomplete and ineligible because its post-run `git diff --check` failed on already-hashed authored files. W2-E2 r2 commit `d026ca02d38009181bea1aa5f5821f48a4319057` is the sole eligible result: valid run, recommendation `proceed`, with a separately hashed oracle loaded only after SUT output capture, hand-enumerated closure expectations, and independent registration reconciliation. The read-only checkpoint advised `continue_to_next_experiment`; it did not rerun the experiment and is not a section 7 gate-ready review. This result does not select an operational dependency architecture or authorize production promotion. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E3.
 
 ## Next safe action
 
-W2-E2 only, after verifying the D-034 administrative lineage, a clean working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E3, W2-E4, or W2-E1. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
+W2-E3 only, after this D-035 administrative commit is published on `proposal/v4-research-network`, and after verifying that published lineage, a clean isolated experiment working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E4 or W2-E1. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
