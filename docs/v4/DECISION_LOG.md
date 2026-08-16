@@ -203,6 +203,14 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Wave 2 execution; experiment worktrees; PostgreSQL startup; product changes; Wave 3; Phase 0 / Gate 0; official version
 - **Consequence:** Request a fresh independent review of the revised planning packet. Do not begin execution.
 
+## D-2026-08-15-029 — Record Wave 2 planning review (`planning_review_pass`)
+
+- **Label:** repository fact of a completed planning review
+- **Decision:** Record `docs/v4/evidence/WAVE-02-PLAN-REVIEW.md` of commit `ed7597a4efbf5ad0a60318cb59193093a178c451`. Disposition `planning_review_pass`. No traceable critical/high planning defect remains. Wave 2 `legal_state` remains `unstarted`. The packet remains `proposed`. Do **not** set `human_approved`. Do **not** execute experiments.
+- **Independence limitation:** same-model reviewer; this conversation lineage previously authored the packet. Not organizational independence. Documentation gates were rerun. Experiment procedures were not run.
+- **Does not decide:** human approval of Wave 2; execution; vendor or policy selection; Phase 0 / Gate 0; official version; Wave 3
+- **Consequence:** Human gate owner decides whether to approve the proposed packet. Medium/low residuals remain non-blocking carry-forward unless the human converts them.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

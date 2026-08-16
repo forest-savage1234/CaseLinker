@@ -37,6 +37,9 @@ wave_02:
   planning_status: "proposed"
   planning_decision: "D-2026-08-15-027"
   planning_revision: "D-2026-08-15-028"
+  planning_review_status: "planning_review_pass"
+  planning_review_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW.md"
+  planning_review_decision: "D-2026-08-15-029"
   proposed_assurance_contract: "docs/v4/assurance/WAVE-02-ASSURANCE.md"
   proposed_requirements_map: "docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md"
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
@@ -61,8 +64,8 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Unstarted. A planning packet is **proposed** (D-027) and was revised (D-028: W2-P1…P5). It is not frozen or approved. No experiment has been executed. No worktree, namespace, migration, service, schema, or test was created for Wave 2. This does **not** approve Wave 2, select infrastructure, invent policy content, complete Phase 0 or Gate 0, or authorize Wave 3.
+Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and has a planning review of `ed7597a4` with disposition `planning_review_pass` (D-029). It is not frozen or human-approved. No experiment has been executed. This does **not** approve Wave 2, select infrastructure, invent policy content, complete Phase 0 or Gate 0, or authorize Wave 3.
 
 ## Next safe action
 
-Fresh independent review of the **revised** proposed Wave 2 assurance and experiment plan. Do not execute Wave 2 until that plan is independently reviewed and explicitly approved. Phase 0 / Gate 0 remain incomplete. Do not reopen Wave 1 disclosure or SoD contracts.
+Human gate owner decides whether to approve the proposed Wave 2 packet. Do not execute Wave 2 until that approval is explicit. Phase 0 / Gate 0 remain incomplete. Do not reopen Wave 1 disclosure or SoD contracts.
