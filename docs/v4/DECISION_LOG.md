@@ -227,6 +227,15 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Wave 2 approval, freeze, or execution; vendor, schema, identity-policy, disclosure-policy, or official-version selection; any blocked OD-*; Phase 0 / Gate 0; Wave 3
 - **Consequence:** Request independent re-verification of this revision by a reviewer outside the builder lineage. Do not begin execution.
 
+## D-2026-08-15-032 — Record valid independent Wave 2 planning re-verification
+
+- **Label:** repository fact of a completed valid independent planning re-verification
+- **Decision:** Record `docs/v4/evidence/WAVE-02-PLAN-REVIEW-03.md` as the valid independent re-verification of planning packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Review-record commit `4c52b41aa03725cde9c1d2b4224a12259397152b`. Disposition `planning_review_pass`. The reviewer identified H1–H6 and specified remediation criteria but did not author or edit repair `5fb8913e`. H1–H6 are closed. No new critical/high finding remains. Material residuals M1–M4 remain non-blocking execution or administrative controls. Wave 2 `legal_state` remains `unstarted`. The packet remains `proposed`. `human_approved` remains false. `experiments_executed` remains false.
+- **Does not rewrite:** D-027, D-028, D-029, D-030, D-031, `WAVE-02-PLAN-REVIEW.md`, or `WAVE-02-PLAN-REVIEW-02.md`
+- **Historical invalidity preserved:** D-029’s recorded `planning_review_pass` remains invalid because its reviewer authored the packet. D-030 is `review_invalid`. The unpushed local attempt `a9b2c7fa2482d71d38dadf88dfef03d5e742ed3b` is not valid acceptance.
+- **Does not decide:** Wave 2 approval, freeze, or execution; vendor, schema, identity-policy, disclosure-policy, or official-version selection; any blocked OD-*; Phase 0 / Gate 0; Wave 3
+- **Consequence:** The next authority belongs solely to the human gate owner deciding whether to approve and freeze exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` for Wave 2 experiment execution only. This decision does not approve, freeze, or execute Wave 2.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

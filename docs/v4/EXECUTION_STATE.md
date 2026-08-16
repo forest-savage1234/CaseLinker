@@ -38,13 +38,22 @@ wave_02:
   planning_decision: "D-2026-08-15-027"
   planning_revision: "D-2026-08-15-031"
   planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
-  planning_review_status: "planning_review_pass"
-  planning_review_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW.md"
-  planning_review_decision: "D-2026-08-15-029"
-  planning_review_02_status: "review_invalid"
+  planning_review_01_recorded_disposition: "planning_review_pass"
+  planning_review_01_validity: "review_invalid"
+  planning_review_01_invalidated_by: "D-2026-08-15-030"
+  planning_review_01_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW.md"
+  planning_review_01_decision: "D-2026-08-15-029"
+  planning_review_02_recorded_disposition: "review_invalid"
+  planning_review_02_validity: "review_invalid"
   planning_review_02_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW-02.md"
   planning_review_02_decision: "D-2026-08-15-030"
-  valid_independent_planning_review: false
+  planning_review_03_recorded_disposition: "planning_review_pass"
+  planning_review_03_validity: "valid"
+  planning_review_03_reviewed_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
+  planning_review_03_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW-03.md"
+  planning_review_03_record_commit: "4c52b41aa03725cde9c1d2b4224a12259397152b"
+  planning_review_03_decision: "D-2026-08-15-032"
+  valid_independent_planning_review: true
   proposed_assurance_contract: "docs/v4/assurance/WAVE-02-ASSURANCE.md"
   proposed_requirements_map: "docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md"
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
@@ -70,8 +79,8 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and was revised again for experiment falsifiability and oracles (D-031). The planning revision under review is `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. The first planning review (`WAVE-02-PLAN-REVIEW.md`, D-029) remains on record as history and is **not** a valid independent review (admitted author lineage). Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid` because that conversation authored the packet; the packet was not evaluated. No valid independent planning review exists. No experiment has been executed. The packet is not frozen or human-approved. D-031 records a proposed planning revision only; it does not approve, freeze, or start Wave 2.
+Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and was revised again for experiment falsifiability and oracles (D-031). The planning packet is `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. A valid independent planning review now exists (`WAVE-02-PLAN-REVIEW-03.md`, D-032, review-record commit `4c52b41aa03725cde9c1d2b4224a12259397152b`). Review 01 (`WAVE-02-PLAN-REVIEW.md`, D-029) recorded `planning_review_pass` and remains `review_invalid` because its reviewer authored the packet; it was invalidated by D-030. Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid`. The unpushed local attempt `a9b2c7fa2482d71d38dadf88dfef03d5e742ed3b` is not valid acceptance. Human approval and packet freeze have not occurred. No experiment has been executed. D-032 does not approve, freeze, or start Wave 2.
 
 ## Next safe action
 
-Commission independent re-verification of planning revision `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` (D-031). Do not treat D-029 as independent acceptance. Do not execute Wave 2. No approval, freeze, or execution authority exists. Phase 0 / Gate 0 remain incomplete.
+The human gate owner decides whether to approve and freeze exactly planning packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` for Wave 2 experiment execution only. Do not treat D-029 as independent acceptance. Do not execute Wave 2 until that explicit human decision exists. No approval, freeze, or execution authority exists now. Phase 0 / Gate 0 remain incomplete.
