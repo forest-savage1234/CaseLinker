@@ -1,0 +1,4684 @@
+{
+  "eligibility_received_by_evaluator": false,
+  "evaluator_calls": [
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": null,
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "missing_decision",
+      "run_id": "D-missing"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "D-internal"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-research",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "D-research"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "D-public"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-expired",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "expired_or_invalid_expiry",
+      "run_id": "D-expired"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-revoked",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "revoked_or_invalid",
+      "run_id": "D-revoked"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-invalid",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "invalid_allowed_fields",
+      "run_id": "D-invalid"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-deny",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "explicit_or_invalid_deny",
+      "run_id": "D-deny"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "M1-remove-display-name",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "M1"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "public_aggregate_count"
+      ],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "M2"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "M3-before"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "revoked_or_invalid",
+      "run_id": "M3-after"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "M4"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ],
+      "decision_id": "D-internal",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "supplied_allow",
+      "run_id": "M5"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-key"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P1",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P2",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P3",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P4",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P5",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P6",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P7",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    },
+    {
+      "authorized_fields": [],
+      "decision_id": "D-public",
+      "eligibility_consulted": false,
+      "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+      "probe_id": "P8",
+      "reason": "nested_unauthorized_structure",
+      "run_id": "N-nested-value"
+    }
+  ],
+  "evaluator_identity": "shared-supplied-decision-evaluator-v2",
+  "oracle_received": false,
+  "results": [
+    {
+      "decision_identity": null,
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "missing_decision",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "missing_decision",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "missing_decision",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "missing_decision",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "missing_decision",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "missing_decision",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "missing_decision",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "missing_decision",
+          "rendered": []
+        }
+      },
+      "run_id": "D-missing",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-internal",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"display_name\":\"W2E3_DENIED_DISPLAY_CANARY\",\"internal_note\":\"W2E3_DENIED_INTERNAL_CANARY\",\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "display_name,internal_note,public_aggregate_count,research_status\nW2E3_DENIED_DISPLAY_CANARY,W2E3_DENIED_INTERNAL_CANARY,1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "\"W2E3_DENIED_DISPLAY_CANARY\"",
+                "name": "fields/display_name.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_INTERNAL_CANARY\"",
+                "name": "fields/internal_note.json"
+              },
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'display_name': 'W2E3_DENIED_DISPLAY_CANARY', 'internal_note': 'W2E3_DENIED_INTERNAL_CANARY', 'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+                "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=display_name=\"W2E3_DENIED_DISPLAY_CANARY\"\tinternal_note=\"W2E3_DENIED_INTERNAL_CANARY\"\tpublic_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+              "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "display_name",
+              "value": "W2E3_DENIED_DISPLAY_CANARY"
+            },
+            {
+              "field": "internal_note",
+              "value": "W2E3_DENIED_INTERNAL_CANARY"
+            },
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "D-internal",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "research",
+        "decision_id": "D-research",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_cohort_research",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "public_aggregate_count,research_status\n1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=public_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "D-research",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "public_aggregate_count"
+        ],
+        "audience": "public",
+        "decision_id": "D-public",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_public_aggregate",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"public_aggregate_count\":1}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "public_aggregate_count\n1\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'public_aggregate_count': 1})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "public_aggregate_count": 1
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=public_aggregate_count=1"
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "public_aggregate_count": 1
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            }
+          ]
+        }
+      },
+      "run_id": "D-public",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "research",
+        "decision_id": "D-expired",
+        "effect": "allow",
+        "expiry": "2026-08-14T12:00:00Z",
+        "purpose": "synthetic_expired",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "expired_or_invalid_expiry",
+          "rendered": []
+        }
+      },
+      "run_id": "D-expired",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-revoked",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_revoked",
+        "revocation_state": "revoked"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": []
+        }
+      },
+      "run_id": "D-revoked",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": "public_aggregate_count",
+        "audience": "public",
+        "decision_id": "D-invalid",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_invalid",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "invalid_allowed_fields",
+          "rendered": []
+        }
+      },
+      "run_id": "D-invalid",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-deny",
+        "effect": "deny",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_explicit_deny",
+        "revocation_state": "active"
+      },
+      "group": "baseline",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "explicit_or_invalid_deny",
+          "rendered": []
+        }
+      },
+      "run_id": "D-deny",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "M1-remove-display-name",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "active"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"internal_note\":\"W2E3_DENIED_INTERNAL_CANARY\",\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "internal_note,public_aggregate_count,research_status\nW2E3_DENIED_INTERNAL_CANARY,1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "\"W2E3_DENIED_INTERNAL_CANARY\"",
+                "name": "fields/internal_note.json"
+              },
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'internal_note': 'W2E3_DENIED_INTERNAL_CANARY', 'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=internal_note=\"W2E3_DENIED_INTERNAL_CANARY\"\tpublic_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "internal_note",
+              "value": "W2E3_DENIED_INTERNAL_CANARY"
+            },
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "M1",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "public_aggregate_count"
+        ],
+        "audience": "public",
+        "decision_id": "D-public",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_public_aggregate",
+        "revocation_state": "active"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"public_aggregate_count\":1}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "public_aggregate_count\n1\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'public_aggregate_count': 1})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "public_aggregate_count": 1
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=public_aggregate_count=1"
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "public_aggregate_count": 1
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            }
+          ]
+        }
+      },
+      "run_id": "M2",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-internal",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "active"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"display_name\":\"W2E3_DENIED_DISPLAY_CANARY\",\"internal_note\":\"W2E3_DENIED_INTERNAL_CANARY\",\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "display_name,internal_note,public_aggregate_count,research_status\nW2E3_DENIED_DISPLAY_CANARY,W2E3_DENIED_INTERNAL_CANARY,1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "\"W2E3_DENIED_DISPLAY_CANARY\"",
+                "name": "fields/display_name.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_INTERNAL_CANARY\"",
+                "name": "fields/internal_note.json"
+              },
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'display_name': 'W2E3_DENIED_DISPLAY_CANARY', 'internal_note': 'W2E3_DENIED_INTERNAL_CANARY', 'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+                "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=display_name=\"W2E3_DENIED_DISPLAY_CANARY\"\tinternal_note=\"W2E3_DENIED_INTERNAL_CANARY\"\tpublic_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+              "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "display_name",
+              "value": "W2E3_DENIED_DISPLAY_CANARY"
+            },
+            {
+              "field": "internal_note",
+              "value": "W2E3_DENIED_INTERNAL_CANARY"
+            },
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "M3-before",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-internal",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "revoked"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 211,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 173,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "revoked_or_invalid",
+          "rendered": []
+        }
+      },
+      "run_id": "M3-after",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-internal",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "active"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"display_name\":\"W2E3_DENIED_DISPLAY_CANARY\",\"internal_note\":\"W2E3_DENIED_INTERNAL_CANARY\",\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "display_name,internal_note,public_aggregate_count,research_status\nW2E3_DENIED_DISPLAY_CANARY,W2E3_DENIED_INTERNAL_CANARY,1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "\"W2E3_DENIED_DISPLAY_CANARY\"",
+                "name": "fields/display_name.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_INTERNAL_CANARY\"",
+                "name": "fields/internal_note.json"
+              },
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 5,
+            "source_field_names": [
+              "display_name",
+              "internal_decoy",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'display_name': 'W2E3_DENIED_DISPLAY_CANARY', 'internal_note': 'W2E3_DENIED_INTERNAL_CANARY', 'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 5,
+            "source_field_names": [
+              "display_name",
+              "internal_decoy",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+                "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 250,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 5,
+            "source_field_names": [
+              "display_name",
+              "internal_decoy",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=display_name=\"W2E3_DENIED_DISPLAY_CANARY\"\tinternal_note=\"W2E3_DENIED_INTERNAL_CANARY\"\tpublic_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 212,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 5,
+            "source_field_names": [
+              "display_name",
+              "internal_decoy",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "display_name": "W2E3_DENIED_DISPLAY_CANARY",
+              "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 5,
+            "source_field_names": [
+              "display_name",
+              "internal_decoy",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "display_name",
+              "value": "W2E3_DENIED_DISPLAY_CANARY"
+            },
+            {
+              "field": "internal_note",
+              "value": "W2E3_DENIED_INTERNAL_CANARY"
+            },
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "M4",
+      "subject_field_names": [
+        "display_name",
+        "internal_decoy",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "internal_note",
+          "display_name",
+          "research_status",
+          "public_aggregate_count"
+        ],
+        "audience": "internal",
+        "decision_id": "D-internal",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_internal_research",
+        "revocation_state": "active"
+      },
+      "group": "metamorphic",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "{\"display_name\":\"  W2E3_DENIED_DISPLAY_CANARY  \",\"internal_note\":\"W2E3_DENIED_INTERNAL_CANARY\",\"public_aggregate_count\":1,\"research_status\":\"W2E3_DENIED_RESEARCH_CANARY\"}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "display_name,internal_note,public_aggregate_count,research_status\n  W2E3_DENIED_DISPLAY_CANARY  ,W2E3_DENIED_INTERNAL_CANARY,1,W2E3_DENIED_RESEARCH_CANARY\n"
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "entries": [
+              {
+                "content": "\"  W2E3_DENIED_DISPLAY_CANARY  \"",
+                "name": "fields/display_name.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_INTERNAL_CANARY\"",
+                "name": "fields/internal_note.json"
+              },
+              {
+                "content": "1",
+                "name": "fields/public_aggregate_count.json"
+              },
+              {
+                "content": "\"W2E3_DENIED_RESEARCH_CANARY\"",
+                "name": "fields/research_status.json"
+              }
+            ]
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "CacheView({'display_name': '  W2E3_DENIED_DISPLAY_CANARY  ', 'internal_note': 'W2E3_DENIED_INTERNAL_CANARY', 'public_aggregate_count': 1, 'research_status': 'W2E3_DENIED_RESEARCH_CANARY'})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "document": {
+              "fields": {
+                "display_name": "  W2E3_DENIED_DISPLAY_CANARY  ",
+                "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+                "public_aggregate_count": 1,
+                "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+              }
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 215,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": "event=w2e3_disclosure fields=display_name=\"  W2E3_DENIED_DISPLAY_CANARY  \"\tinternal_note=\"W2E3_DENIED_INTERNAL_CANARY\"\tpublic_aggregate_count=1\tresearch_status=\"W2E3_DENIED_RESEARCH_CANARY\""
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 177,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {
+              "display_name": "  W2E3_DENIED_DISPLAY_CANARY  ",
+              "internal_note": "W2E3_DENIED_INTERNAL_CANARY",
+              "public_aggregate_count": 1,
+              "research_status": "W2E3_DENIED_RESEARCH_CANARY"
+            },
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "supplied_allow",
+          "rendered": [
+            {
+              "field": "display_name",
+              "value": "  W2E3_DENIED_DISPLAY_CANARY  "
+            },
+            {
+              "field": "internal_note",
+              "value": "W2E3_DENIED_INTERNAL_CANARY"
+            },
+            {
+              "field": "public_aggregate_count",
+              "value": 1
+            },
+            {
+              "field": "research_status",
+              "value": "W2E3_DENIED_RESEARCH_CANARY"
+            }
+          ]
+        }
+      },
+      "run_id": "M5",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "public_aggregate_count"
+        ],
+        "audience": "public",
+        "decision_id": "D-public",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_public_aggregate",
+        "revocation_state": "active"
+      },
+      "group": "structural",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 256,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 218,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": []
+        }
+      },
+      "run_id": "N-nested-key",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    },
+    {
+      "decision_identity": {
+        "allowed_fields": [
+          "public_aggregate_count"
+        ],
+        "audience": "public",
+        "decision_id": "D-public",
+        "effect": "allow",
+        "expiry": "2026-08-16T12:00:00Z",
+        "purpose": "synthetic_public_aggregate",
+        "revocation_state": "active"
+      },
+      "group": "structural",
+      "outputs": {
+        "P1": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "{}"
+        },
+        "P2": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": ""
+        },
+        "P3": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": false,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": null,
+            "skip_enforcement_attempted": false,
+            "source_field_count": 0,
+            "source_field_names": [],
+            "source_kind": null
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "entries": []
+          }
+        },
+        "P4": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "seed_cache_from_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_cache_seed"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "CacheView({})"
+        },
+        "P5": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "build_search_from_internal_view",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "internal_view_search_document"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "document": {
+              "fields": {}
+            },
+            "index": "w2e3-synthetic"
+          }
+        },
+        "P6": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 239,
+            "repr_computed": true,
+            "requested": "log_full_record",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "full_record_log"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": "event=w2e3_disclosure fields="
+        },
+        "P7": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": 201,
+            "repr_computed": true,
+            "requested": "include_record_repr_in_error",
+            "skip_enforcement_attempted": false,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "record_repr_error"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": {
+            "error": "synthetic_failure",
+            "safe_context": {},
+            "status": 400
+          }
+        },
+        "P8": {
+          "attack": {
+            "enforcement_applied": true,
+            "evaluator_consulted": true,
+            "executed": true,
+            "repr_char_length": null,
+            "repr_computed": false,
+            "requested": "skip_enforcement_requested",
+            "skip_enforcement_attempted": true,
+            "source_field_count": 4,
+            "source_field_names": [
+              "display_name",
+              "internal_note",
+              "public_aggregate_count",
+              "research_status"
+            ],
+            "source_kind": "admin_skip_pep"
+          },
+          "decision_reason": "nested_unauthorized_structure",
+          "rendered": []
+        }
+      },
+      "run_id": "N-nested-value",
+      "subject_field_names": [
+        "display_name",
+        "internal_note",
+        "public_aggregate_count",
+        "research_status"
+      ]
+    }
+  ],
+  "schema_version": "w2e3-sut-output-v2",
+  "sut_revision": "w2e3-disclosure-v2"
+}

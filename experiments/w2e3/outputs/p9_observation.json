@@ -1,0 +1,61 @@
+{
+  "carry_forward": "Wave 5 must add an authorized supplied-decision enforcement hook before Claim Card or Evidence Pack entry points can support a disclosure-safety claim.",
+  "classification": "path_lacks_enforcement",
+  "confirmed_leak": false,
+  "decision": "D-public",
+  "decision_supplied_to_product_entrypoints": false,
+  "denied_canary_presence": {
+    "display_name": {
+      "claim_card": false,
+      "evidence_pack": false
+    },
+    "internal_note": {
+      "claim_card": false,
+      "evidence_pack": false
+    },
+    "research_status": {
+      "claim_card": false,
+      "evidence_pack": false
+    }
+  },
+  "entrypoints": {
+    "ClaimCard.to_dict": "(*, include_claim_id: 'bool' = True) -> 'dict[str, object]'",
+    "ClaimCardBuilder.build": "(result: 'CohortResult') -> 'ClaimCard'",
+    "EvidencePack.canonical_json": "bytes attribute read",
+    "EvidencePackAssembler.assemble": "(claim: 'ClaimCard') -> 'EvidencePack'"
+  },
+  "mapping": {
+    "display_name": "unmappable",
+    "internal_note": "unmappable",
+    "public_aggregate_count": "CohortResult.numerator",
+    "research_status": "unmappable; builder owns fixed limitations"
+  },
+  "observed_output_keys": {
+    "claim_card": [
+      "claim_id",
+      "claim_text",
+      "denominator",
+      "denominator_event_ids",
+      "limitations",
+      "numerator",
+      "numerator_event_ids",
+      "projection_sha256s",
+      "query_id",
+      "query_sha256",
+      "schema_version",
+      "shapes_sha256",
+      "snapshot_id",
+      "snapshot_manifest_sha256",
+      "unit"
+    ],
+    "evidence_pack": [
+      "claim_card",
+      "contents",
+      "exclusions",
+      "schema_version"
+    ]
+  },
+  "policy_hook_observed": false,
+  "product_code_modified": false,
+  "requires_unapproved_repair_to_continue": false
+}

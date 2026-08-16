@@ -1,0 +1,62 @@
+{
+  "commit": "4e620ab45e2dd771e6ed04eca243259bafb610a8",
+  "parent": "9c481ee78bce8f916b9773f46924558424babdae",
+  "branch": "experiment/w2-e3",
+  "draft_pr": "https://github.com/forest-savage1234/CaseLinker/pull/1",
+  "eligible": false,
+  "disposition": "repeat_experiment",
+  "files": {
+    "docs/v4/evidence/experiments/W2-E3-REPORT.md": {
+      "git_blob": "611adfdd50d335f2d2706c0c73072ca4579754c2",
+      "sha256": "e881dd9782e7e2d55de8f743276fa60c06ada89706b24eb56407ce64c0a1c9f5"
+    },
+    "experiments/w2e3/README.md": {
+      "git_blob": "a9e72134ba8c70533b95219390fadd69efffce2a",
+      "sha256": "d1f4b0b7761ff4e20d961f7447c37e2c6e18d90b05ae2f82e487ab55e983e5df"
+    },
+    "experiments/w2e3/fixtures/input_fixture.json": {
+      "git_blob": "295d95200bb125da45d19ff0fbba837160c35c59",
+      "sha256": "c8d1a6e72ca983594ffb3b77268ed144b28f05e3244e52cb8cc759dc22bb64c2"
+    },
+    "experiments/w2e3/harness/run_w2e3.py": {
+      "git_blob": "135cfc0952e01c558638865cac62bafb80527adf",
+      "sha256": "295ac2a848a428954cc17bf7259de10838ef3cb861edfa7588878c03f2afc8c5"
+    },
+    "experiments/w2e3/oracle/expected_results.json": {
+      "git_blob": "e70343a98962526be33748ef67e611283c3ee39d",
+      "sha256": "4789ed2b1305d74707275911830398ee958e6a7b778df2d4b44f63be1aa7a3ff"
+    },
+    "experiments/w2e3/outputs/comparison.json": {
+      "git_blob": "e80fff4c8fdcf0a489081b7f4997fd0bb5ebe9b2",
+      "sha256": "689eaf793b254b63c5a0e97f0e0098cbce09638022e2ab9e8383e9ef29411814"
+    },
+    "experiments/w2e3/outputs/p9_observation.json": {
+      "git_blob": "4ab86196e5fc9f0e316d6aff3daab17323e18461",
+      "sha256": "e8ab6defa5027fe0c774350a1ed1594063bd8679b584c7a665323b9c36943723"
+    },
+    "experiments/w2e3/outputs/run_sequence.json": {
+      "git_blob": "d42f52ab4a03506f1dbab62f44aed6b5658a8215",
+      "sha256": "bfef432528563715170264ed97a3f66e6f3500f5020196baf40d3a82604668f5"
+    },
+    "experiments/w2e3/outputs/sut_output.json": {
+      "git_blob": "b87cd85b1d2557cb3cd9f732f3b2b45599837618",
+      "sha256": "6d3cf42b2f7a0ba7fb7710f8bdf7e071760627bff2ada2fa7f0ee7652222aa5c"
+    },
+    "experiments/w2e3/repro/freeze_record.json": {
+      "git_blob": "16b9bc604705e042a27b4d40c78fa40a17ab35b0",
+      "sha256": "605bc6ac13b14c146cb317c96987bd1a9c22a5cb9d81cdb62d6a4aa4de88670d"
+    },
+    "experiments/w2e3/sut/adapters.py": {
+      "git_blob": "52f7493c1845800a9ae4a1717a58d225f6ba2d90",
+      "sha256": "2c68aac6894b8dbc03dec20fae1e9dd0cd8873b727c752cab80847269ddc231e"
+    },
+    "experiments/w2e3/sut/driver.py": {
+      "git_blob": "dc774bcd6eeaaa2ebc3646825db28b109458b121",
+      "sha256": "c45a7a15002d4e4fba1a07c7d77affd6bee993db653a86d1b542181f56158a37"
+    },
+    "experiments/w2e3/sut/evaluator.py": {
+      "git_blob": "a3fcef521765bc360e085f6cc9ab620aedb834ac",
+      "sha256": "d7fea896e0749c411999eb4c089b5e0d0e729d8b93b1c2f8571cf78c53694276"
+    }
+  }
+}

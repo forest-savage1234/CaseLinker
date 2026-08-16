@@ -1,0 +1,147 @@
+{
+  "approved_parent": "64dc010feaf8fc79a61bea8b70e2386fa39ce546",
+  "commands": {
+    "harness": "python -B experiments/w2e3/harness/run_w2e3.py",
+    "sut_interface": "python -B experiments/w2e3/sut/driver.py --fixture experiments/w2e3/fixtures/input_fixture.json --output experiments/w2e3/outputs/sut_output.json"
+  },
+  "experiment_id": "W2-E3",
+  "frozen_hashes": {
+    "fixture": "887421f98da909e9a0a0441248e66833d647440956677bdcaf790cc95a02da39",
+    "harness": "85c461686887dc035f996ef1c480d8a9990ebcd1ec154c468c1b9be422a12750",
+    "oracle": "539596c7c0c5ff71da06a8f096d6829280d16c71d839797ce62bedad0e0f74dd",
+    "sut_adapters": "04bdc2767c8746ad586a2d63ae5bac8427bb49ea246d3a4499de9096b38eeecb",
+    "sut_driver": "88dba912391010ffb4bf71cb130d5ac612a25b11affff0a3b8ac357c1ae6ba60",
+    "sut_evaluator": "0f1b195f0cf77e54ba518d70628946cfdf33fabf4bf59a7724fa1ba28433cc74"
+  },
+  "frozen_planning_packet": "5fb8913e78d0e54ed25021bb34fcade43d2aff3c",
+  "isolation": {
+    "namespace": "experiments/w2e3",
+    "oracle_available_to_sut": false,
+    "product_code_modified": false,
+    "temporary_sut_stage_destroyed": true
+  },
+  "oracle_bytes_hashed_before_sut": true,
+  "oracle_content_deserialized_before_sut": false,
+  "oracle_loaded_after_sut_output_capture": true,
+  "output_hashes": {
+    "comparison": "9ec51c8db34426a80420dc8627adff468f0a1d057f36107f34a9dafcf9fb89cf",
+    "p9_observation": "e8ab6defa5027fe0c774350a1ed1594063bd8679b584c7a665323b9c36943723",
+    "run_sequence": "1be0bfdf1d2ce20df5e8c7eb990374fbc5d0e0046dba66a7520ad2d079331a72",
+    "sut_output": "1868dc2b4eaebdb1041a839a67f69995e21ae3c8d99e9770d37e29b75e90775d"
+  },
+  "preserved_ineligible_r1": "4e620ab45e2dd771e6ed04eca243259bafb610a8",
+  "python": "3.12.13 (main, Jul 18 2026, 17:08:38) [MSC v.1944 64 bit (AMD64)]",
+  "run_sequence": [
+    {
+      "details": {
+        "hashes": {
+          "fixture": "887421f98da909e9a0a0441248e66833d647440956677bdcaf790cc95a02da39",
+          "harness": "85c461686887dc035f996ef1c480d8a9990ebcd1ec154c468c1b9be422a12750",
+          "oracle": "539596c7c0c5ff71da06a8f096d6829280d16c71d839797ce62bedad0e0f74dd",
+          "sut_adapters": "04bdc2767c8746ad586a2d63ae5bac8427bb49ea246d3a4499de9096b38eeecb",
+          "sut_driver": "88dba912391010ffb4bf71cb130d5ac612a25b11affff0a3b8ac357c1ae6ba60",
+          "sut_evaluator": "0f1b195f0cf77e54ba518d70628946cfdf33fabf4bf59a7724fa1ba28433cc74"
+        },
+        "oracle_bytes_hashed": true,
+        "oracle_content_deserialized": false
+      },
+      "event": "freeze_completed",
+      "monotonic_ns": 171001078000000,
+      "seq": 1,
+      "timestamp_utc": "2026-08-16T08:06:55.036858Z"
+    },
+    {
+      "details": {
+        "argv": [
+          "<python>",
+          "-B",
+          "<isolated>/sut/driver.py",
+          "--fixture",
+          "<isolated>/input_fixture.json",
+          "--output",
+          "<isolated>/sut_output.json"
+        ],
+        "cwd": "<isolated>",
+        "oracle_available_to_sut": false,
+        "staged_files": [
+          "input_fixture.json",
+          "sut/adapters.py",
+          "sut/driver.py",
+          "sut/evaluator.py"
+        ]
+      },
+      "event": "sut_started",
+      "monotonic_ns": 171001093000000,
+      "seq": 2,
+      "timestamp_utc": "2026-08-16T08:06:55.049728Z"
+    },
+    {
+      "details": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "event": "sut_completed",
+      "monotonic_ns": 171001531000000,
+      "seq": 3,
+      "timestamp_utc": "2026-08-16T08:06:55.482571Z"
+    },
+    {
+      "details": {
+        "oracle_content_deserialized": false,
+        "output_sha256": "1868dc2b4eaebdb1041a839a67f69995e21ae3c8d99e9770d37e29b75e90775d"
+      },
+      "event": "sut_output_captured",
+      "monotonic_ns": 171001546000000,
+      "seq": 4,
+      "timestamp_utc": "2026-08-16T08:06:55.505837Z"
+    },
+    {
+      "details": {
+        "after_sut_output_capture": true,
+        "oracle_sha256": "539596c7c0c5ff71da06a8f096d6829280d16c71d839797ce62bedad0e0f74dd"
+      },
+      "event": "oracle_loaded",
+      "monotonic_ns": 171001562000000,
+      "seq": 5,
+      "timestamp_utc": "2026-08-16T08:06:55.514721Z"
+    },
+    {
+      "details": {
+        "validity_error_count": 0
+      },
+      "event": "oracle_validated",
+      "monotonic_ns": 171001562000001,
+      "seq": 6,
+      "timestamp_utc": "2026-08-16T08:06:55.514721Z"
+    },
+    {
+      "details": {
+        "classification": "path_lacks_enforcement",
+        "confirmed_leak": false
+      },
+      "event": "p9_observed",
+      "monotonic_ns": 171002718000000,
+      "seq": 7,
+      "timestamp_utc": "2026-08-16T08:06:56.668974Z"
+    },
+    {
+      "details": {
+        "recommendation": "proceed",
+        "valid_run": true
+      },
+      "event": "comparison_written",
+      "monotonic_ns": 171002765000000,
+      "seq": 8,
+      "timestamp_utc": "2026-08-16T08:06:56.709849Z"
+    },
+    {
+      "details": {},
+      "event": "evidence_finalized",
+      "monotonic_ns": 171002765000001,
+      "seq": 9,
+      "timestamp_utc": "2026-08-16T08:06:56.714480Z"
+    }
+  ],
+  "sut_revision": "w2e3-disclosure-v2"
+}

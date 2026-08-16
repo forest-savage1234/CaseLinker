@@ -1,0 +1,132 @@
+{
+  "schema_version": "w2e3-oracle-v2",
+  "experiment_id": "W2-E3",
+  "attempt": "r2",
+  "expected_sut_revision": "w2e3-disclosure-v2",
+  "expected_evaluator_identity": "shared-supplied-decision-evaluator-v2",
+  "required_probe_ids": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8"
+  ],
+  "required_attacks": {
+    "P4": "seed_cache_from_full_record",
+    "P5": "build_search_from_internal_view",
+    "P6": "log_full_record",
+    "P7": "include_record_repr_in_error",
+    "P8": "skip_enforcement_requested"
+  },
+  "expected_fields": {
+    "D-missing": [],
+    "D-internal": [
+      "display_name",
+      "internal_note",
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "D-research": [
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "D-public": [
+      "public_aggregate_count"
+    ],
+    "D-expired": [],
+    "D-revoked": [],
+    "D-invalid": [],
+    "D-deny": [],
+    "M1": [
+      "internal_note",
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "M2": [
+      "public_aggregate_count"
+    ],
+    "M3-before": [
+      "display_name",
+      "internal_note",
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "M3-after": [],
+    "M4": [
+      "display_name",
+      "internal_note",
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "M5": [
+      "display_name",
+      "internal_note",
+      "public_aggregate_count",
+      "research_status"
+    ],
+    "N-nested-key": [],
+    "N-nested-value": []
+  },
+  "deny_all_runs": [
+    "D-missing",
+    "D-expired",
+    "D-revoked",
+    "D-invalid",
+    "D-deny",
+    "M3-after",
+    "N-nested-key",
+    "N-nested-value"
+  ],
+  "non_internal_runs": [
+    "D-missing",
+    "D-research",
+    "D-public",
+    "D-expired",
+    "D-revoked",
+    "D-invalid",
+    "D-deny",
+    "M2",
+    "M3-after",
+    "N-nested-key",
+    "N-nested-value"
+  ],
+  "internal_fields": [
+    "internal_note",
+    "internal_decoy"
+  ],
+  "metamorphic_runs": [
+    "M1",
+    "M2",
+    "M3-before",
+    "M3-after",
+    "M4",
+    "M5"
+  ],
+  "structural_runs": [
+    "N-nested-key",
+    "N-nested-value"
+  ],
+  "distinct_view_runs": [
+    "D-internal",
+    "D-research",
+    "D-public"
+  ],
+  "m3": {
+    "after_run_id": "M3-after",
+    "before_run_id": "M3-before",
+    "changed_fields": [
+      "revocation_state"
+    ],
+    "preserved_fields": [
+      "allowed_fields",
+      "audience",
+      "decision_id",
+      "effect",
+      "expiry",
+      "purpose"
+    ]
+  }
+}
