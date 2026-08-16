@@ -27,8 +27,8 @@ Wave 2 must run the minimum isolated experiments that can succeed or fail agains
 | ID | Requirement | Source |
 |---|---|---|
 | W2-N1 | Isolated, disposable worktrees or experiment namespaces only | §22 |
-| W2-N2 | Test whether PostgreSQL can enforce append-only, bitemporal, and concurrent-review invariants under realistic conflicting transactions | §22 item 1; R-CON |
-| W2-N3 | Test whether dependency invalidation can identify the complete transitive impact of a corrected claim without treating a graph projection as authoritative | §22 item 2; R-COR |
+| W2-N2 | Test whether PostgreSQL can enforce append-only, **independent-dimension** bitemporal, and concurrent-review invariants under realistic conflicting transactions. No fixed event/knowledge ordering. Collapse means aliasing, overwriting, omitting, or querying the two times as one. | §22 item 1; R-CON; W1 `reject_collapsed_clock` |
+| W2-N3 | Test whether dependency invalidation can (1) find all transitives in the **registered** set, (2) prevent or detect silent unregistered dependencies against a declared fixture universe, and (3) fail closed when coverage cannot be established — without treating a graph projection as authoritative | §22 item 2; R-COR |
 | W2-N4 | Test whether purpose/audience/field-level disclosure can default-deny and produce distinct internal, research, and public projections without leaking internal fields through alternate serializers, logs, exports, caches, search, errors, or admin paths | §22 item 3; R-DIS |
 | W2-N5 | Test whether source-family modeling can distinguish independent corroboration from duplicated or syndicated reporting on frozen policy-safe examples | §22 item 4; RESOLVE-001/002 |
 | W2-N6 | Test whether identity hypotheses remain reversible and resist blind transitive merging | §22 item 5; R-ID |
@@ -54,12 +54,14 @@ Wave 2 must run the minimum isolated experiments that can succeed or fail agains
 
 Detailed procedures live in `docs/v4/experiments/WAVE-02-PLAN.md`.
 
+Default execution is **sequential**: W2-E5 → W2-E2 → W2-E3 → W2-E4 → W2-E1. The experiments are logically independent; sequence is not a result dependency. Parallel execution requires an explicit human amendment (builders or namespaces, capacity, evidence isolation, reviewer availability, contamination controls).
+
 ## 3. Principal risks assigned to this wave
 
 | Risk | Wave 2 duty | Not this wave |
 |---|---|---|
 | R-ID silent false merge | Falsify blind transitivity and irreversibility on fixtures | Operational identity resolution (Wave 4; OD-006) |
-| R-COR incomplete invalidation | Falsify incomplete, cyclic, stale, and projection-authoritative impact | Wave 3 temporal kernel |
+| R-COR incomplete invalidation | Falsify closure errors, silent non-registration, incomplete-state claims, and projection-authoritative impact | Wave 3 temporal kernel; unknowable external dependents |
 | R-DIS alternate-path leakage | Falsify default-deny and three synthetic views on experiment output paths | Real policy content (OD-003); Wave 5 PDP |
 | R-CON lost concurrent review | Falsify append-only / bitemporal / review conflicts on disposable Postgres | Production vendor, schema, hosting (OD-008) |
 | Syndicated “corroboration” | Falsify family-vs-independent classification without a single score | Live corpus (OD-004) |
@@ -168,7 +170,7 @@ Accepted Wave 1 residuals remain non-blocking carry-forward unless a later human
 | W1-N15 extractor wiring | **out of scope**; later wave |
 | Leftover `identity-hypothesis-v1` | **out of scope**; Wave 4 / OD-006 |
 | r3/r4 disclosure field extras | **not** Wave 2 exit requirements unless a human amendment says so |
-| Three live views on **real** product serializers | W2-E3 tests the **mechanism** on experiment surfaces and may **probe** existing paths; it does not adopt production audience policy |
+| Three live views on **real** product serializers | W2-E3 tests the **mechanism** on P1–P8. P9 is an observational probe of existing v3 Evidence Pack / Claim Card paths: a confirmed leak cannot be ignored, yields `revise architecture` or `stop` with a named carry-forward, and must not trigger unapproved product repair. |
 
 ## 11. What human approval of this packet would authorize
 

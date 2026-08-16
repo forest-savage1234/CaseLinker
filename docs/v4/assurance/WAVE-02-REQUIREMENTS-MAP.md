@@ -21,10 +21,13 @@ Do not mark anything `implemented` or `closed`.
 | ID | Requirement | Disposition | Proposed experiment | Falsification criterion | Intended evidence | Dependency | Owner | Blocking OD-* |
 |---|---|---|---|---|---|---|---|---|
 | W2-N1 | Isolated disposable namespaces | planned | all | Any experiment writes into production modules, `main`, or `proposal/v3-foundation` | Isolation record; worktree/namespace id; diff scope | plan approval | program operator (tracking) | none for isolation; OD-008 for any hosted claim |
-| W2-N2 | Postgres append-only, bitemporal, conflicting-review invariants | planned (instrument only) | W2-E1 | Silent lost update, illegal overwrite, time collapse, or two conflicting reviews both committing as legal | Conflict matrix; isolation-level measurements; invariant-violation count | none | program operator (tracking) | OD-008 **blocks production selection**, not the disposable instrument |
-| W2-N3 | Complete transitive invalidation without graph authority | planned | W2-E2 | Missing transitive dependent; cycle mishandled; stale survivor; graph projection wins over registry | Impact-set comparison; incomplete-registry fail-closed cases | none | program operator (tracking) | none for fixtures; OD-003 blocks production notices |
+| W2-N2 | Postgres append-only, independent-dimension bitemporal, conflicting-review invariants | planned (instrument only) | W2-E1 | Silent lost update; illegal overwrite; dimensions aliased/omitted/queried as one; future-effective or coincident pair rejected as intrinsically invalid; inverted event interval, invented precision, non-UTC knowledge time, or in-place knowledge mutation stored as valid; two conflicting reviews both committing as legal | Conflict matrix including C4a–C4g; isolation-level measurements; independent-query checks | none | program operator (tracking) | OD-008 **blocks production selection**, not the disposable instrument |
+| W2-N3 | Fixture-relative invalidation without graph authority | planned | W2-E2 | See W2-N3a–c | Manifest, registry closure, coverage status, fail-closed traces | none | program operator (tracking) | none for fixtures; OD-003 blocks production notices |
+| W2-N3a | Closure correctness over the registered set | planned | W2-E2 | Registered transitive omitted; cycle drops nodes or fails to terminate | Impact-set vs registry closure | W2-N3 | program operator (tracking) | none for fixtures |
+| W2-N3b | Registration coverage vs declared fixture universe | planned | W2-E2 | Manifest-declared edge or input created without registration and without detection | Registry-vs-manifest coverage | W2-N3 | program operator (tracking) | none for fixtures |
+| W2-N3c | Incomplete-state fail-closed | planned | W2-E2 | Coverage not established but result claims complete impact | Explicit `incomplete` on F-incomplete / F-missing-reg / F-silent-create | W2-N3 | program operator (tracking) | none for fixtures |
 | W2-N4 | Default-deny disclosure; distinct views; no alternate-path leak | planned (synthetic decisions) | W2-E3 | Missing policy authorizes; views collapse; internal field appears on any probed path | Leakage probe table; three-view field matrices | none | program operator (tracking) | OD-003 **blocks policy content**; synthetic fixtures allowed |
-| W2-N5 | Independent corroboration ≠ syndication/duplication | planned | W2-E4 | Copy or syndicate counted as independent; genuine independent collapsed; single opaque score is the decision | Labeled confusion table; structured reasons | none | program operator (tracking) | OD-004 blocks live corpus |
+| W2-N5 | Independent corroboration ≠ syndication/duplication | planned | W2-E4 | Copy or syndicate counted as independent; genuine independent pair classified as the same family **or** improperly suppressed as non-independent evidence; single opaque score is the decision; one-example-per-label pack | Multi-example confusion table; structured reasons | none | program operator (tracking) | OD-004 blocks live corpus |
 | W2-N6 | Reversible identity; no blind A≈B≈C | planned | W2-E5 | Automatic A=C; irreversible merge; negative evidence dropped; false-merge cannot reopen | Adversarial fixture outcomes; state traces | none | program operator (tracking) | OD-006 **blocks operational identity**; no canonical person |
 | W2-N7 | Pre-declared falsification and thresholds | planned | plan artifact | Execution begins without recorded failure conditions | this map; `WAVE-02-PLAN.md` | plan approval | program operator (tracking) | none |
 | W2-N8 | Policy-safe synthetic fixtures only | planned | all | Live corpus, real PII, or invented lawful basis used | Fixture inventory and provenance | D-007 | program operator (tracking) | OD-003/004 |
@@ -43,7 +46,7 @@ These IDs may gain **experimental evidence**. None are `closed`.
 | ID | Wave 2 effect | Still open |
 |---|---|---|
 | CONST-004 / TEMP-* | W2-E1 may show whether Postgres can hold two times under conflict | Wave 3 kernel |
-| CONST-012 / CORRECT-001…003 | W2-E2 tests fixture impact completeness | Wave 3 engine; production notices |
+| CONST-012 / CORRECT-001…003 | W2-E2 tests fixture-relative closure, coverage, and fail-closed incomplete state | Wave 3 engine; production notices; unknowable externals |
 | CONST-009 / DISCLOSE-001…004 | W2-E3 tests enforcement of **supplied** decisions and leakage | OD-003; Wave 5 PDP |
 | CONST-006 / 007 / RESOLVE-003…005 | W2-E5 tests reversibility and non-transitivity | OD-006; Wave 4 |
 | CONST-010 / 011 / RESOLVE-001…002 | W2-E4 tests family vs independent on frozen examples | OD-004 live corpus |
@@ -67,8 +70,8 @@ These IDs may gain **experimental evidence**. None are `closed`.
 
 Full analysis: `docs/v4/experiments/WAVE-02-PLAN.md` §0.
 
-Recommended risk order if sequential: **W2-E5 → W2-E2 → W2-E3 → W2-E4 → W2-E1**.
+**Default order is sequential:** **W2-E5 → W2-E2 → W2-E3 → W2-E4 → W2-E1**.
 
-Independent / parallelizable: all five. Highest-risk parallel panel: W2-E5 + W2-E2 + W2-E3.
+The five experiments remain logically independent. Simultaneous execution is **not** authorized by default. Parallel execution requires an explicit human amendment naming builders/namespaces, capacity, evidence isolation, reviewer availability, and contamination controls.
 
-No experiment depends on resolving OD-003, OD-005, OD-006, or OD-008. Each may use synthetic fixtures. Production or policy claims remain blocked.
+No experiment depends on resolving OD-003, OD-005, OD-006, or OD-008. Each may use synthetic fixtures. Production or policy claims remain blocked. Wave 2 completeness on W2-E2 is relative to a declared fixture universe.

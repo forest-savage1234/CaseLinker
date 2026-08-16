@@ -195,6 +195,14 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Wave 2 execution; vendor or infrastructure selection; policy content; any blocked OD-*; Phase 0 / Gate 0; official version; Wave 3
 - **Consequence:** Human gate owner reviews the proposed boundary. Wave 2 implementation awaits a separate explicit plan approval.
 
+## D-2026-08-15-028 — Revise proposed Wave 2 planning packet (W2-P1…P5)
+
+- **Label:** repository fact of an operator-authorized planning revision
+- **Decision:** Revise the **proposed** Wave 2 packet. Confirm and repair: W2-P1 independent-dimension bitemporal model (no cross-clock ordering); W2-P2 separate closure correctness, registration coverage, and incomplete-state fail-closed; W2-P3 independent-pair failure is classification **or** suppression; W2-P4 explicit P9 disposition; W2-P5 sequential default E5→E2→E3→E4→E1. Wave 2 `legal_state` remains `unstarted`. The packet remains `proposed`, not frozen or human-approved.
+- **Does not rewrite:** D-027 or the original proposed-plan commit
+- **Does not decide:** Wave 2 execution; experiment worktrees; PostgreSQL startup; product changes; Wave 3; Phase 0 / Gate 0; official version
+- **Consequence:** Request a fresh independent review of the revised planning packet. Do not begin execution.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
