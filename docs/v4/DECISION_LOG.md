@@ -236,6 +236,27 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** Wave 2 approval, freeze, or execution; vendor, schema, identity-policy, disclosure-policy, or official-version selection; any blocked OD-*; Phase 0 / Gate 0; Wave 3
 - **Consequence:** The next authority belongs solely to the human gate owner deciding whether to approve and freeze exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` for Wave 2 experiment execution only. This decision does not approve, freeze, or execute Wave 2.
 
+## D-2026-08-15-033 — Human approves and freezes Wave 2 planning packet
+
+- **Label:** human decision required (decided)
+- **Decision:** Forest Savage, as human gate owner, issued the following decision verbatim:
+
+  I approve and freeze exactly Wave 2 planning packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`.
+
+  My approval relies on the valid independent review recorded by commit `4c52b41aa03725cde9c1d2b4224a12259397152b` and the administrative reconciliation recorded by commit `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`.
+
+  This approval authorizes execution of the five planned Wave 2 experiments only, sequentially in the governed order beginning with E5. It does not pre-accept any experimental result, approve later-wave implementation, waive an invalid/revise/stop condition, or authorize work beyond the frozen packet.
+
+  No experiment may begin unless the approved commit lineage is verified, the working tree is clean, and the packet remains byte-identical to `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`.
+
+- **Frozen packet:** `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`
+- **Valid review record:** `docs/v4/evidence/WAVE-02-PLAN-REVIEW-03.md` at `4c52b41aa03725cde9c1d2b4224a12259397152b`
+- **State reconciliation relied upon:** `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`
+- **Authorization:** Wave 2 experiments only, sequential order W2-E5 → W2-E2 → W2-E3 → W2-E4 → W2-E1. Next authorized experiment is W2-E5 only. `experiments_executed` remains false. No experiment namespace is created by this decision.
+- **Does not rewrite:** D-027 through D-032 or any review record
+- **Does not decide:** any experimental result; later-wave implementation; any blocked OD-*; Phase 0 / Gate 0; official version; vendor, schema, identity policy, or disclosure policy
+- **Consequence:** The planning packet is frozen and `human_approved`. The only unlocked experiment is W2-E5, and only after the lineage, clean-tree, and packet-identity conditions in the human decision are met.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

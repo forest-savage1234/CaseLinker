@@ -33,11 +33,14 @@ wave_01:
   human_accepted: true
   official_version_claim: false
 wave_02:
-  legal_state: "unstarted"
-  planning_status: "proposed"
+  legal_state: "human_approved"
+  planning_status: "frozen"
   planning_decision: "D-2026-08-15-027"
   planning_revision: "D-2026-08-15-031"
   planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
+  frozen_planning_packet: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
+  approval_decision: "D-2026-08-15-033"
+  next_authorized_experiment: "W2-E5"
   planning_review_01_recorded_disposition: "planning_review_pass"
   planning_review_01_validity: "review_invalid"
   planning_review_01_invalidated_by: "D-2026-08-15-030"
@@ -59,7 +62,7 @@ wave_02:
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
   proposed_primary_proof_obligation: "obtain evidence about the hardest assumptions before committing the architecture to them"
   experiments_executed: false
-  human_approved: false
+  human_approved: true
   official_version_claim: false
 gate_0: "not_complete"
 approved_base_commit: "4a17a9e5fdf74057de08a819291bf1606b8e3b45"
@@ -79,8 +82,8 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and was revised again for experiment falsifiability and oracles (D-031). The planning packet is `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. A valid independent planning review now exists (`WAVE-02-PLAN-REVIEW-03.md`, D-032, review-record commit `4c52b41aa03725cde9c1d2b4224a12259397152b`). Review 01 (`WAVE-02-PLAN-REVIEW.md`, D-029) recorded `planning_review_pass` and remains `review_invalid` because its reviewer authored the packet; it was invalidated by D-030. Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid`. The unpushed local attempt `a9b2c7fa2482d71d38dadf88dfef03d5e742ed3b` is not valid acceptance. Human approval and packet freeze have not occurred. No experiment has been executed. D-032 does not approve, freeze, or start Wave 2.
+Human-approved and frozen (D-033). The frozen planning packet is exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Approval relies on the valid independent review at `4c52b41aa03725cde9c1d2b4224a12259397152b` (`WAVE-02-PLAN-REVIEW-03.md`, D-032) and the administrative reconciliation at `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`. Review 01 (D-029) remains `review_invalid`. Review 02 (D-030) remains `review_invalid`. No experiment has been executed. No experiment result is pre-accepted. Later-wave work is not authorized. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E5. An experiment may begin only if the approved commit lineage is verified, the working tree is clean, and the packet remains byte-identical to `5fb8913e`.
 
 ## Next safe action
 
-The human gate owner decides whether to approve and freeze exactly planning packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c` for Wave 2 experiment execution only. Do not treat D-029 as independent acceptance. Do not execute Wave 2 until that explicit human decision exists. No approval, freeze, or execution authority exists now. Phase 0 / Gate 0 remain incomplete.
+W2-E5 only, after verifying the approved commit lineage, a clean working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E2, W2-E3, W2-E4, or W2-E1. Do not create an experiment namespace from this administrative record. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
