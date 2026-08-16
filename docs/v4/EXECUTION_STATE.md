@@ -40,6 +40,10 @@ wave_02:
   planning_review_status: "planning_review_pass"
   planning_review_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW.md"
   planning_review_decision: "D-2026-08-15-029"
+  planning_review_02_status: "review_invalid"
+  planning_review_02_record: "docs/v4/evidence/WAVE-02-PLAN-REVIEW-02.md"
+  planning_review_02_decision: "D-2026-08-15-030"
+  valid_independent_planning_review: false
   proposed_assurance_contract: "docs/v4/assurance/WAVE-02-ASSURANCE.md"
   proposed_requirements_map: "docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md"
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
@@ -64,8 +68,8 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Unstarted. A planning packet is **proposed** (D-027), was revised (D-028), and has a planning review of `ed7597a4` with disposition `planning_review_pass` (D-029). It is not frozen or human-approved. No experiment has been executed. This does **not** approve Wave 2, select infrastructure, invent policy content, complete Phase 0 or Gate 0, or authorize Wave 3.
+Unstarted. A planning packet is **proposed** (D-027) and was revised (D-028). The first planning review (`WAVE-02-PLAN-REVIEW.md`, D-029) remains on record as history and is **not** a valid independent review (admitted author lineage). Review 02 (`WAVE-02-PLAN-REVIEW-02.md`, D-030) is `review_invalid` because this conversation authored the packet; the packet was not evaluated. No valid independent planning review exists. No experiment has been executed. The packet is not frozen or human-approved.
 
 ## Next safe action
 
-Human gate owner decides whether to approve the proposed Wave 2 packet. Do not execute Wave 2 until that approval is explicit. Phase 0 / Gate 0 remain incomplete. Do not reopen Wave 1 disclosure or SoD contracts.
+Commission a **fresh conversation** with no Wave 2 authoring context to review the proposed packet. Do not treat D-029 as independent acceptance. Do not execute Wave 2. Phase 0 / Gate 0 remain incomplete.

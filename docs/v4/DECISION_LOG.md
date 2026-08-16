@@ -211,6 +211,14 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** human approval of Wave 2; execution; vendor or policy selection; Phase 0 / Gate 0; official version; Wave 3
 - **Consequence:** Human gate owner decides whether to approve the proposed packet. Medium/low residuals remain non-blocking carry-forward unless the human converts them.
 
+## D-2026-08-15-030 — Wave 2 planning review 02 is `review_invalid`
+
+- **Label:** repository fact of a failed independence check
+- **Decision:** Record `docs/v4/evidence/WAVE-02-PLAN-REVIEW-02.md`. Disposition `review_invalid`. This conversation lineage authored and revised the Wave 2 planning packet and authored the prior review. The packet was **not** evaluated. The prior review remains on disk as history and is **not** a valid independent review. Wave 2 `legal_state` remains `unstarted`. The packet remains `proposed`. Do **not** set `human_approved`. Do **not** execute experiments.
+- **Does not rewrite:** D-027, D-028, D-029, or `WAVE-02-PLAN-REVIEW.md`
+- **Does not decide:** the technical merit of the proposed packet; human approval; execution
+- **Consequence:** A genuinely fresh conversation must perform the independent planning review. D-029 is not independent acceptance.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
