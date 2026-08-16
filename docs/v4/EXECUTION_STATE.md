@@ -40,7 +40,7 @@ wave_02:
   planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   frozen_planning_packet: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   approval_decision: "D-2026-08-15-033"
-  execution_checkpoint_decision: "D-2026-08-15-035"
+  execution_checkpoint_decision: "D-2026-08-15-036"
   completed_experiments:
     - "W2-E5"
     - "W2-E2"
@@ -69,6 +69,22 @@ wave_02:
       checkpoint_limitations:
         - "same-model conversation is not organizational independence under WAVE-02-ASSURANCE section 7"
         - "checkpoint did not rerun the experiment and is not a section 7 gate-ready review"
+    W2-E3:
+      status: "invalid/incomplete"
+      recommendation: null
+      eligible_evidence_commit: null
+      invalid_incomplete_attempts:
+        - commit: "4e620ab45e2dd771e6ed04eca243259bafb610a8"
+          parent: "9c481ee78bce8f916b9773f46924558424babdae"
+          branch: "experiment/w2-e3"
+          draft_pr: "https://github.com/forest-savage1234/CaseLinker/pull/1"
+          reason: "required cache/search/log/error/admin bypasses recorded but not executed; M3 used a different decision; nested denied keys/values invisible to top-level scorer"
+          preserved: true
+          eligible: false
+      checkpoint_advice: "repeat_experiment"
+      checkpoint_decision: "D-2026-08-15-036"
+      authorized_repeat: "W2-E3 r2 only"
+      checkpoint_gate_ready: false
   next_authorized_experiment: "W2-E3"
   planning_review_01_recorded_disposition: "planning_review_pass"
   planning_review_01_validity: "review_invalid"
@@ -115,8 +131,10 @@ Human-approved and frozen (D-033). The frozen planning packet is exactly `5fb891
 
 W2-E5 is complete under D-034. Attempts `98a171dc` and `ce28e88c` remain invalid/incomplete and ineligible. W2-E5 r3 commit `105ac4237b767db51c95161e202dacfff0590a92` is the sole eligible result: valid run, recommendation `proceed`, with oracle content loaded only after SUT completion and output capture. This result is not Wave 2 acceptance and does not decide OD-006 or select a canonical identity model.
 
-W2-E2 is complete under D-035. Attempt `64ac7288` remains invalid/incomplete and ineligible because its post-run `git diff --check` failed on already-hashed authored files. W2-E2 r2 commit `d026ca02d38009181bea1aa5f5821f48a4319057` is the sole eligible result: valid run, recommendation `proceed`, with a separately hashed oracle loaded only after SUT output capture, hand-enumerated closure expectations, and independent registration reconciliation. The read-only checkpoint advised `continue_to_next_experiment`; it did not rerun the experiment and is not a section 7 gate-ready review. This result does not select an operational dependency architecture or authorize production promotion. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E3.
+W2-E2 is complete under D-035. Attempt `64ac7288` remains invalid/incomplete and ineligible because its post-run `git diff --check` failed on already-hashed authored files. W2-E2 r2 commit `d026ca02d38009181bea1aa5f5821f48a4319057` is the sole eligible result: valid run, recommendation `proceed`, with a separately hashed oracle loaded only after SUT output capture, hand-enumerated closure expectations, and independent registration reconciliation. The read-only checkpoint advised `continue_to_next_experiment`; it did not rerun the experiment and is not a section 7 gate-ready review. This result does not select an operational dependency architecture or authorize production promotion. Invalid/revise/stop conditions are not waived.
+
+W2-E3 r1 is incomplete under D-036. Commit `4e620ab45e2dd771e6ed04eca243259bafb610a8` and draft PR #1 are preserved as ineligible r1 evidence and must not be amended, deleted, force-pushed, or represented as eligible. The independent checkpoint disposition was `repeat_experiment` because required bypass cases were not executed, M3 did not revoke or expire the same previously allowed decision, and nested denied structure was invisible to the scorer. W2-E3 is not complete. The only unlocked work is one bounded W2-E3 r2.
 
 ## Next safe action
 
-W2-E3 only, after this D-035 administrative commit is published on `proposal/v4-research-network`, and after verifying that published lineage, a clean isolated experiment working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E4 or W2-E1. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
+One bounded W2-E3 r2 only, after this D-036 administrative commit is published on `proposal/v4-research-network`, and after verifying that published lineage, a clean isolated experiment working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Preserve r1 commit `4e620ab` and draft PR #1. Do not start W2-E4 or W2-E1. A reviewer who did not author or repair W2-E3 r2 must independently verify that r2 before any continuation decision. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
