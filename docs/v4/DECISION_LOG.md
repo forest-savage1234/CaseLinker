@@ -257,6 +257,18 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** any experimental result; later-wave implementation; any blocked OD-*; Phase 0 / Gate 0; official version; vendor, schema, identity policy, or disclosure policy
 - **Consequence:** The planning packet is frozen and `human_approved`. The only unlocked experiment is W2-E5, and only after the lineage, clean-tree, and packet-identity conditions in the human decision are met.
 
+## D-2026-08-15-034 — Continue after valid W2-E5 r3; authorize W2-E2 only
+
+- **Label:** human decision required (decided), with administrative checkpoint reconciliation
+- **Human instruction (verbatim):** “Once the playbook is complete, execute it carefully.”
+- **Conservative scope applied:** The completed mission-completion playbook makes its first execution gate the already-reviewed W2-E5 r3 checkpoint. This record therefore applies the instruction only to that presently knowable gate: accept the read-only checkpoint advice for valid W2-E5 r3 evidence commit `105ac4237b767db51c95161e202dacfff0590a92` and authorize W2-E2 as the next named experiment. It is not blanket pre-authorization of outcome-dependent later gates.
+- **Eligible W2-E5 evidence:** `105ac4237b767db51c95161e202dacfff0590a92`, parent `e620ec75c334a8e3fa7bd27358ebbdcd3ed3af50`; valid run; recommendation `proceed`; fixture/oracle/SUT/driver/harness hashes match the frozen run record; oracle content was loaded only after SUT completion and output capture.
+- **Preserved invalid/incomplete attempts:** `98a171dc6df0c0fa04f9eb22598191f0a48e7efe` (oracle lacked complete I-trans and I-contra traces) and `ce28e88c42223767a1d85f880ea7b6b6a7f28b22` (oracle deserialized and validated before SUT execution). Neither result is eligible evidence.
+- **Architecture implication accepted for sequencing only:** A disposable hypothesis driver demonstrated reversible recovery from a mistaken `confirmed_same` decision without destroying evidence or creating a canonical identity. This does not decide OD-006 or select an operational identity model.
+- **Authorization:** W2-E2 only, from the still-frozen packet `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`, after verifying this administrative commit, clean state, and packet identity.
+- **Does not authorize:** W2-E3, W2-E4, W2-E1, Wave 2 acceptance, Wave 3, production code promotion, canonical merge/split, any blocked OD-* decision, cleanup, deployment, or an official-version claim.
+- **Consequence:** W2-E5 is complete with r3 as its sole eligible result. W2-E2 becomes the only unlocked experiment. Every later experiment remains locked pending its own valid result, read-only checkpoint, and explicit human continuation decision.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.

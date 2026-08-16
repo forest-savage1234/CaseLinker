@@ -40,7 +40,22 @@ wave_02:
   planning_revision_commit: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   frozen_planning_packet: "5fb8913e78d0e54ed25021bb34fcade43d2aff3c"
   approval_decision: "D-2026-08-15-033"
-  next_authorized_experiment: "W2-E5"
+  execution_checkpoint_decision: "D-2026-08-15-034"
+  completed_experiments:
+    - "W2-E5"
+  experiment_results:
+    W2-E5:
+      status: "valid"
+      recommendation: "proceed"
+      eligible_evidence_commit: "105ac4237b767db51c95161e202dacfff0590a92"
+      invalid_incomplete_attempts:
+        - commit: "98a171dc6df0c0fa04f9eb22598191f0a48e7efe"
+          reason: "oracle lacked complete I-trans and I-contra traces"
+        - commit: "ce28e88c42223767a1d85f880ea7b6b6a7f28b22"
+          reason: "oracle deserialized and validated before SUT execution"
+      checkpoint_advice: "continue_to_next_experiment"
+      checkpoint_decision: "D-2026-08-15-034"
+  next_authorized_experiment: "W2-E2"
   planning_review_01_recorded_disposition: "planning_review_pass"
   planning_review_01_validity: "review_invalid"
   planning_review_01_invalidated_by: "D-2026-08-15-030"
@@ -61,7 +76,7 @@ wave_02:
   proposed_requirements_map: "docs/v4/assurance/WAVE-02-REQUIREMENTS-MAP.md"
   proposed_experiment_plan: "docs/v4/experiments/WAVE-02-PLAN.md"
   proposed_primary_proof_obligation: "obtain evidence about the hardest assumptions before committing the architecture to them"
-  experiments_executed: false
+  experiments_executed: true
   human_approved: true
   official_version_claim: false
 gate_0: "not_complete"
@@ -82,8 +97,10 @@ Closed. Operator accepted implementation `740862d3` and gate-ready record `c30a1
 
 ## Wave 2
 
-Human-approved and frozen (D-033). The frozen planning packet is exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Approval relies on the valid independent review at `4c52b41aa03725cde9c1d2b4224a12259397152b` (`WAVE-02-PLAN-REVIEW-03.md`, D-032) and the administrative reconciliation at `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`. Review 01 (D-029) remains `review_invalid`. Review 02 (D-030) remains `review_invalid`. No experiment has been executed. No experiment result is pre-accepted. Later-wave work is not authorized. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E5. An experiment may begin only if the approved commit lineage is verified, the working tree is clean, and the packet remains byte-identical to `5fb8913e`.
+Human-approved and frozen (D-033). The frozen planning packet is exactly `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Approval relies on the valid independent review at `4c52b41aa03725cde9c1d2b4224a12259397152b` (`WAVE-02-PLAN-REVIEW-03.md`, D-032) and the administrative reconciliation at `bedeb04b15e17885af6fe7a41c963c8cd154ffcd`. Review 01 (D-029) remains `review_invalid`. Review 02 (D-030) remains `review_invalid`.
+
+W2-E5 is complete under D-034. Attempts `98a171dc` and `ce28e88c` remain invalid/incomplete and ineligible. W2-E5 r3 commit `105ac4237b767db51c95161e202dacfff0590a92` is the sole eligible result: valid run, recommendation `proceed`, with oracle content loaded only after SUT completion and output capture. This result is not Wave 2 acceptance and does not decide OD-006 or select a canonical identity model. Later-wave work is not authorized. Invalid/revise/stop conditions are not waived. The only unlocked experiment is W2-E2.
 
 ## Next safe action
 
-W2-E5 only, after verifying the approved commit lineage, a clean working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E2, W2-E3, W2-E4, or W2-E1. Do not create an experiment namespace from this administrative record. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
+W2-E2 only, after verifying the D-034 administrative lineage, a clean working tree, and packet identity `5fb8913e78d0e54ed25021bb34fcade43d2aff3c`. Do not start W2-E3, W2-E4, or W2-E1. Phase 0 / Gate 0 remain incomplete. `official_version_claim` remains false.
