@@ -27,17 +27,17 @@ Wave 2 must run the minimum isolated experiments that can succeed or fail agains
 | ID | Requirement | Source |
 |---|---|---|
 | W2-N1 | Isolated, disposable worktrees or experiment namespaces only | §22 |
-| W2-N2 | Test whether PostgreSQL can enforce append-only, **independent-dimension** bitemporal, and concurrent-review invariants under realistic conflicting transactions. No fixed event/knowledge ordering. Collapse means aliasing, overwriting, omitting, or querying the two times as one. | §22 item 1; R-CON; W1 `reject_collapsed_clock` |
+| W2-N2 | Test two layers on a disposable PostgreSQL instrument: (1) **storage enforcement** — reject a structurally collapsed representation, an invalid event interval, an explicitly declared invented-precision condition, non-UTC knowledge time, and in-place mutation of prior knowledge history; (2) **query-interface correctness** — declared `as_known` and `valid_during` interfaces address the two stored dimensions independently and return independently enumerated expected results. The experiment may test only information represented in its schema. It does **not** claim that PostgreSQL inferred whether a source invented precision, or that PostgreSQL rejects every arbitrary `SELECT` issued by a principal with unrestricted table access. Storage collapse is structural (one field or alias for both dimensions, an omitted dimension, or `time_model=collapsed`). Equal timestamps in distinct event/valid-time and knowledge/transaction-time fields remain valid. No fixed event/knowledge ordering. | §22 item 1; R-CON; W1 `reject_collapsed_clock` |
 | W2-N3 | Test whether dependency invalidation can (1) find all transitives in the **registered** set, (2) prevent or detect silent unregistered dependencies against a declared fixture universe, and (3) fail closed when coverage cannot be established — without treating a graph projection as authoritative | §22 item 2; R-COR |
-| W2-N4 | Test whether purpose/audience/field-level disclosure can default-deny and produce distinct internal, research, and public projections without leaking internal fields through alternate serializers, logs, exports, caches, search, errors, or admin paths | §22 item 3; R-DIS |
-| W2-N5 | Test whether source-family modeling can distinguish independent corroboration from duplicated or syndicated reporting on frozen policy-safe examples | §22 item 4; RESOLVE-001/002 |
-| W2-N6 | Test whether identity hypotheses remain reversible and resist blind transitive merging | §22 item 5; R-ID |
-| W2-N7 | Declare falsification criteria, pass/revise/stop thresholds, and negative cases **before** execution | §22; STRATEGY §5 |
+| W2-N4 | Test whether purpose/audience/field-level disclosure can default-deny and produce distinct internal, research, and public projections without leaking internal fields through experiment output paths P1–P8 (serializers, logs, exports, caches, search, errors, admin stubs). P9 is a separately reported observational probe of existing v3 Evidence Pack / Claim Card entry points and is outside the P1–P8 mechanism pass bar. | §22 item 3; R-DIS |
+| W2-N5 | Test whether source-family modeling can distinguish independent corroboration of the **same** underlying event or claim from duplicated or syndicated reporting on frozen policy-safe examples. Unrelated-event pairs are labeled `unrelated`, not independent corroboration. | §22 item 4; RESOLVE-001/002 |
+| W2-N6 | Test whether a mistaken identity-hypothesis decision can be reopened without destroying evidence or creating a canonical identity. Subject IDs remain distinct throughout. No canonical identity, merge, or split operation exists. A≈B and B≈C do not yield A=C. | §22 item 5; R-ID |
+| W2-N7 | Declare falsification criteria, valid-run gates, exhaustive mutually exclusive proceed/revise/stop mappings, and negative cases **before** execution. An invalid or incomplete run is not an architecture recommendation. | §22; STRATEGY §5 |
 | W2-N8 | Use synthetic or approved policy-safe fixtures only | §22; D-007 |
 | W2-N9 | Measure results; do not promote spike code into production modules | §22 |
 | W2-N10 | Record what must change in the target architecture | §22 |
 | W2-N11 | Produce `WAVE-02-EVIDENCE.md` plus one experiment report per assumption | §22 |
-| W2-N12 | Recommend proceed, revise architecture, or stop for each experiment | §22 |
+| W2-N12 | Recommend proceed, revise architecture, or stop for each experiment using one shared precedence: if evidence is invalid, repeat the run; otherwise stop, then revise architecture, then proceed. Every valid non-proceed outcome maps to exactly one revise or stop branch. | §22 |
 | W2-N13 | Do not begin the temporal kernel implementation | §22; Wave 3 |
 | W2-N14 | Delete or quarantine disposable artifacts only after preserving evidence and with human-approved cleanup | §22 |
 | W2-N15 | Experiment outcome does not select production architecture, vendor, policy content, or official version | STRATEGY §3.6; OD-003/006/008 |
@@ -60,7 +60,7 @@ Default execution is **sequential**: W2-E5 → W2-E2 → W2-E3 → W2-E4 → W2-
 
 | Risk | Wave 2 duty | Not this wave |
 |---|---|---|
-| R-ID silent false merge | Falsify blind transitivity and irreversibility on fixtures | Operational identity resolution (Wave 4; OD-006) |
+| R-ID silent false merge | Falsify blind transitivity and irreversible hypothesis decisions on fixtures. Do not create or split a canonical identity. | Operational identity resolution and canonical split (Wave 4; OD-006) |
 | R-COR incomplete invalidation | Falsify closure errors, silent non-registration, incomplete-state claims, and projection-authoritative impact | Wave 3 temporal kernel; unknowable external dependents |
 | R-DIS alternate-path leakage | Falsify default-deny and three synthetic views on experiment output paths | Real policy content (OD-003); Wave 5 PDP |
 | R-CON lost concurrent review | Falsify append-only / bitemporal / review conflicts on disposable Postgres | Production vendor, schema, hosting (OD-008) |
@@ -101,7 +101,7 @@ Synthetic fixtures do **not** resolve these decisions. If an experiment cannot p
 - This proposed contract, once human-approved and frozen
 - `WAVE-02-REQUIREMENTS-MAP.md`
 - `docs/v4/experiments/WAVE-02-PLAN.md` with pre-declared falsification
-- Per-experiment report: hypothesis, fixtures, measurements, proceed/revise/stop, architecture implications
+- Per-experiment report: hypothesis, fixtures, measurements, valid-run determination, proceed/revise/stop, architecture implications
 - `docs/v4/evidence/WAVE-02-EVIDENCE.md` (created only during execution)
 - Isolation record (worktree or namespace identity) and cleanup approval
 - Approved repository gates, subject to the three documented Windows baseline exceptions
@@ -141,7 +141,7 @@ Wave 2 may become `gate_ready` when:
 
 - this boundary is frozen by explicit human approval, or an explicit accepted amendment exists;
 - every W2-N* row is executed, explicitly deferred, or blocked on a named OD-*;
-- each executed experiment has a pre-declared proceed / revise / stop recommendation;
+- each executed experiment has a valid-run determination and a pre-declared proceed / revise / stop recommendation; an invalid run is repeated and is not an architecture recommendation;
 - no traceable critical/high defect remains inside this boundary;
 - approved gates pass, subject to the three Windows baseline exceptions;
 - remaining medium/low items have owners;
@@ -170,7 +170,7 @@ Accepted Wave 1 residuals remain non-blocking carry-forward unless a later human
 | W1-N15 extractor wiring | **out of scope**; later wave |
 | Leftover `identity-hypothesis-v1` | **out of scope**; Wave 4 / OD-006 |
 | r3/r4 disclosure field extras | **not** Wave 2 exit requirements unless a human amendment says so |
-| Three live views on **real** product serializers | W2-E3 tests the **mechanism** on P1–P8. P9 is an observational probe of existing v3 Evidence Pack / Claim Card paths: a confirmed leak cannot be ignored, yields `revise architecture` or `stop` with a named carry-forward, and must not trigger unapproved product repair. |
+| Three live views on **real** product serializers | W2-E3 tests the **mechanism** on P1–P8. That P1–P8 result is governed by the shared valid-run / stop / revise / proceed algorithm. P9 is a separately reported observational probe of the existing `ClaimCardBuilder.build` / `ClaimCard.to_dict` and `EvidencePackAssembler.assemble` entry points: it cannot improve or invalidate the P1–P8 mechanism result, but a confirmed leak still requires a predeclared `revise architecture` or `stop` disposition with a named carry-forward. `Not evaluable` is an incomplete observational result, not a mechanism pass or failure. No P9 outcome authorizes unplanned product repair. |
 
 ## 11. What human approval of this packet would authorize
 

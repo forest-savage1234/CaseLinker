@@ -219,6 +219,14 @@ Later waves append. Do not erase. Software does not convert conservative default
 - **Does not decide:** the technical merit of the proposed packet; human approval; execution
 - **Consequence:** A genuinely fresh conversation must perform the independent planning review. D-029 is not independent acceptance.
 
+## D-2026-08-15-031 — Revise proposed Wave 2 planning packet (falsifiability and oracles)
+
+- **Label:** repository fact of an operator-authorized planning revision
+- **Decision:** Revise the **proposed** Wave 2 planning packet so that each experiment’s claim matches what its permitted surface can prove, and so that each experiment has an independent oracle, a reproducible procedure, a valid-run gate, and an exhaustive stop / revise / proceed mapping. The packet being revised is `ed7597a4efbf5ad0a60318cb59193093a178c451`. The starting branch HEAD was `31d3c85d92aac4f49448a2e8f123b2dc37359664`. The containing commit records this proposed revision. Wave 2 `legal_state` remains `unstarted`. The packet remains `proposed`. No experiment was run. No prior review was rewritten. Independent re-verification of this revision is required.
+- **Does not rewrite:** D-027, D-028, D-029, D-030, `WAVE-02-PLAN-REVIEW.md`, or `WAVE-02-PLAN-REVIEW-02.md`
+- **Does not decide:** Wave 2 approval, freeze, or execution; vendor, schema, identity-policy, disclosure-policy, or official-version selection; any blocked OD-*; Phase 0 / Gate 0; Wave 3
+- **Consequence:** Request independent re-verification of this revision by a reviewer outside the builder lineage. Do not begin execution.
+
 ## Ownership convention
 
 - **Accountable owner:** person or role who must keep the item visible and stop dependent work. Until a specialist is named, the Wave 0 program operator (this fork’s operator) is the tracking owner only.
