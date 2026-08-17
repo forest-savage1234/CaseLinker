@@ -169,6 +169,7 @@ Do not look in the research freezes for these as source of truth:
 | Artifact | Location |
 |---|---|
 | This index (working copy) | `C:\Users\fores\docs\research\RESEARCH_LAYER.md` |
+| This index (durable orphan branch) | [forest-savage1234/CaseLinker `research/layer-index`](https://github.com/forest-savage1234/CaseLinker/blob/research/layer-index/RESEARCH_LAYER.md) — independent history; not a product branch and not a pull request |
 | CaseLinker v4 working tree | `C:\Users\fores\Downloads\CaseLinker-v4-research-network` |
 | CaseLinker v3-foundation working tree | `C:\Users\fores\Downloads\CaseLinker-proposal` |
 | CASE-UCO-SDK advanced working tree | `C:\Users\fores\CASE-UCO-SDK` (currently at `5b1758c`) |
